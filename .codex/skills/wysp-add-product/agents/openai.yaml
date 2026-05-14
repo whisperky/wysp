@@ -1,0 +1,4 @@
+interface:
+  display_name: "Wysp Add Product"
+  short_description: "Add Wysp products and detail pages"
+  default_prompt: "Use $wysp-add-product to add a new Wysp product from a name, id, and context."
