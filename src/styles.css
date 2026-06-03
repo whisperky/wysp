@@ -1871,6 +1871,7 @@ svg {
   .channel-link {
     min-height: 84px;
   }
+
 }
 
 @media (prefers-reduced-motion: reduce) {

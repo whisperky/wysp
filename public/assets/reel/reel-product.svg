@@ -1,0 +1,122 @@
+<svg width="960" height="640" viewBox="0 0 960 640" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="rtitle rdesc">
+  <title id="rtitle">Reel product preview</title>
+  <desc id="rdesc">A dark investigation-style interface showing the Reel lens, an Add to Chrome action, and an AI evidence list over indexed Discord messages.</desc>
+  <defs>
+    <linearGradient id="reelBg" x1="124" y1="65" x2="836" y2="589" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#101a26"/>
+      <stop offset="0.5" stop-color="#0e1622"/>
+      <stop offset="1" stop-color="#08130f"/>
+    </linearGradient>
+    <linearGradient id="reelJade" x1="134" y1="110" x2="826" y2="530" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3ee7a6"/>
+      <stop offset="1" stop-color="#1fb37f"/>
+    </linearGradient>
+    <radialGradient id="reelAura" cx="0.5" cy="0.5" r="0.5">
+      <stop stop-color="#27c98a" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#27c98a" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="reelShadow" x="53" y="24" width="854" height="592" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="bg"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset dy="24"/>
+      <feGaussianBlur stdDeviation="28"/>
+      <feComposite in2="hardAlpha" operator="out"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.02 0 0 0 0 0.04 0 0 0 0 0.05 0 0 0 0.4 0"/>
+      <feBlend mode="normal" in2="bg" result="e1"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="e1"/>
+    </filter>
+  </defs>
+
+  <rect width="960" height="640" rx="42" fill="#F4F6FB"/>
+
+  <!-- faint accent flows -->
+  <path d="M162 184C270 74 405 65 514 154C623 243 735 234 826 136" stroke="url(#reelJade)" stroke-width="18" stroke-linecap="round" opacity="0.28"/>
+  <path d="M136 504C290 387 358 249 329 118" stroke="#7c89f6" stroke-width="18" stroke-linecap="round" opacity="0.16"/>
+  <path d="M801 500C690 407 608 418 484 520" stroke="#f5a524" stroke-width="18" stroke-linecap="round" opacity="0.2"/>
+
+  <g filter="url(#reelShadow)">
+    <rect x="100" y="72" width="760" height="500" rx="28" fill="url(#reelBg)"/>
+    <rect x="100.5" y="72.5" width="759" height="499" rx="27.5" stroke="white" stroke-opacity="0.10"/>
+
+    <!-- title bar -->
+    <g>
+      <rect x="138" y="110" width="684" height="44" rx="14" fill="white" fill-opacity="0.06"/>
+      <circle cx="166" cy="132" r="7" fill="#3a4658"/>
+      <circle cx="188" cy="132" r="7" fill="#3a4658"/>
+      <circle cx="210" cy="132" r="7" fill="#3a4658"/>
+      <text x="240" y="137" fill="#9fb2ab" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600">Reel · analyzer</text>
+      <rect x="640" y="120" width="166" height="24" rx="12" fill="#27c98a" fill-opacity="0.16"/>
+      <circle cx="658" cy="132" r="4" fill="#3ee7a6"/>
+      <text x="670" y="137" fill="#9af0cd" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700">indexing #job-board</text>
+    </g>
+
+    <!-- body panel -->
+    <rect x="154" y="186" width="652" height="320" rx="22" fill="white" fill-opacity="0.04"/>
+    <rect x="154.5" y="186.5" width="651" height="319" rx="21.5" stroke="white" stroke-opacity="0.10"/>
+    <line x1="474" y1="186" x2="474" y2="506" stroke="white" stroke-opacity="0.10"/>
+
+    <!-- LEFT: lens + brand + add to chrome -->
+    <g>
+      <ellipse cx="314" cy="278" rx="86" ry="86" fill="url(#reelAura)"/>
+      <circle cx="314" cy="278" r="62" fill="none" stroke="#3ee7a6" stroke-width="3" stroke-opacity="0.32" stroke-dasharray="4 12"/>
+      <circle cx="314" cy="278" r="46" fill="none" stroke="#3ee7a6" stroke-width="5" stroke-opacity="0.85"/>
+      <line x1="314" y1="263" x2="314" y2="232" stroke="#3ee7a6" stroke-width="5" stroke-linecap="round" stroke-opacity="0.8"/>
+      <circle cx="314" cy="278" r="15" fill="#3ee7a6"/>
+
+      <text x="314" y="384" text-anchor="middle" fill="#EAF6F0" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="800">Reel</text>
+      <text x="314" y="406" text-anchor="middle" fill="#8fa9a0" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600">Discord Chat Lens</text>
+
+      <!-- Add to Chrome pill with the real multicolor Chrome mark -->
+      <rect x="206" y="430" width="216" height="46" rx="12" fill="#3ee7a6"/>
+      <g transform="translate(228,442) scale(0.46)">
+        <path fill="#EA4335" d="M24 24 6.7 14A20 20 0 0 1 41.3 14Z"/>
+        <path fill="#FBBC05" d="M24 24 41.3 14A20 20 0 0 1 24 44Z"/>
+        <path fill="#34A853" d="M24 24 24 44A20 20 0 0 1 6.7 14Z"/>
+        <circle cx="24" cy="24" r="9.4" fill="#fff"/>
+        <circle cx="24" cy="24" r="6.4" fill="#4285F4"/>
+      </g>
+      <text x="258" y="459" fill="#06251a" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="800">Add to Chrome</text>
+    </g>
+
+    <!-- RIGHT: AI evidence list -->
+    <g>
+      <text x="498" y="222" fill="#8fa9a0" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="800" letter-spacing="1">EVIDENCE · 3 USERS</text>
+
+      <!-- row 1 (top hit) -->
+      <rect x="498" y="238" width="292" height="58" rx="14" fill="#27c98a" fill-opacity="0.12"/>
+      <rect x="498.5" y="238.5" width="291" height="57" rx="13.5" stroke="#3ee7a6" stroke-opacity="0.4"/>
+      <circle cx="528" cy="267" r="16" fill="#2a6f57"/>
+      <text x="528" y="272" text-anchor="middle" fill="#9af0cd" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="800">AL</text>
+      <text x="556" y="263" fill="#EAF6F0" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="700">Ada Lovelace</text>
+      <text x="556" y="282" fill="#8fa9a0" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="600">8 hiring posts · github + email</text>
+      <text x="768" y="256" text-anchor="end" fill="#9af0cd" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="800">0.94</text>
+      <rect x="710" y="276" width="58" height="6" rx="3" fill="#16352b"/>
+      <rect x="710" y="276" width="55" height="6" rx="3" fill="#3ee7a6"/>
+
+      <!-- row 2 -->
+      <rect x="498" y="306" width="292" height="58" rx="14" fill="white" fill-opacity="0.05"/>
+      <circle cx="528" cy="335" r="16" fill="#6b5a2e"/>
+      <text x="528" y="340" text-anchor="middle" fill="#f7d59a" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="800">MR</text>
+      <text x="556" y="331" fill="#EAF6F0" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="700">Marco Reus</text>
+      <text x="556" y="350" fill="#8fa9a0" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="600">founding-designer · linkedin</text>
+      <text x="768" y="324" text-anchor="end" fill="#9af0cd" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="800">0.88</text>
+      <rect x="710" y="344" width="58" height="6" rx="3" fill="#16352b"/>
+      <rect x="710" y="344" width="51" height="6" rx="3" fill="#3ee7a6" fill-opacity="0.85"/>
+
+      <!-- row 3 -->
+      <rect x="498" y="374" width="292" height="58" rx="14" fill="white" fill-opacity="0.05"/>
+      <circle cx="528" cy="403" r="16" fill="#3a4f7a"/>
+      <text x="528" y="408" text-anchor="middle" fill="#bcd0f7" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="800">LT</text>
+      <text x="556" y="399" fill="#EAF6F0" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="700">Linus T.</text>
+      <text x="556" y="418" fill="#8fa9a0" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="600">single-channel · github + email</text>
+      <text x="768" y="392" text-anchor="end" fill="#9af0cd" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="800">0.71</text>
+      <rect x="710" y="412" width="58" height="6" rx="3" fill="#16352b"/>
+      <rect x="710" y="412" width="41" height="6" rx="3" fill="#3ee7a6" fill-opacity="0.7"/>
+
+      <!-- composer hint -->
+      <rect x="498" y="450" width="292" height="40" rx="12" fill="#06140f" fill-opacity="0.5"/>
+      <rect x="498.5" y="450.5" width="291" height="39" rx="11.5" stroke="white" stroke-opacity="0.08"/>
+      <text x="516" y="475" fill="#6f8a81" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="600">Ask a follow-up across the server…</text>
+    </g>
+  </g>
+</svg>

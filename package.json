@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host 127.0.0.1",
-    "build": "tsc && vite build",
+    "build": "tsc && vite build && node scripts/prerender-lanes.mjs && node scripts/prerender-reel.mjs && node scripts/prerender-trust-contract.mjs",
     "preview": "vite preview"
   },
   "devDependencies": {
@@ -19,6 +19,7 @@
     "@fortawesome/fontawesome-free": "^7.2.0",
     "lucide-react": "^1.14.0",
     "react": "^19.2.6",
-    "react-dom": "^19.2.6"
+    "react-dom": "^19.2.6",
+    "react-router-dom": "^7.15.1"
   }
 }
