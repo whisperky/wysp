@@ -1,0 +1,45 @@
+name: Refresh stats
+
+# Read-only: pulls aggregate counts from LemonSqueezy and commits the static
+# public/stats.json the site reads. No accounts, no payments — just numbers.
+
+on:
+  schedule:
+    - cron: '0 * * * *' # hourly, on the hour (UTC)
+  workflow_dispatch: {} # allow manual runs from the Actions tab
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-stats
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # No install step needed — the script uses only Node built-ins + global fetch.
+      - name: Fetch latest numbers from LemonSqueezy
+        env:
+          LEMONSQUEEZY_API_KEY: ${{ secrets.LEMONSQUEEZY_API_KEY }}
+          LEMONSQUEEZY_STORE_ID: ${{ secrets.LEMONSQUEEZY_STORE_ID }}
+        run: node scripts/fetch-stats.mjs
+
+      - name: Commit stats.json only if it changed
+        run: |
+          if [ -n "$(git status --porcelain public/stats.json)" ]; then
+            git config user.name "wysp-stats-bot"
+            git config user.email "stats-bot@users.noreply.github.com"
+            git add public/stats.json
+            git commit -m "chore(stats): refresh live numbers [skip ci]"
+            git push
+          else
+            echo "No change to stats.json — nothing to commit."
+          fi

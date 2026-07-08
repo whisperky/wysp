@@ -1,12 +1,14 @@
 import { ArrowRight, AppWindow, CheckCircle2, ExternalLink, Workflow, Wrench } from 'lucide-react';
 import { ProductRow } from '../components/products/ProductRow';
-import { channels, contact, products, stats, suggestionPrompts } from '../data/siteData';
+import { channels, contact, products, statCards, suggestionPrompts } from '../data/siteData';
 import { useHashScroll } from '../hooks/useHashScroll';
+import { useLiveStats } from '../hooks/useLiveStats';
 
-const factIconClasses = ['fas fa-download', 'fas fa-users', 'fab fa-gratipay'] as const;
+const numberFormatter = new Intl.NumberFormat('en-US');
 
 export function HomePage() {
   useHashScroll('home');
+  const liveStats = useLiveStats();
 
   return (
     <main id="top">
@@ -126,19 +128,15 @@ export function HomePage() {
           <p>Let the numbers speak about us</p>
         </div>
         <div className="facts-grid">
-          {stats.map((stat, index) => {
-            const iconClassName = factIconClasses[index] ?? factIconClasses[0];
-
-            return (
-              <article className="fact-counter" key={stat.label}>
-                <div className="fact-icon" aria-hidden="true">
-                  <i className={iconClassName} />
-                </div>
-                <strong>{stat.value}</strong>
-                <span>{stat.label}</span>
-              </article>
-            );
-          })}
+          {statCards.map((card) => (
+            <article className="fact-counter" key={card.label}>
+              <div className="fact-icon" aria-hidden="true">
+                <i className={card.icon} />
+              </div>
+              <strong>{numberFormatter.format(liveStats?.metrics?.[card.key] ?? 0)}</strong>
+              <span>{card.label}</span>
+            </article>
+          ))}
         </div>
       </section>
 

@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite --host 127.0.0.1",
     "build": "tsc && vite build && node scripts/prerender-lanes.mjs && node scripts/prerender-reel.mjs && node scripts/prerender-trust-contract.mjs",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "stats": "node scripts/fetch-stats.mjs"
   },
   "devDependencies": {
     "@types/react": "^19.2.14",
