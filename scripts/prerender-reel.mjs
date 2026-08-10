@@ -8,7 +8,10 @@ import { createServer } from 'vite';
 const scriptDir = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(scriptDir, '..');
 const distDir = path.join(root, 'dist');
-const routePaths = ['/reel/'];
+// /reel/privacy/ is the privacy-policy URL published to the Chrome Web Store, so
+// it must exist as a real prerendered document — a store reviewer (and crawlers)
+// should not depend on client-side routing to see it.
+const routePaths = ['/reel/', '/reel/privacy/'];
 
 const siteOrigin = 'https://wysp.pro';
 const assetRoot = '/assets/reel';

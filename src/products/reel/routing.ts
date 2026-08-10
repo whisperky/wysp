@@ -1,8 +1,9 @@
-import { landingMetadata, notFoundMetadata } from './content';
-import { PRODUCT_ROOT } from './config';
+import { landingMetadata, notFoundMetadata, privacyMetadata } from './content';
+import { PRIVACY_PATH, PRODUCT_ROOT } from './config';
 
 export type ReelResolvedPage =
   | { type: 'home'; key: 'home' }
+  | { type: 'privacy'; key: 'privacy' }
   | { type: 'not-found'; key: string };
 
 export function normalizeReelPath(routePath: string) {
@@ -22,10 +23,18 @@ export function resolveReelPage(routePath: string): ReelResolvedPage {
     return { type: 'home', key: 'home' };
   }
 
+  if (normalizedPath === PRIVACY_PATH) {
+    return { type: 'privacy', key: 'privacy' };
+  }
+
   return { type: 'not-found', key: normalizedPath.replace(/^\/reel\/?/, '') || 'not-found' };
 }
 
 export function metadataForReelPage(page: ReelResolvedPage) {
+  if (page.type === 'privacy') {
+    return privacyMetadata;
+  }
+
   return page.type === 'not-found' ? notFoundMetadata : landingMetadata;
 }
 

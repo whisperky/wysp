@@ -1,5 +1,5 @@
 /* =============================================================
-   Reel — Discord Chat Lens · Investigation (dark) marketing site
+   Reel — Discord Chat Lens · research tool (dark) marketing site
    Scoped under .reel-site so it lives beside Lanes inside Wysp.
    ============================================================= */
 
@@ -709,4 +709,47 @@
   .reel-feature + .reel-feature { margin-top: 72px; }
   .reel-band-inner { grid-template-columns: 1fr 1fr; }
   .reel-footer-inner { grid-template-columns: 1fr; gap: 28px; }
+}
+
+/* ── Legal / policy pages (/reel/privacy) ─────────────────────────────────
+   Long-form prose rather than marketing layout: a comfortable measure, clear
+   heading rhythm, and enough contrast to actually be read. */
+.reel-legal { padding-top: 8px; }
+.reel-legal h1 {
+  margin: 0 0 10px;
+  font-size: clamp(2rem, 3.6vw, 2.6rem);
+  font-weight: 600; line-height: 1.1; letter-spacing: -0.025em;
+  color: var(--ink-12);
+}
+.reel-legal h2 {
+  margin: 44px 0 12px; padding-top: 22px;
+  border-top: 1px solid var(--ink-2, rgba(255,255,255,.09));
+  font-size: 1.18rem; font-weight: 600; letter-spacing: -0.012em;
+  color: var(--ink-12);
+}
+.reel-legal p { margin: 0 0 14px; font-size: 1rem; line-height: 1.68; color: var(--ink-8); }
+.reel-legal ul { margin: 0 0 16px; padding-left: 22px; }
+.reel-legal li { margin: 7px 0; font-size: 1rem; line-height: 1.62; color: var(--ink-8); }
+.reel-legal strong { color: var(--ink-12); font-weight: 600; }
+.reel-legal a { color: var(--brand-ink, #34d399); }
+.reel-legal code {
+  padding: 1px 6px; border-radius: 5px; font-size: 0.86em;
+  background: var(--ink-1, rgba(255,255,255,.06)); color: var(--ink-10, inherit);
+  font-family: var(--font-mono, ui-monospace, SFMono-Regular, Menlo, monospace);
+}
+.reel-legal-meta { list-style: none; margin: 0 0 26px; padding: 0; }
+.reel-legal-meta li { margin: 3px 0; }
+.reel-legal-callout {
+  margin: 18px 0; padding: 14px 16px; border-radius: 10px;
+  border: 1px solid var(--ember-line, rgba(245,158,11,.32));
+  background: var(--ember-tint, rgba(245,158,11,.08));
+}
+.reel-legal-foot {
+  margin-top: 48px; padding-top: 20px;
+  border-top: 1px solid var(--ink-2, rgba(255,255,255,.09));
+  font-size: 0.92rem;
+}
+
+@media (max-width: 720px) {
+  .reel-legal h2 { margin-top: 34px; }
 }

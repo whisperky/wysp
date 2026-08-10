@@ -2,6 +2,7 @@ import { useHashScroll } from '../../hooks/useHashScroll';
 import { usePageMetadata } from '../../lib/pageMetadata';
 import { LandingPage } from './components/ReelLandingPage';
 import { ReelFooter, ReelNav, ReelNotFound } from './components/ReelLayout';
+import { ReelPrivacyPage } from './components/ReelPrivacyPage';
 import { ASSET_ROOT, PRODUCT_ROOT, SITE_ORIGIN } from './config';
 import { metadataForReelPage, resolveReelPage } from './routing';
 
@@ -34,7 +35,7 @@ export function ReelProductSite({ routePath, scrollKey }: { routePath?: string; 
   return (
     <div className={'reel-site reel-page-' + page.type} data-hero="lens">
       <ReelNav />
-      {page.type === 'not-found' ? <ReelNotFound /> : <LandingPage />}
+      {page.type === 'not-found' ? <ReelNotFound /> : page.type === 'privacy' ? <ReelPrivacyPage /> : <LandingPage />}
       <ReelFooter />
     </div>
   );
