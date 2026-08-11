@@ -82,15 +82,14 @@ export function LandingPage() {
           <div className="reel-hero-copy">
             <span className="reel-hero-badge">
               <span className="reel-hero-badge-tag">New</span>
-              <b>Reel</b>&nbsp;joins the Wysp product family
+              <b>Reel</b>&nbsp;joins Wysp
             </span>
             <h1>
-              Read an entire Discord server like a <span className="reel-glow">database</span>.
+              Read a server like a <span className="reel-glow">database</span>.
             </h1>
             <p className="reel-hero-lead">
-              Reel quietly indexes the channels you can already open into a private database on your own
-              machine — then an AI agent answers evidence-backed questions across the whole server and
-              exports every channel at once. No bot. No token. Nothing leaves your device.
+              Back up a <b>whole</b> Discord server in one run — channels, threads and forums.
+              Then search it by keyword or meaning, or ask an AI.
             </p>
             <div className="reel-hero-cta">
               <AppLink className="reel-btn reel-btn-brand" href={CHROME_STORE_HREF}>
@@ -113,14 +112,14 @@ export function LandingPage() {
                   <rect x="5" y="10" width="14" height="9" rx="2" stroke="currentColor" strokeWidth="1.6" />
                   <path d="M8 10V8a4 4 0 0 1 8 0v2" stroke="currentColor" strokeWidth="1.6" />
                 </svg>
-                No Discord token, ever
+                No password · no bot
               </span>
               <span>
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none">
                   <circle cx="12" cy="12" r="8.5" stroke="currentColor" strokeWidth="1.6" />
                   <path d="m8.5 12 2.4 2.4 4.6-5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
-                Works fully offline (free tier)
+                Whole server in one run
               </span>
             </div>
 
@@ -143,6 +142,7 @@ export function LandingPage() {
               <svg viewBox="0 0 240 240">
                 <circle className="reel-ring reel-ring-outer" cx="120" cy="120" r="92" strokeWidth="2" opacity="0.4" strokeDasharray="6 14" />
                 <circle className="reel-ring reel-ring-outer" cx="120" cy="120" r="78" strokeWidth="3" opacity="0.5" />
+                <circle className="reel-ring reel-ring-mid" cx="120" cy="120" r="54" strokeWidth="2" opacity="0.35" strokeDasharray="6 14" />
                 <circle className="reel-ring reel-ring-mid" cx="120" cy="120" r="54" strokeWidth="3" opacity="0.75" strokeDasharray="120 220" strokeLinecap="round" />
                 <g className="reel-ring-tick">
                   <line x1="120" y1="105" x2="120" y2="42" stroke="var(--brand)" strokeWidth="3" strokeLinecap="round" opacity="0.7" />
@@ -176,7 +176,7 @@ export function LandingPage() {
         <div className="reel-band-inner">
           <div className="reel-stat"><strong data-count="7">0</strong><span>servers indexed</span></div>
           <div className="reel-stat"><strong data-count="23">0</strong><span>channels</span></div>
-          <div className="reel-stat"><strong data-count="1842" data-comma="1">0</strong><span>users mapped</span></div>
+          <div className="reel-stat"><strong data-count="318">0</strong><span>threads &amp; forums</span></div>
           <div className="reel-stat"><strong className="reel-stat-jade">100%</strong><span>stays on your device</span></div>
         </div>
       </section>
@@ -186,19 +186,18 @@ export function LandingPage() {
         <div className="reel-wrap">
           <div className="reel-feature reel-reveal">
             <div className="reel-feature-copy">
-              <span className="reel-eyebrow"><span className="reel-eyebrow-dot"></span>Whole-server analysis</span>
-              <h3>Ask your server anything. Get answers backed by receipts.</h3>
+              <span className="reel-eyebrow"><span className="reel-eyebrow-dot"></span>Search &amp; AI research</span>
+              <h3>Find anything. Search or ask.</h3>
               <p>
-                Reel's analyzer is an agentic loop: it reads your prompt, calls local tools against your
-                indexed database, and returns a structured answer — every claim traceable to the exact
-                messages behind it. People, topics, tech stacks, hiring funnels, contact signals.
+                Search by keyword or by meaning. On Pro, an AI agent does the research — every claim
+                linked to the messages behind it.
               </p>
               <ul className="reel-feature-list">
-                <li><Check /><span><b>Cross-channel by default.</b> Combine #job-board, #showcase and #intros in one question — not one channel at a time.</span></li>
-                <li><Check /><span><b>Evidence, not vibes.</b> Each result links to dated, channel-tagged messages with the trigger phrases highlighted.</span></li>
-                <li><Check /><span><b>Private by construction.</b> Only ≤25 selected rows per tool call ever reach the model. Your full corpus never leaves.</span></li>
+                <li><Check /><span><b>Search by meaning.</b> On-device. Free tier too.</span></li>
+                <li><Check /><span><b>Cross-channel.</b> One question, every channel and thread. One-click recipes.</span></li>
+                <li><Check /><span><b>Receipts, not vibes.</b> Answers link to the messages. Only ≤25 rows leave.</span></li>
               </ul>
-              <div className="reel-tagline"><span className="mono-jade">$</span> reel.ask("find signal across the whole server")</div>
+              <div className="reel-tagline"><span className="mono-jade">$</span> reel.ask("what's the consensus — and who explains it best?")</div>
             </div>
 
             <div className="reel-feature-visual reel-mock">
@@ -217,7 +216,7 @@ export function LandingPage() {
                     </div>
                     <div>
                       <div className="reel-msg-label">You</div>
-                      <div className="reel-msg-text">Find users who posted <span className="reel-hl">[Hiring]</span>, account older than 3 years, active in the last 90 days, who shared contact info.</div>
+                      <div className="reel-msg-text">What does the community recommend for <span className="reel-hl">state management</span> — and who explains it best?</div>
                     </div>
                   </div>
 
@@ -227,10 +226,10 @@ export function LandingPage() {
                       <span className="mono">2.89s · claude-sonnet</span>
                     </div>
                     <div className="reel-toolrows">
-                      <div className="reel-toolrow"><span className="reel-toolrow-idx">1</span><span className="reel-tool-name">list_channels</span><span className="reel-tool-sum">#job-board matched</span><span className="reel-tool-ms">60ms</span></div>
-                      <div className="reel-toolrow"><span className="reel-toolrow-idx">2</span><span className="reel-tool-name">hiring_analysis</span><span className="reel-tool-sum">38 users · 142 msgs</span><span className="reel-tool-ms">840ms</span></div>
-                      <div className="reel-toolrow"><span className="reel-toolrow-idx">3</span><span className="reel-tool-name">find_contact_info</span><span className="reel-tool-sum">17 shared · 4 email+github</span><span className="reel-tool-ms">215ms</span></div>
-                      <div className="reel-toolrow is-running"><span className="reel-toolrow-idx">4</span><span className="reel-tool-name">get_user_profile</span><span className="reel-tool-sum">Ada Lovelace · 412 msgs</span><span className="reel-tool-ms"><span className="reel-dot-live is-pulsing"></span></span></div>
+                      <div className="reel-toolrow"><span className="reel-toolrow-idx">1</span><span className="reel-tool-name">summarize_corpus</span><span className="reel-tool-sum">38k msgs · scope</span><span className="reel-tool-ms">60ms</span></div>
+                      <div className="reel-toolrow"><span className="reel-toolrow-idx">2</span><span className="reel-tool-name">investigate_topic</span><span className="reel-tool-sum">Zustand · Redux · Jotai</span><span className="reel-tool-ms">840ms</span></div>
+                      <div className="reel-toolrow"><span className="reel-toolrow-idx">3</span><span className="reel-tool-name">semantic_search</span><span className="reel-tool-sum">by meaning · 60 hits</span><span className="reel-tool-ms">215ms</span></div>
+                      <div className="reel-toolrow is-running"><span className="reel-toolrow-idx">4</span><span className="reel-tool-name">investigate_user</span><span className="reel-tool-sum">top contributor</span><span className="reel-tool-ms"><span className="reel-dot-live is-pulsing"></span></span></div>
                     </div>
                   </div>
 
@@ -240,21 +239,21 @@ export function LandingPage() {
                         <circle cx="12" cy="12" r="8" stroke="currentColor" strokeWidth="1.8" />
                         <path d="M12 2v4M12 18v4M2 12h4M18 12h4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
                       </svg>
-                      Evidence <span className="reel-chip reel-chip-brand">4 users</span><span className="reel-chip">21 messages</span>
+                      Answer <span className="reel-chip reel-chip-brand">3 picks</span><span className="reel-chip">21 messages</span>
                     </div>
                     <div className="reel-evrow is-top">
                       <div className="reel-avatar reel-av-a">AL</div>
-                      <div><div className="reel-evrow-name"><strong>Ada Lovelace</strong><span>@ada</span><span className="reel-chip">5.3y</span></div><div className="reel-evrow-sub">8 hiring posts · github + email + portfolio</div></div>
+                      <div><div className="reel-evrow-name"><strong>Ada Lovelace</strong><span>@ada</span><span className="reel-chip">5.3y</span></div><div className="reel-evrow-sub">42 messages on state mgmt · shared 3 guides</div></div>
                       <div className="reel-score"><span className="mono">0.94</span><div className="reel-score-bar"><i style={{ width: '94%' }}></i></div></div>
                     </div>
                     <div className="reel-evrow">
                       <div className="reel-avatar reel-av-b">MR</div>
-                      <div><div className="reel-evrow-name"><strong>Marco Reus</strong><span>@marcor</span><span className="reel-chip">7.1y</span></div><div className="reel-evrow-sub">founding-designer posts · linkedin + email</div></div>
+                      <div><div className="reel-evrow-name"><strong>Marco Reus</strong><span>@marcor</span><span className="reel-chip">7.1y</span></div><div className="reel-evrow-sub">explained Zustand patterns · 18 messages</div></div>
                       <div className="reel-score"><span className="mono">0.88</span><div className="reel-score-bar"><i style={{ width: '88%' }}></i></div></div>
                     </div>
                     <div className="reel-evrow">
                       <div className="reel-avatar reel-av-c">LT</div>
-                      <div><div className="reel-evrow-name"><strong>Linus T.</strong><span>@linus</span><span className="reel-chip">8.4y</span></div><div className="reel-evrow-sub">single-channel signal · github + email</div></div>
+                      <div><div className="reel-evrow-name"><strong>Linus T.</strong><span>@linus</span><span className="reel-chip">8.4y</span></div><div className="reel-evrow-sub">benchmarks + trade-offs · 9 messages</div></div>
                       <div className="reel-score"><span className="mono">0.71</span><div className="reel-score-bar"><i style={{ width: '71%' }}></i></div></div>
                     </div>
                   </div>
@@ -278,19 +277,18 @@ export function LandingPage() {
         <div className="reel-wrap">
           <div className="reel-feature is-flip reel-reveal">
             <div className="reel-feature-copy">
-              <span className="reel-eyebrow"><span className="reel-eyebrow-dot"></span>The whole server · not one channel</span>
-              <h3>Export every channel in a server. Most tools stop at one.</h3>
+              <span className="reel-eyebrow"><span className="reel-eyebrow-dot"></span>Back up the whole server</span>
+              <h3>The whole server at once.</h3>
               <p>
-                Other exporters make you dump channels one by one. Reel walks the entire server you can
-                access — every readable channel and thread — and writes one clean dataset. RFC-4180 CSV
-                or newline-delimited JSONL, with permalinks, timestamps and authors intact.
+                Other tools export one channel at a time — brutal across dozens. Reel grabs the whole
+                server in one run: channels, threads and forums, to HTML, Excel, CSV or JSON.
               </p>
               <ul className="reel-feature-list">
-                <li><Check /><span><b>Server-wide in one run.</b> Select a whole server; Reel discovers and queues every channel it can read.</span></li>
-                <li><Check /><span><b>Analysis-ready columns.</b> <code>id · timestamp · permalink · author · content</code> — drop it straight into a notebook or sheet.</span></li>
-                <li><Check /><span><b>Exports are free.</b> CSV &amp; JSONL work on the free tier — no <code>downloads</code> permission, just an in-page save.</span></li>
+                <li><Check /><span><b>Channels, threads &amp; forums.</b> The posts other tools miss.</span></li>
+                <li><Check /><span><b>Four formats.</b> <code>HTML</code> · <code>XLSX</code> · <code>CSV</code> · <code>JSONL</code>.</span></li>
+                <li><Check /><span><b>Gentle &amp; resumable.</b> Re-sync in seconds.</span></li>
               </ul>
-              <div className="reel-tagline"><span className="mono-jade">→</span> acme-builders.server.jsonl · 38,421 rows</div>
+              <div className="reel-tagline"><span className="mono-jade">→</span> acme-builders archive · HTML · 38,421 rows</div>
             </div>
 
             <div className="reel-feature-visual reel-mock">
@@ -301,20 +299,22 @@ export function LandingPage() {
                   </svg>
                   Export scope · <b>entire server</b>
                 </span>
-                <span className="reel-export-formats"><span className="reel-chip reel-chip-brand">CSV</span><span className="reel-chip">JSONL</span></span>
+                <span className="reel-export-formats"><span className="reel-chip reel-chip-brand">HTML</span><span className="reel-chip">XLSX</span><span className="reel-chip">CSV</span><span className="reel-chip">JSON</span></span>
               </div>
               <div className="reel-channel-tree">
-                <div className="reel-tree-server"><span className="reel-srv-mark">AB</span><strong>Acme Builders</strong><span className="mono">7 channels · 12.4k</span></div>
+                <div className="reel-tree-server"><span className="reel-srv-mark">AB</span><strong>Acme Builders</strong><span className="mono">7 channels · 18 threads · 12.4k</span></div>
                 <div className="reel-tree-row"><span className="reel-tree-check"><Check size={9} sw={3.4} /></span><span className="reel-tree-hash">#</span><span className="reel-tree-name">job-board</span><div className="reel-tree-bar"><i style={{ width: '100%' }}></i></div><span className="mono">4,128</span></div>
                 <div className="reel-tree-row"><span className="reel-tree-check"><Check size={9} sw={3.4} /></span><span className="reel-tree-hash">#</span><span className="reel-tree-name">introductions</span><div className="reel-tree-bar"><i style={{ width: '58%' }}></i></div><span className="mono">2,401</span></div>
                 <div className="reel-tree-row"><span className="reel-tree-check"><Check size={9} sw={3.4} /></span><span className="reel-tree-hash">#</span><span className="reel-tree-name">showcase</span><div className="reel-tree-bar"><i style={{ width: '44%' }}></i></div><span className="mono">1,822</span></div>
                 <div className="reel-tree-row"><span className="reel-tree-check"><Check size={9} sw={3.4} /></span><span className="reel-tree-hash">#</span><span className="reel-tree-name">general</span><div className="reel-tree-bar"><i style={{ width: '30%' }}></i></div><span className="mono">1,240</span></div>
                 <div className="reel-tree-row"><span className="reel-tree-check"><Check size={9} sw={3.4} /></span><span className="reel-tree-hash">#</span><span className="reel-tree-name">announcements</span><div className="reel-tree-bar"><i style={{ width: '10%' }}></i></div><span className="mono">412</span></div>
                 <div className="reel-tree-row"><span className="reel-tree-check"><Check size={9} sw={3.4} /></span><span className="reel-tree-hash">#</span><span className="reel-tree-name">q3-hiring</span><div className="reel-tree-bar"><i style={{ width: '6%' }}></i></div><span className="mono">213</span></div>
+                <div className="reel-tree-row"><span className="reel-tree-check"><Check size={9} sw={3.4} /></span><span className="reel-tree-hash">↳</span><span className="reel-tree-name">design-help · thread</span><div className="reel-tree-bar"><i style={{ width: '8%' }}></i></div><span className="mono">96</span></div>
+                <div className="reel-tree-row"><span className="reel-tree-check"><Check size={9} sw={3.4} /></span><span className="reel-tree-hash">↳</span><span className="reel-tree-name">showcase · forum post</span><div className="reel-tree-bar"><i style={{ width: '5%' }}></i></div><span className="mono">58</span></div>
               </div>
               <div className="reel-progress"><i></i></div>
               <div className="reel-export-foot">
-                <span className="reel-export-count">Queued <b>7 / 7 channels</b> · 12,410 rows</span>
+                <span className="reel-export-count">Queued <b>7 channels + 18 threads</b> · 12,410 rows</span>
                 <span className="reel-btn reel-btn-brand reel-btn-sm">
                   <svg width="13" height="13" viewBox="0 0 24 24" fill="none">
                     <path d="M12 3v12m0 0 4-4m-4 4-4-4M5 19h14" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
@@ -332,8 +332,8 @@ export function LandingPage() {
         <div className="reel-wrap">
           <div className="reel-section-head is-center reel-reveal">
             <span className="reel-eyebrow" style={{ justifyContent: 'center' }}><span className="reel-eyebrow-dot"></span>How it works</span>
-            <h2>Three moves: capture, index, ask.</h2>
-            <p>Reel never logs in as you and never crawls in the background. It only captures what is rendered in your own browser, in response to a click.</p>
+            <h2>Three moves: back up, index, search.</h2>
+            <p>No bot, no crawling. Reel uses your own session — only when you click.</p>
           </div>
           <div className="reel-steps reel-reveal">
             <div className="reel-step">
@@ -345,8 +345,8 @@ export function LandingPage() {
                   <circle cx="6" cy="7" r="0.6" fill="currentColor" />
                 </svg>
               </div>
-              <h3>Capture what you can see</h3>
-              <p>Open a Discord channel, click the Reel lens in the toolbar, and the sidebar backfills by date range or message cap — Channel, Server, or Live.</p>
+              <h3>Back up a server</h3>
+              <p>Click the lens, pick channels. Reel fetches channels, threads and forums — gently, resumably.</p>
               <div className="reel-step-arrow">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M5 12h13m0 0-5-5m5 5-5 5" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" /></svg>
               </div>
@@ -359,8 +359,8 @@ export function LandingPage() {
                   <path d="M4 7v10c0 1.7 3.6 3 8 3s8-1.3 8-3V7M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3" stroke="currentColor" strokeWidth="1.7" />
                 </svg>
               </div>
-              <h3>Index into a local database</h3>
-              <p>Messages land in IndexedDB on your machine and get a full-text search index. Deduped, structured, queryable — and it works completely offline.</p>
+              <h3>Index locally</h3>
+              <p>Full-text + on-device semantic search, in IndexedDB. Fully offline.</p>
               <div className="reel-step-arrow">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M5 12h13m0 0-5-5m5 5-5 5" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" /></svg>
               </div>
@@ -372,8 +372,8 @@ export function LandingPage() {
                   <path d="m12 3 1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3Z" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
                 </svg>
               </div>
-              <h3>Ask, or export</h3>
-              <p>Open the Analyzer to chat with the AI agent over your data, or switch to the table to filter, sort and export the whole server as CSV or JSONL.</p>
+              <h3>Search, ask, or export</h3>
+              <p>Search by keyword or meaning, ask the AI, or export to HTML / Excel / CSV / JSON.</p>
               <div className="reel-step-arrow"></div>
             </div>
           </div>
@@ -392,8 +392,8 @@ export function LandingPage() {
                 </svg>
               </div>
               <span className="reel-eyebrow"><span className="reel-eyebrow-dot"></span>Privacy is the product</span>
-              <h2>Built so your data has nowhere to leak.</h2>
-              <p>Reel is local-first, not a server-side scraper. The corpus lives in your browser. The only thing that ever touches the network is a tiny AI snippet — and only on Pro, only when you ask.</p>
+              <h2>Your data has nowhere to leak.</h2>
+              <p>Local-first, not a scraper. Your corpus stays in your browser — only a tiny AI snippet leaves, Pro only.</p>
             </div>
             <div>
               <div className="reel-privacy-grid">
@@ -404,8 +404,8 @@ export function LandingPage() {
                       <path d="M8 10V8a4 4 0 0 1 8 0v2" stroke="currentColor" strokeWidth="1.7" />
                     </svg>
                   </div>
-                  <h4>No token. No bot.</h4>
-                  <p>Reel never asks for or stores a Discord token, never logs in, and never opens a gateway client.</p>
+                  <h4>Your session, used locally</h4>
+                  <p>Reuses your existing Discord session — passive, in-memory, Discord-only. No password, no bot.</p>
                 </div>
                 <div className="reel-privacy-card">
                   <div className="reel-privacy-ico">
@@ -414,8 +414,8 @@ export function LandingPage() {
                       <circle cx="12" cy="12" r="2.6" stroke="currentColor" strokeWidth="1.7" />
                     </svg>
                   </div>
-                  <h4>Only what you can see</h4>
-                  <p>Captures are limited to messages rendered in your own browser, triggered by your click. No hidden crawling.</p>
+                  <h4>Nothing runs on its own</h4>
+                  <p>Every fetch is a click, paced gently. No crawling, no schedulers.</p>
                 </div>
                 <div className="reel-privacy-card">
                   <div className="reel-privacy-ico">
@@ -425,7 +425,7 @@ export function LandingPage() {
                     </svg>
                   </div>
                   <h4>Stored on your device</h4>
-                  <p>Everything indexed sits in IndexedDB locally. The free tier works end-to-end with no backend at all.</p>
+                  <p>Messages and embeddings sit in IndexedDB. Free tier needs no backend.</p>
                 </div>
                 <div className="reel-privacy-card">
                   <div className="reel-privacy-ico">
@@ -434,15 +434,8 @@ export function LandingPage() {
                     </svg>
                   </div>
                   <h4>≤25 rows to the AI</h4>
-                  <p>Pro analysis sends only the snippets a tool selects — never your whole corpus, never raw bulk upload.</p>
+                  <p>Pro sends only the snippets a tool picks — never your whole corpus.</p>
                 </div>
-              </div>
-              <div className="reel-disclaimer">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                  <path d="M12 3 2.5 20h19L12 3Z" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
-                  <path d="M12 10v4M12 16.6v.4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-                </svg>
-                <span>Reel is independent and <b>not affiliated with Discord</b>. Indexing channels may breach Discord's Terms of Service — use it on communities you have a right to, and at your own risk.</span>
               </div>
             </div>
           </div>
@@ -454,8 +447,8 @@ export function LandingPage() {
         <div className="reel-wrap">
           <div className="reel-section-head is-center reel-reveal">
             <span className="reel-eyebrow" style={{ justifyContent: 'center' }}><span className="reel-eyebrow-dot"></span>Pricing</span>
-            <h2>Free is genuinely useful. Pro is for investigations.</h2>
-            <p>No trial games — the free tier is a complete experience for the data it can hold. Pro unlocks the AI agent, the whole server, and unlimited scale.</p>
+            <h2>Free is useful. Pro is for research.</h2>
+            <p>No trial games. Free is complete for what it holds. Pro adds AI research and the whole server.</p>
           </div>
           <div className="reel-pricing reel-reveal">
             <div className="reel-plan">
@@ -465,10 +458,10 @@ export function LandingPage() {
               <AppLink className="reel-btn reel-btn-ghost reel-plan-cta" href={CHROME_STORE_HREF}>Add to Chrome</AppLink>
               <ul className="reel-plan-feats">
                 <li><Check size={14} sw={2.4} />1 server, 1 channel, 500 messages</li>
-                <li><Check size={14} sw={2.4} />Full-text search, sort &amp; filter</li>
-                <li><Check size={14} sw={2.4} />CSV &amp; JSONL export included</li>
-                <li className="is-muted"><Cross />AI investigation</li>
-                <li className="is-muted"><Cross />Server-wide &amp; live indexing</li>
+                <li><Check size={14} sw={2.4} />Keyword + semantic search, sort &amp; filter</li>
+                <li><Check size={14} sw={2.4} />Export to HTML, XLSX, CSV &amp; JSON</li>
+                <li className="is-muted"><Cross />AI research agent</li>
+                <li className="is-muted"><Cross />Whole-server backup &amp; live sync</li>
               </ul>
             </div>
             <div className="reel-plan is-featured">
@@ -478,9 +471,9 @@ export function LandingPage() {
               <p className="reel-plan-note">or $149 / year — 17% off · best value</p>
               <AppLink className="reel-btn reel-btn-brand reel-plan-cta" href={CHROME_STORE_HREF}>Go Pro</AppLink>
               <ul className="reel-plan-feats">
-                <li><Check size={14} sw={2.4} /><span><b>AI investigation agent</b> · 15M tokens / month</span></li>
-                <li><Check size={14} sw={2.4} />Unlimited servers &amp; channels</li>
-                <li><Check size={14} sw={2.4} />Server-wide indexing + live sync</li>
+                <li><Check size={14} sw={2.4} /><span><b>AI research agent</b> · 15M tokens / month</span></li>
+                <li><Check size={14} sw={2.4} />Whole-server backup — channels, threads &amp; forums</li>
+                <li><Check size={14} sw={2.4} />Unlimited servers &amp; channels · live sync</li>
                 <li><Check size={14} sw={2.4} />Cross-channel user profiles</li>
                 <li><Check size={14} sw={2.4} />100k messages per channel</li>
               </ul>
@@ -498,8 +491,8 @@ export function LandingPage() {
             <h2>Questions, answered plainly.</h2>
           </div>
           <div className="reel-faq reel-reveal">
-            {landingFaqs.map((faq, index) => (
-              <details key={faq.question} open={index === 0}>
+            {landingFaqs.map((faq) => (
+              <details key={faq.question}>
                 <summary>
                   <span>{faq.question}</span>
                   <span className="reel-faq-ico"></span>
@@ -514,8 +507,8 @@ export function LandingPage() {
       {/* ════ FINAL CTA ════ */}
       <section className="reel-section reel-final" id="get">
         <div className="reel-wrap reel-final-inner reel-reveal">
-          <h2>Turn a server you can read into answers you can trust.</h2>
-          <p>Install Reel, capture a channel, and ask your first question in under a minute. Free to start, no account, nothing leaves your device.</p>
+          <h2>Back up a server. Search it. Ask it anything.</h2>
+          <p>Back up a channel, then search or ask in a minute. Free, no account, all local.</p>
           <div className="reel-final-cta">
             <AppLink className="reel-btn reel-btn-brand" href={CHROME_STORE_HREF}>
               <ChromeGlyph />

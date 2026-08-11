@@ -32,9 +32,9 @@ export const landingFaqs: FaqItem[] = [
 ];
 
 export const landingMetadata: PageMetadata = {
-  title: 'Reel — Discord Chat Lens · Wysp',
+  title: 'Reel — Discord Chat Exporter, Search & AI · Wysp',
   description:
-    'Reel is a local-first Chrome extension that backs up an entire Discord server — every channel, thread and forum post — into a private, searchable archive on your machine. Find anything by keyword or meaning with on-device semantic search, ask an AI for research with citations, and export to HTML, Excel, CSV or JSON.',
+    'Export Discord chat to HTML, Excel, CSV or JSON — a whole server in one run, every channel, thread and forum post, into a private searchable archive on your own machine. Find anything by keyword or meaning with on-device semantic search, and ask an AI for research with citations.',
   path: PRODUCT_ROOT,
   ogType: 'website',
   schema: [softwareApplicationSchema(), buildFaqSchema(landingFaqs)],

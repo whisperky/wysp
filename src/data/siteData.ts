@@ -3,6 +3,7 @@ import {
   Bell,
   Code2,
   Command,
+  Gamepad2,
   Mail,
   MessageCircle,
   Phone,
@@ -57,12 +58,57 @@ export const contact = {
   phone: '+1 872 322 0408',
   phoneHref: 'tel:+18723220408',
   discord: '@whisper3029',
-  discordHref: 'https://discord.com/',
+  discordHref: 'https://discord.com/users/471372856580767745',
   github: 'https://github.com/whisperky',
   suggestionHref: 'mailto:support@wysp.pro?subject=Wysp tool suggestion',
 };
 
 export const products: Product[] = [
+  {
+    id: 'klinex',
+    name: 'Klinex',
+    shortName: 'Klinex',
+    status: 'Building',
+    eyebrow: 'Game from a sentence',
+    description:
+      'Describe a world in one line and Klinex co-designs and builds a real, playable 3D game you own — proven winnable before you press play.',
+    outcome: 'Open the Klinex microsite to see the studio, the verified build, and how you own every world.',
+    href: '/klinex/',
+    accent: 'gold',
+    icon: Gamepad2,
+    image: {
+      src: '/assets/klinex/klinex-product.svg',
+      alt: 'Klinex product preview — a cinematic dark studio with an amber idea box turning the prompt "a neon cathedral horde with a lich boss" into a verified, winnable game.',
+    },
+    points: ['One sentence in, a real game out', 'Proven fair & winnable', 'No engine, no code — you own it'],
+    detail: {
+      intro:
+        'Klinex has its own product microsite at /klinex/. Wysp keeps this catalog entry compact while the independent Klinex page carries the living "Stage" hero, the Director co-design flow, the direction fingerprint, the narrated verified build, the ownership model, and the community in its own cinematic dark + amber design language.',
+      sections: [
+        {
+          title: 'Independent product home',
+          text: 'The homepage card sends visitors into the Klinex microsite instead of rendering a generic Wysp detail layout — the same approach as Reel, Lanes, and Trust Contract.',
+        },
+        {
+          title: 'One sentence becomes a real game',
+          text: 'A conversational Director turns a plain-language idea into a machine-proven, playable game — no engine, no code, and no genre or mode pickers to learn.',
+        },
+        {
+          title: 'Verified, and yours',
+          text: 'Every build is proven fair and winnable before you play, cosmetic edits can never break it, and you own every world — set its visibility, export it, or let others remix it.',
+        },
+      ],
+      milestones: [
+        'Wire the real Klinex studio / early-access link into the CTAs',
+        'Confirm the monetization model and connect LemonSqueezy checkout',
+        'Keep the wysp.pro/klinex sitemap entry current after deployment',
+      ],
+      primaryAction: {
+        label: 'Open Klinex',
+        href: '/klinex/',
+      },
+    },
+  },
   {
     id: 'trust-contract',
     name: 'Trust Contract',
@@ -113,33 +159,33 @@ export const products: Product[] = [
     name: 'Reel',
     shortName: 'Reel',
     status: 'Building',
-    eyebrow: 'Discord Chat Lens',
+    eyebrow: 'Discord Chat Exporter',
     description:
-      'A local-first Chrome extension that indexes the Discord channels you can already see, then lets an AI agent answer evidence-backed questions across the whole server — and export every channel at once.',
-    outcome: 'Open the Reel microsite to see the analyzer, server export, privacy model, and pricing.',
+      'A local-first Chrome extension that backs up a whole Discord server in one run, then searches it by keyword or meaning and runs AI research — all on your own machine.',
+    outcome: 'Open the Reel microsite for the backup, search, AI research, privacy model, and pricing.',
     href: '/reel/',
     accent: 'sage',
     icon: Aperture,
     image: {
       src: '/assets/reel/reel-product.svg',
-      alt: 'Reel analyzer preview — the jade lens, an Add to Chrome action, and an AI evidence list over indexed Discord messages',
+      alt: 'Reel preview — the jade lens, an Add to Chrome action, a whole-server backup tree, and an AI research answer over indexed Discord messages',
     },
-    points: ['Whole-server AI analysis', 'Export every channel at once', 'Local-first, no token or bot'],
+    points: ['Full export, at once', 'Keyword + semantic search', 'AI research, with citations'],
     detail: {
       intro:
-        'Reel has its own product microsite at /reel/. Wysp keeps this catalog entry compact while the independent Reel page carries the hero, analyzer and export mockups, privacy model, pricing, and FAQ in its own dark "Investigation" design language.',
+        'Reel has its own product microsite at /reel/. Wysp keeps this catalog entry compact while the independent Reel page carries the hero, backup and search mockups, privacy model, pricing, and FAQ in its own dark research-tool design language.',
       sections: [
         {
           title: 'Independent product home',
           text: 'The homepage card sends visitors into the Reel microsite instead of rendering a generic Wysp detail layout — the same approach as Lanes.',
         },
         {
-          title: 'Whole-server analysis & export',
-          text: 'The microsite showcases the agentic analyzer with evidence-backed answers and the server-wide CSV/JSONL export that most tools can only do one channel at a time.',
+          title: 'Whole-server backup & search',
+          text: 'The microsite shows the one-run backup of every channel, thread and forum post into a browsable HTML / Excel / CSV / JSON archive, plus keyword and on-device semantic search and an AI research agent over the result.',
         },
         {
-          title: 'Privacy as the product',
-          text: 'No token, no bot, no background crawling. The corpus lives in IndexedDB on the device; only the small snippets a tool selects ever reach the AI, and only on Pro.',
+          title: 'Local-first by design',
+          text: 'The corpus and the optional semantic embeddings live in IndexedDB on the device. History fetches reuse your existing Discord session locally and are paced gently; only small AI snippets ever leave, and only on Pro.',
         },
       ],
       milestones: [

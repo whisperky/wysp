@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="640" viewBox="0 0 960 640" role="img" aria-labelledby="ktitle kdesc">
+  <title id="ktitle">Klinex product preview</title>
+  <desc id="kdesc">A cinematic dark studio lit by an amber glow: a glass idea box holding the prompt "a neon cathedral horde with a lich boss" beside an amber Enter button, over a green "Verified — fair and winnable" pill.</desc>
+  <defs>
+    <linearGradient id="kxBg" x1="0" y1="0" x2="960" y2="640" gradientUnits="userSpaceOnUse"><stop stop-color="#0c0d10"/><stop offset="0.55" stop-color="#08090c"/><stop offset="1" stop-color="#0a0806"/></linearGradient>
+    <radialGradient id="kxForge" cx="0.5" cy="1.05" r="0.8"><stop stop-color="#e9b45a" stop-opacity="0.42"/><stop offset="0.42" stop-color="#c7913a" stop-opacity="0.12"/><stop offset="1" stop-color="#e9b45a" stop-opacity="0"/></radialGradient>
+    <linearGradient id="kxMarkP" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f6cd77"/><stop offset="1" stop-color="#c7913a"/></linearGradient>
+    <linearGradient id="kxEnter" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#f6cd77"/><stop offset="1" stop-color="#e9b45a"/></linearGradient>
+  </defs>
+  <rect width="960" height="640" rx="18" fill="url(#kxBg)"/>
+  <rect width="960" height="640" rx="18" fill="url(#kxForge)"/>
+  <g fill="#f6cd77">
+    <circle cx="150" cy="470" r="2.4" opacity="0.5"/>
+    <circle cx="815" cy="300" r="3" opacity="0.4"/>
+    <circle cx="864" cy="500" r="2" opacity="0.45"/>
+    <circle cx="120" cy="250" r="2" opacity="0.3"/>
+  </g>
+  <g transform="translate(64,58)">
+    <rect width="38" height="38" rx="10" fill="url(#kxMarkP)"/>
+    <text x="19" y="21" text-anchor="middle" dominant-baseline="central" font-family="'Space Grotesk',sans-serif" font-size="23" font-weight="700" fill="#2a1d06">K</text>
+    <text x="52" y="20" dominant-baseline="central" font-family="'Space Grotesk',sans-serif" font-size="22" font-weight="600" fill="#f2efe9">Klinex</text>
+  </g>
+  <text x="64" y="178" font-family="'JetBrains Mono',monospace" font-size="15" letter-spacing="3" fill="#8d8b85">A REAL GAME FROM ONE SENTENCE</text>
+  <text x="62" y="242" font-family="'Space Grotesk',sans-serif" font-size="50" font-weight="600" letter-spacing="-1.6" fill="#f2efe9">What world do you</text>
+  <text x="62" y="302" font-family="'Space Grotesk',sans-serif" font-size="50" font-weight="600" letter-spacing="-1.6" fill="#f2efe9">want to <tspan fill="#f6cd77">step into?</tspan></text>
+  <g transform="translate(64,360)">
+    <rect width="832" height="96" rx="14" fill="#0e0f13" fill-opacity="0.72" stroke="#ffffff" stroke-opacity="0.12"/>
+    <text x="28" y="48" dominant-baseline="central" font-family="'Hanken Grotesk','Segoe UI',sans-serif" font-size="21" fill="#c3c0b9">a neon cathedral horde with a lich boss</text>
+    <g transform="translate(654,20)">
+      <rect width="158" height="56" rx="12" fill="url(#kxEnter)"/>
+      <text x="58" y="29" text-anchor="middle" dominant-baseline="central" font-family="'Hanken Grotesk',sans-serif" font-size="18" font-weight="600" fill="#2a1d06">Enter</text>
+      <path d="M108 22l11 7-11 7z" fill="#2a1d06"/>
+    </g>
+  </g>
+  <g transform="translate(64,502)">
+    <rect width="292" height="44" rx="22" fill="#7fbf8e"/>
+    <path d="M22 22l7 7 12-14" stroke="#0e1b12" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="52" y="23" dominant-baseline="central" font-family="'JetBrains Mono',monospace" font-size="15" font-weight="500" fill="#0e1b12">Verified — fair &amp; winnable</text>
+  </g>
+</svg>

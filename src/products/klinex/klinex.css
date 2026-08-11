@@ -1,0 +1,451 @@
+/* =============================================================
+   Klinex — "Stage" cinematic creation-studio marketing site.
+   Ported from the Claude Design handoff (klinex.css / Direction C).
+   Scoped under .klinex-site so it lives beside the other Wysp
+   products without leaking a single token or selector globally.
+   Dark near-black stage · warm amber "creation" accent ·
+   grass "verified" · grotesque + mono type.
+   ============================================================= */
+
+.klinex-site {
+  /* surfaces */
+  --void: #08080a; --bg: #0c0d10; --panel: #111317; --panel-2: #15171c; --elev: #1c1f25; --elev-2: #23272e;
+  --line: rgba(255,255,255,0.065); --line-2: rgba(255,255,255,0.11); --line-3: rgba(255,255,255,0.18);
+
+  /* text ramp */
+  --tx: #f2efe9; --tx-2: #c3c0b9; --tx-3: #8d8b85; --tx-4: #66645f; --tx-5: #47453f;
+
+  /* amber · the one creation accent (rationed) */
+  --amber: #e9b45a; --amber-hi: #f6cd77; --amber-lo: #c7913a;
+  --amber-glow: rgba(233,180,90,0.55); --amber-wash: rgba(233,180,90,0.12);
+
+  /* grass · verified (used for almost nothing else) */
+  --grass: #7fbf8e; --grass-wash: rgba(127,191,142,0.13);
+
+  /* tonal tags — kinds of things, not decoration */
+  --teal: #5fb8a6; --teal-wash: rgba(95,184,166,0.12);
+  --ember: #e5705b; --ember-wash: rgba(229,112,91,0.12);
+  --violet: #9b8ce0; --violet-wash: rgba(155,140,224,0.12);
+  --sky: #79b7d8; --sky-wash: rgba(121,183,216,0.12);
+
+  --display: 'Space Grotesk', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --ui: 'Hanken Grotesk', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+
+  --r-sm: 6px; --r: 9px; --r-lg: 14px; --r-xl: 20px;
+  --shadow-lg: 0 30px 80px -24px rgba(0,0,0,0.85), 0 0 0 1px var(--line-2);
+  --glass-bg: rgba(14,15,19,0.62);
+  --grain-url: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+
+  --site: 1140px;
+  --site-narrow: 760px;
+
+  min-height: 100vh;
+  color: var(--tx-2);
+  background: var(--void);
+  font-family: var(--ui);
+  font-size: 15px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.klinex-site *,
+.klinex-site *::before,
+.klinex-site *::after { box-sizing: border-box; }
+
+.klinex-site img,
+.klinex-site svg { display: block; max-width: 100%; }
+
+.klinex-site a { color: var(--amber-hi); text-decoration: none; }
+.klinex-site ::selection { background: var(--amber-wash); color: var(--amber-hi); }
+
+.klinex-site .klinex-mono { font-family: var(--mono); font-feature-settings: 'tnum' 1; }
+.klinex-site .klinex-display { font-family: var(--display); }
+
+.klinex-site code {
+  font-family: var(--mono); font-size: 0.85em;
+  padding: 1px 5px; border-radius: 5px;
+  background: var(--panel-2); color: var(--amber-hi); border: 1px solid var(--line);
+}
+
+/* ─── layout helpers ─────────────────────────────────────────── */
+.klinex-wrap { width: min(var(--site), calc(100% - 48px)); margin: 0 auto; }
+.klinex-wrap-narrow { width: min(var(--site-narrow), calc(100% - 48px)); margin: 0 auto; }
+.klinex-section { padding: 104px 0; position: relative; }
+.klinex-section-tight { padding: 68px 0; }
+
+.klinex-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  margin: 0 0 15px;
+  font-family: var(--mono);
+  font-size: 10.5px; font-weight: 500;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--amber);
+}
+.klinex-eyebrow .klinex-eyebrow-dot {
+  width: 6px; height: 6px; border-radius: 999px;
+  background: var(--amber); box-shadow: 0 0 12px 1px var(--amber-glow);
+}
+
+.klinex-section-head { max-width: 640px; margin: 0 0 52px; }
+.klinex-section-head.is-center { margin-left: auto; margin-right: auto; text-align: center; }
+.klinex-section-head.is-center .klinex-eyebrow { justify-content: center; }
+.klinex-section-head h2 {
+  margin: 0;
+  font-family: var(--display);
+  font-size: clamp(1.9rem, 3.6vw, 2.7rem);
+  font-weight: 600; line-height: 1.08; letter-spacing: -0.025em;
+  color: var(--tx);
+}
+.klinex-section-head p {
+  margin: 16px 0 0;
+  font-size: 1.05rem; line-height: 1.6; color: var(--tx-3);
+}
+.klinex-section-head.is-center p { margin-left: auto; margin-right: auto; }
+
+/* ─── buttons ────────────────────────────────────────────────── */
+.klinex-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  height: 46px; padding: 0 20px;
+  border: 1px solid var(--line-2); border-radius: 99px;
+  background: var(--elev); color: var(--tx);
+  font-family: var(--ui); font-size: 14px; font-weight: 600;
+  letter-spacing: -0.01em; cursor: pointer; white-space: nowrap;
+  transition: transform 180ms cubic-bezier(0.2,0.8,0.2,1), background 160ms ease, border-color 160ms ease, box-shadow 200ms ease, color 160ms ease;
+}
+.klinex-btn:hover { transform: translateY(-1px); background: var(--elev-2); border-color: var(--line-3); }
+.klinex-btn-brand {
+  background: linear-gradient(180deg, var(--amber-hi), var(--amber));
+  color: #2a1d06; border-color: var(--amber-lo);
+  box-shadow: 0 6px 22px -8px var(--amber-glow);
+}
+.klinex-btn-brand:hover { background: linear-gradient(180deg, #ffd98a, var(--amber-hi)); border-color: var(--amber); }
+.klinex-btn-ghost { background: transparent; border-color: var(--line-2); color: var(--tx-2); }
+.klinex-btn-ghost:hover { background: var(--elev); color: var(--tx); }
+.klinex-btn-sm { height: 38px; padding: 0 15px; font-size: 13px; }
+
+.klinex-chip {
+  font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500;
+  padding: 3px 8px; border-radius: 5px; display: inline-flex; align-items: center; gap: 5px;
+  color: var(--tx-3); background: var(--panel-2); border: 1px solid var(--line);
+}
+.klinex-chip-amber { color: var(--amber); background: var(--amber-wash); border-color: var(--amber-lo); }
+.klinex-tag { color: var(--tx-3); background: var(--panel-2); }
+.klinex-tag-amber { color: var(--amber); background: var(--amber-wash); }
+.klinex-tag-teal { color: var(--teal); background: var(--teal-wash); }
+.klinex-tag-ember { color: var(--ember); background: var(--ember-wash); }
+.klinex-tag-violet { color: var(--violet); background: var(--violet-wash); }
+.klinex-tag-sky { color: var(--sky); background: var(--sky-wash); }
+
+/* ─── glass primitive ────────────────────────────────────────── */
+.klinex-glass {
+  background: var(--glass-bg);
+  border: 1px solid var(--line-2);
+  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 24px 70px -28px rgba(0,0,0,0.85), inset 0 1px 0 rgba(255,255,255,0.05);
+}
+
+/* ─── reveal on scroll ───────────────────────────────────────── */
+.klinex-reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.2,0.8,0.2,1); }
+.klinex-reveal.is-in { opacity: 1; transform: none; }
+
+/* ─── nav ────────────────────────────────────────────────────── */
+.klinex-nav { position: sticky; top: 0; z-index: 30; }
+.klinex-nav-inner {
+  width: min(var(--site), calc(100% - 32px)); margin: 12px auto 0;
+  display: flex; align-items: center; gap: 16px;
+  padding: 9px 10px 9px 16px; border-radius: 99px;
+  background: rgba(12,13,16,0.68); border: 1px solid var(--line);
+  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+}
+.klinex-brand { display: inline-flex; align-items: center; gap: 10px; color: var(--tx); }
+.klinex-logo {
+  width: 30px; height: 30px; border-radius: 8px; flex: none;
+  display: grid; place-items: center;
+  font: 700 16px/1 var(--display); color: #2a1d06;
+  background: linear-gradient(150deg, var(--amber-hi), var(--amber-lo));
+  box-shadow: 0 2px 10px -2px var(--amber-glow);
+}
+.klinex-brand-word { font: 600 17px var(--display); letter-spacing: -0.01em; }
+.klinex-nav-links { display: flex; align-items: center; gap: 4px; margin-left: auto; }
+.klinex-nav-links a {
+  color: var(--tx-3); font-size: 13.5px; font-weight: 600;
+  padding: 8px 12px; border-radius: 99px; transition: color 0.15s, background 0.15s;
+}
+.klinex-nav-links a:hover { color: var(--tx); background: var(--elev); }
+.klinex-nav-home { color: var(--tx-4) !important; }
+.klinex-nav-cta { color: #2a1d06 !important; }
+@media (max-width: 860px) {
+  .klinex-nav-links a:not(.klinex-nav-cta) { display: none; }
+}
+
+/* ─── hero (living stage) ────────────────────────────────────── */
+.klinex-hero { position: relative; overflow: hidden; padding: 120px 0 108px; isolation: isolate; }
+.klinex-hero-stage { position: absolute; inset: 0; z-index: 0; }
+.klinex-hero-stage canvas { width: 100%; height: 100%; display: block; }
+.klinex-hero-fallback {
+  position: absolute; inset: 0; z-index: 0;
+  background:
+    radial-gradient(ellipse 90% 60% at 50% 108%, rgba(233,180,90,0.28), transparent 60%),
+    radial-gradient(ellipse 60% 40% at 50% -6%, rgba(229,112,91,0.10), transparent 60%),
+    var(--void);
+}
+.klinex-vignette {
+  position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background:
+    radial-gradient(ellipse at 50% 42%, transparent 30%, rgba(4,5,8,0.55) 88%),
+    linear-gradient(180deg, rgba(4,5,8,0.55), transparent 22%, transparent 60%, rgba(4,5,8,0.82));
+}
+.klinex-grain {
+  position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  opacity: 0.05; mix-blend-mode: overlay;
+  background-image: var(--grain-url); background-size: 160px 160px;
+}
+.klinex-hero-inner { position: relative; z-index: 2; text-align: center; }
+.klinex-hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px; margin-bottom: 18px;
+  font-family: var(--mono); font-size: 11px; font-weight: 500;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--amber);
+}
+.klinex-hero-eyebrow .klinex-eyebrow-dot { width: 6px; height: 6px; border-radius: 999px; background: var(--amber); box-shadow: 0 0 12px 1px var(--amber-glow); }
+.klinex-hero h1 {
+  margin: 0 auto 16px; max-width: 15ch;
+  font-family: var(--display); font-weight: 600;
+  font-size: clamp(2.5rem, 6vw, 4rem); letter-spacing: -0.03em; line-height: 1.03;
+  color: var(--tx); text-shadow: 0 8px 40px rgba(0,0,0,0.5);
+}
+.klinex-hero h1 .em { color: var(--amber-hi); }
+.klinex-hero-sub { margin: 0 auto 30px; max-width: 54ch; font-size: 1.1rem; line-height: 1.55; color: var(--tx-2); }
+.klinex-idea {
+  display: flex; align-items: center; gap: 6px;
+  width: min(680px, 100%); margin: 0 auto; padding: 8px 8px 8px 18px;
+  border-radius: var(--r-lg); text-align: left;
+}
+.klinex-idea-input { flex: 1; min-width: 0; font-size: 1.05rem; color: var(--tx-2); }
+.klinex-idea-input .klinex-caret { color: var(--amber); font-weight: 700; }
+.klinex-idea-go { flex: none; }
+.klinex-idea-ghost { margin-top: 16px; font-size: 12.5px; color: var(--tx-4); }
+.klinex-idea-ghost b { color: var(--tx-3); font-weight: 500; }
+.klinex-hero-trust {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 22px;
+  margin-top: 30px; font-size: 13px; color: var(--tx-3);
+}
+.klinex-hero-trust span { display: inline-flex; align-items: center; gap: 7px; }
+.klinex-hero-trust svg { color: var(--grass); }
+
+/* ─── journey rail ───────────────────────────────────────────── */
+.klinex-journey {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 6px;
+  width: max-content; max-width: 100%; margin: -40px auto 0; padding: 8px 10px; border-radius: 99px;
+  position: relative; z-index: 3;
+}
+.klinex-journey-step { display: inline-flex; align-items: center; gap: 6px; padding: 6px 13px; border-radius: 99px; font-size: 12.5px; font-weight: 600; color: var(--tx-3); }
+.klinex-journey-step .n { font-family: var(--mono); font-size: 10px; color: var(--tx-5); }
+.klinex-journey-step:first-child { color: #2a1d06; background: linear-gradient(180deg, var(--amber-hi), var(--amber)); box-shadow: 0 2px 12px -4px var(--amber-glow); }
+.klinex-journey-step:first-child .n { color: #2a1d06; }
+.klinex-journey-arrow { color: var(--tx-5); font-size: 12px; }
+
+/* ─── feature blocks (2-col) ─────────────────────────────────── */
+.klinex-feature { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 5vw, 64px); align-items: center; }
+.klinex-feature.is-flip .klinex-feature-copy { order: 2; }
+.klinex-feature-copy h3 { margin: 0 0 12px; font-family: var(--display); font-size: clamp(1.6rem, 3vw, 2.15rem); font-weight: 600; line-height: 1.12; letter-spacing: -0.02em; color: var(--tx); }
+.klinex-feature-copy > p { margin: 0 0 18px; font-size: 1.02rem; line-height: 1.6; color: var(--tx-3); }
+.klinex-feature-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+.klinex-feature-list li { display: flex; gap: 11px; font-size: 0.98rem; color: var(--tx-2); }
+.klinex-feature-list li svg { color: var(--amber); flex: none; margin-top: 3px; }
+.klinex-feature-list li b { color: var(--tx); font-weight: 600; }
+.klinex-tagline { margin-top: 20px; font-family: var(--mono); font-size: 12.5px; color: var(--tx-3); padding: 11px 14px; border-radius: var(--r); background: var(--panel-2); border: 1px solid var(--line); }
+.klinex-tagline .k { color: var(--amber); }
+
+/* ─── discover / director mock ───────────────────────────────── */
+.klinex-q { border-radius: var(--r-xl); padding: 22px 24px; }
+.klinex-sig-tag {
+  display: inline-flex; align-items: center; gap: 6px; margin-bottom: 12px;
+  font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--amber-hi); background: var(--amber-wash); border: 1px solid var(--amber-lo);
+  padding: 4px 10px; border-radius: 99px;
+}
+.klinex-q-ask { font-family: var(--display); font-size: 1.4rem; font-weight: 600; letter-spacing: -0.01em; line-height: 1.22; color: var(--tx); }
+.klinex-q-why { margin-top: 6px; font-size: 13px; color: var(--tx-3); }
+.klinex-q-opts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 11px; margin-top: 18px; }
+.klinex-q-opt { text-align: left; border-radius: var(--r-lg); padding: 14px; background: rgba(21,23,28,0.7); border: 1px solid var(--line-2); transition: transform 0.12s, border-color 0.14s, box-shadow 0.14s; }
+.klinex-q-opt:hover { transform: translateY(-3px); border-color: var(--amber-lo); box-shadow: 0 12px 30px -16px var(--amber-glow); }
+.klinex-q-sw { display: flex; gap: 4px; margin-bottom: 10px; }
+.klinex-q-sw span { width: 18px; height: 18px; border-radius: 4px; border: 1px solid var(--line-2); }
+.klinex-q-ot { font: 600 15px var(--display); color: var(--tx); }
+.klinex-q-ol { margin-top: 4px; font-size: 11.5px; color: var(--tx-3); line-height: 1.4; }
+.klinex-q-foot { display: flex; align-items: center; gap: 7px; margin-top: 16px; font-size: 11.5px; color: var(--tx-4); }
+.klinex-q-foot .dots { display: inline-flex; gap: 4px; }
+.klinex-q-foot .dots i { width: 6px; height: 6px; border-radius: 99px; background: var(--line-3); }
+.klinex-q-foot .dots i.on { background: var(--amber); }
+
+/* ─── direction "fingerprint" ────────────────────────────────── */
+.klinex-fp { max-width: 560px; margin: 0 auto; border-radius: var(--r-xl); overflow: hidden; }
+.klinex-fp-h { padding: 24px 28px 20px; border-bottom: 1px solid var(--line); text-align: center; }
+.klinex-fp-concept { margin: 12px 0 0; font-family: var(--display); font-weight: 600; font-size: 1.85rem; letter-spacing: -0.02em; line-height: 1.14; color: var(--tx); }
+.klinex-fp-grid { display: grid; grid-template-columns: 1fr 1fr; }
+.klinex-fp-cell { padding: 18px 24px; border-bottom: 1px solid var(--line); }
+.klinex-fp-cell.full { grid-column: 1 / 3; }
+.klinex-fp-cell.br { border-right: 1px solid var(--line); }
+.klinex-fp-lbl { margin-bottom: 9px; font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--tx-4); }
+.klinex-sig { font-family: var(--display); font-size: 16px; font-weight: 500; line-height: 1.4; color: var(--tx); }
+.klinex-sig .hl { color: var(--amber-hi); }
+.klinex-swatches { display: flex; gap: 6px; align-items: center; }
+.klinex-swatches span { width: 24px; height: 24px; border-radius: 6px; border: 1px solid var(--line-2); }
+.klinex-diffs { display: flex; flex-wrap: wrap; gap: 7px; }
+.klinex-cast { display: flex; flex-direction: column; gap: 10px; }
+.klinex-cr { display: flex; align-items: center; gap: 11px; }
+.klinex-cr .a { width: 32px; height: 32px; border-radius: 8px; flex: none; display: grid; place-items: center; border: 1px solid var(--line-2); }
+.klinex-cr .role { font: 500 9px var(--mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--tx-4); }
+.klinex-cr .nm { font-size: 13px; font-weight: 600; line-height: 1.25; color: var(--tx); }
+.klinex-gap { display: flex; gap: 10px; padding: 14px 28px; background: var(--sky-wash); border-bottom: 1px solid var(--line); }
+.klinex-gap svg { color: var(--sky); flex: none; margin-top: 1px; }
+.klinex-gap .t { font-size: 12px; color: var(--tx-2); line-height: 1.5; }
+.klinex-gap .t b { color: var(--sky); }
+.klinex-fp-foot { display: flex; gap: 11px; align-items: center; justify-content: space-between; padding: 16px 28px; }
+.klinex-fp-foot .meta { font: 500 11px var(--mono); color: var(--tx-4); }
+
+/* ─── build narration + verified ─────────────────────────────── */
+.klinex-build { max-width: 520px; margin: 0 auto; border-radius: var(--r-xl); padding: 10px 26px; }
+.klinex-bstage { display: flex; gap: 13px; align-items: center; padding: 15px 0; border-bottom: 1px solid var(--line); }
+.klinex-bstage:last-child { border-bottom: 0; }
+.klinex-bstage .rail { width: 3px; height: 30px; border-radius: 99px; flex: none; background: var(--line-2); }
+.klinex-bstage.done .rail { background: var(--grass); }
+.klinex-bstage.active .rail { background: var(--amber); }
+.klinex-bstage.pending { opacity: 0.34; }
+.klinex-bstage .bt { font: 500 9.5px var(--mono); letter-spacing: 0.1em; text-transform: uppercase; color: var(--tx-4); }
+.klinex-bstage .btitle { font-size: 14px; font-weight: 600; color: var(--tx); }
+.klinex-bstage .bd { font-size: 11.5px; color: var(--tx-3); margin-top: 1px; }
+.klinex-bstage .mk { margin-left: auto; flex: none; }
+.klinex-bstage.done .mk { color: var(--grass); }
+.klinex-verified {
+  display: inline-flex; align-items: center; gap: 8px; margin: 22px auto 0;
+  font: 500 12px var(--mono); letter-spacing: 0.05em; color: #0e1b12;
+  background: var(--grass); padding: 9px 17px; border-radius: 99px;
+  box-shadow: 0 8px 30px -8px rgba(127,191,142,0.8);
+}
+.klinex-verified.is-in { animation: klinex-bloom 1.1s cubic-bezier(0.2,0.8,0.2,1); }
+@keyframes klinex-bloom { 0% { transform: scale(0.5); } 50% { transform: scale(1.12); } 100% { transform: scale(1); } }
+
+/* ─── ownership / cosmetics safety ───────────────────────────── */
+.klinex-safe-badge {
+  display: inline-flex; align-items: center; gap: 6px; margin-bottom: 14px;
+  font: 500 11px var(--mono); color: var(--grass);
+  background: var(--grass-wash); border: 1px solid rgba(127,191,142,0.3);
+  padding: 5px 11px; border-radius: 99px;
+}
+.klinex-own {
+  display: flex; align-items: center; gap: 12px; margin-top: 18px;
+  padding: 14px 16px; border-radius: var(--r-lg);
+  background: var(--amber-wash); border: 1px solid var(--amber-lo);
+}
+.klinex-own svg { color: var(--amber-hi); flex: none; }
+.klinex-own .t { font-size: 13px; color: var(--tx-2); line-height: 1.5; }
+.klinex-own .t b { color: var(--amber-hi); }
+
+/* ─── community / world cards ────────────────────────────────── */
+.klinex-worlds { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.klinex-wcard { border-radius: var(--r-lg); overflow: hidden; background: var(--panel-2); border: 1px solid var(--line); transition: transform 0.18s, border-color 0.18s, box-shadow 0.18s; }
+.klinex-wcard:hover { transform: translateY(-5px); border-color: var(--line-3); box-shadow: 0 24px 50px -24px rgba(0,0,0,0.85); }
+.klinex-wthumb { height: 128px; position: relative; overflow: hidden; }
+.klinex-wdot { position: absolute; width: 9px; height: 9px; border-radius: 99px; transform: translate(-50%,-50%); }
+.klinex-wkind { position: absolute; top: 10px; left: 10px; font: 700 9px var(--mono); letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 8px; border-radius: 99px; background: rgba(8,8,10,0.6); color: var(--tx-2); backdrop-filter: blur(4px); }
+.klinex-wverified { position: absolute; top: 9px; right: 10px; width: 20px; height: 20px; display: grid; place-items: center; border-radius: 99px; background: rgba(20,60,30,0.7); color: #7fbf8e; }
+.klinex-wbody { padding: 13px 14px 15px; }
+.klinex-wtitle { font-family: var(--display); font-size: 15px; font-weight: 600; letter-spacing: -0.01em; color: var(--tx); }
+.klinex-wmeta { display: flex; align-items: center; gap: 8px; margin-top: 9px; }
+.klinex-wava { width: 22px; height: 22px; border-radius: 50%; flex: none; display: grid; place-items: center; font: 600 10px var(--display); color: #10131a; }
+.klinex-wcreator { font-size: 12px; color: var(--tx-3); }
+.klinex-wcreator b { color: var(--tx-2); font-weight: 600; }
+.klinex-wstats { display: flex; align-items: center; gap: 14px; margin-top: 11px; font: 500 11px var(--mono); color: var(--tx-4); }
+.klinex-wstats span { display: inline-flex; align-items: center; gap: 5px; }
+.klinex-wtags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 11px; }
+
+/* ─── early access ───────────────────────────────────────────── */
+.klinex-ea { max-width: 720px; margin: 0 auto; border-radius: var(--r-xl); padding: 34px 32px; text-align: center; }
+.klinex-ea h2 { margin: 0 0 12px; font-family: var(--display); font-size: clamp(1.7rem, 3vw, 2.3rem); font-weight: 600; letter-spacing: -0.02em; color: var(--tx); }
+.klinex-ea p { margin: 0 auto 24px; max-width: 52ch; color: var(--tx-3); font-size: 1.02rem; line-height: 1.6; }
+.klinex-ea-cta { display: flex; flex-wrap: wrap; gap: 11px; justify-content: center; }
+.klinex-ea-points { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 24px; margin-top: 26px; font-size: 13px; color: var(--tx-3); }
+.klinex-ea-points span { display: inline-flex; align-items: center; gap: 7px; }
+.klinex-ea-points svg { color: var(--amber); }
+
+/* ─── faq ────────────────────────────────────────────────────── */
+.klinex-faq { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 10px; }
+.klinex-faq details { border: 1px solid var(--line); border-radius: var(--r); background: var(--panel-2); overflow: hidden; }
+.klinex-faq details[open] { border-color: var(--line-2); }
+.klinex-faq summary { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 16px 18px; cursor: pointer; font-size: 15px; font-weight: 600; color: var(--tx); list-style: none; }
+.klinex-faq summary::-webkit-details-marker { display: none; }
+.klinex-faq summary .klinex-faq-ico { position: relative; width: 14px; height: 14px; flex: none; }
+.klinex-faq summary .klinex-faq-ico::before,
+.klinex-faq summary .klinex-faq-ico::after { content: ""; position: absolute; background: var(--amber); border-radius: 2px; transition: transform 0.2s ease; }
+.klinex-faq summary .klinex-faq-ico::before { top: 6px; left: 0; width: 14px; height: 2px; }
+.klinex-faq summary .klinex-faq-ico::after { top: 0; left: 6px; width: 2px; height: 14px; }
+.klinex-faq details[open] summary .klinex-faq-ico::after { transform: scaleY(0); }
+.klinex-faq details > div { padding: 0 18px 17px; font-size: 14px; color: var(--tx-3); line-height: 1.6; }
+
+/* ─── final cta ──────────────────────────────────────────────── */
+.klinex-final { position: relative; overflow: hidden; text-align: center; }
+.klinex-final::before {
+  content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background: radial-gradient(ellipse 70% 60% at 50% 120%, rgba(233,180,90,0.16), transparent 62%);
+}
+.klinex-final-inner { position: relative; z-index: 1; }
+.klinex-final h2 { margin: 0 auto 14px; max-width: 20ch; font-family: var(--display); font-size: clamp(2rem, 4vw, 3rem); font-weight: 600; letter-spacing: -0.025em; line-height: 1.06; color: var(--tx); }
+.klinex-final p { margin: 0 auto 28px; max-width: 48ch; color: var(--tx-3); font-size: 1.05rem; }
+.klinex-final-cta { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+.klinex-final-note { margin-top: 18px; font: 500 11.5px var(--mono); color: var(--tx-5); }
+
+/* ─── footer ─────────────────────────────────────────────────── */
+.klinex-footer { border-top: 1px solid var(--line); background: var(--bg); }
+.klinex-footer-inner { width: min(var(--site), calc(100% - 48px)); margin: 0 auto; padding: 56px 0 30px; display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 32px; }
+.klinex-footer-brand p { margin: 12px 0 0; max-width: 34ch; font-size: 13px; color: var(--tx-4); line-height: 1.6; }
+.klinex-footer-col h4 { margin: 0 0 12px; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--tx-4); }
+.klinex-footer-col a { display: block; padding: 4px 0; font-size: 13.5px; color: var(--tx-3); }
+.klinex-footer-col a:hover { color: var(--amber-hi); }
+.klinex-colophon { width: min(var(--site), calc(100% - 48px)); margin: 0 auto; padding: 20px 0 40px; display: flex; flex-wrap: wrap; gap: 8px 18px; justify-content: space-between; border-top: 1px solid var(--line); font-size: 12px; color: var(--tx-5); }
+
+/* ─── not found ──────────────────────────────────────────────── */
+.klinex-nf { min-height: 70vh; display: grid; place-items: center; text-align: center; }
+.klinex-nf h1 { font-family: var(--display); font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 600; color: var(--tx); margin: 0 0 12px; }
+.klinex-nf p { color: var(--tx-3); margin: 0 auto 22px; max-width: 46ch; }
+
+/* ─── intro framing (refine pass — reads as a Wysp product intro) ─ */
+.klinex-byline {
+  color: var(--tx-4) !important;
+  font-size: 11px; font-weight: 600; letter-spacing: 0.01em; white-space: nowrap;
+  padding: 3px 10px; border-radius: 99px; border: 1px solid var(--line);
+}
+.klinex-byline:hover { color: var(--tx-2) !important; border-color: var(--line-2); background: var(--elev); }
+
+.klinex-idea-cap { margin-top: 15px; font-size: 13px; color: var(--tx-4); line-height: 1.55; }
+.klinex-idea-cap b { color: var(--tx-2); font-weight: 600; }
+
+.klinex-preview-tag {
+  display: block; margin-bottom: 13px;
+  font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--tx-5);
+}
+@media (max-width: 600px) { .klinex-byline { display: none; } }
+
+/* ─── responsive ─────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .klinex-feature { grid-template-columns: 1fr; }
+  .klinex-feature.is-flip .klinex-feature-copy { order: 0; }
+  .klinex-worlds { grid-template-columns: repeat(2, 1fr); }
+  .klinex-footer-inner { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 620px) {
+  .klinex-section { padding: 76px 0; }
+  .klinex-q-opts { grid-template-columns: 1fr; }
+  .klinex-worlds { grid-template-columns: 1fr; }
+  .klinex-fp-grid { grid-template-columns: 1fr; }
+  .klinex-fp-cell.br { border-right: 0; }
+  .klinex-footer-inner { grid-template-columns: 1fr 1fr; gap: 24px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .klinex-site *, .klinex-site *::before, .klinex-site *::after { animation-duration: 0.001ms !important; transition-duration: 0.05ms !important; }
+  .klinex-reveal { opacity: 1; transform: none; }
+}

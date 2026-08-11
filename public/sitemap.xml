@@ -19,6 +19,12 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://wysp.pro/klinex/</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://wysp.pro/lanes/</loc>
     <lastmod>2026-05-21</lastmod>
     <changefreq>weekly</changefreq>

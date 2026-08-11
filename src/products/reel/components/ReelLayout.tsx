@@ -10,7 +10,7 @@ export function ReelNav() {
         <AppLink className="reel-brand" href={REEL_ROUTES.home} aria-label="Reel home">
           <img className="reel-brand-mark" src={ASSET_ROOT + '/reel-icon.svg'} alt="" aria-hidden="true" />
           <span className="reel-brand-word">
-            Reel<span className="reel-brand-sub">Discord Chat Lens</span>
+            Reel<span className="reel-brand-sub">Discord Chat Exporter</span>
           </span>
         </AppLink>
         <div className="reel-nav-links">

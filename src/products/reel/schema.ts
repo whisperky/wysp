@@ -20,11 +20,20 @@ export function softwareApplicationSchema() {
   return {
     '@context': 'https://schema.org',
     '@type': 'SoftwareApplication',
-    name: 'Reel — Discord Chat Lens',
+    name: 'Reel — Discord Chat Exporter, Search & AI',
     applicationCategory: 'BrowserApplication',
     operatingSystem: 'Chrome',
     description:
-      'Reel is a local-first Chrome extension that indexes the Discord channels you can already see into a private database, then lets an AI agent answer evidence-backed questions across the whole server and export every channel at once.',
+      'Reel is a local-first Chrome extension that backs up entire Discord servers — every channel, thread and forum post — into a private, searchable archive on your own device. Search by keyword or on-device semantic meaning, run AI research with cited evidence, and export to HTML, Excel, CSV or JSON.',
+    featureList: [
+      'Whole-server backup — channels, threads and forum posts in one run',
+      'Resumable, rate-limited history fetch (gentle on your account)',
+      'On-device semantic search — find messages by meaning, no keywords needed',
+      'Full-text keyword search, sort and filter',
+      'AI research agent with one-click recipes and cited evidence (Pro)',
+      'Export to browsable HTML, Excel (XLSX), CSV and JSONL',
+      'Local-first — your corpus and embeddings stay in your browser',
+    ],
     url: reelAbsoluteUrl(PRODUCT_ROOT),
     downloadUrl: reelAbsoluteUrl('/reel/#get'),
     image: reelAbsoluteUrl(ASSET_ROOT + '/reel-icon-128.png'),

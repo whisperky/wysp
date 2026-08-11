@@ -6,9 +6,11 @@ import { ProductDetailRoute } from '../pages/ProductDetailRoute';
 import { LanesProductSite } from '../products/lanes';
 import { ReelProductSite } from '../products/reel';
 import { TrustContractProductSite } from '../products/trust-contract';
+import { KlinexProductSite } from '../products/klinex';
 import '../products/lanes/lanes.css';
 import '../products/reel/reel.css';
 import '../products/trust-contract/trust-contract.css';
+import '../products/klinex/klinex.css';
 
 export default function App() {
   return (
@@ -17,6 +19,7 @@ export default function App() {
         <Route path="/lanes/*" element={<LanesRoute />} />
         <Route path="/reel/*" element={<ReelRoute />} />
         <Route path="/trust-contract/*" element={<TrustContractRoute />} />
+        <Route path="/klinex/*" element={<KlinexRoute />} />
         <Route element={<WyspLayout />}>
           <Route index element={<HomePage />} />
           <Route path=":productId" element={<ProductDetailRoute />} />
@@ -43,4 +46,10 @@ function TrustContractRoute() {
   const { hash, key, pathname } = useLocation();
 
   return <TrustContractProductSite routePath={pathname} scrollKey={`trust-contract:${key}:${pathname}:${hash}`} />;
+}
+
+function KlinexRoute() {
+  const { hash, key, pathname } = useLocation();
+
+  return <KlinexProductSite routePath={pathname} scrollKey={`klinex:${key}:${pathname}:${hash}`} />;
 }

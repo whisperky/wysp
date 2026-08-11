@@ -12,7 +12,7 @@ type SiteHeaderProps = {
 export function SiteHeader({ activeProduct }: SiteHeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isHeaderDocked, setIsHeaderDocked] = useState(false);
-  const featuredProducts = useMemo(() => products.slice(0, 3), []);
+  const featuredProducts = useMemo(() => products.slice(0, 4), []);
   const headerClassName = [
     'site-header',
     activeProduct ? 'detail-header' : '',
