@@ -1,13 +1,14 @@
 import { useEffect, useState } from 'react';
 
 export type LiveStatsMetrics = {
-  downloads: number;
-  activeUsers: number;
+  customers: number;
   subscribers: number;
+  revenueCents: number;
 };
 
 export type LiveStats = {
   generatedAt: string | null;
+  currency: string;
   metrics: LiveStatsMetrics;
 };
 
@@ -17,8 +18,7 @@ export type LiveStats = {
  * The file is regenerated hourly by a scheduled job that calls the LemonSqueezy
  * API server-side, so the API key never reaches the browser and no per-customer
  * data is exposed — only aggregate counts. Returns null while loading, or if the
- * snapshot is missing/unreadable, in which case HomePage falls back to the
- * honest pre-launch facts.
+ * snapshot is missing/unreadable, in which case the band renders zeros.
  */
 export function useLiveStats(): LiveStats | null {
   const [data, setData] = useState<LiveStats | null>(null);

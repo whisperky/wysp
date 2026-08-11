@@ -1,9 +1,10 @@
 {
   "generatedAt": null,
   "source": "lemonsqueezy",
+  "currency": "USD",
   "metrics": {
-    "downloads": 0,
-    "activeUsers": 0,
-    "subscribers": 0
+    "customers": 0,
+    "subscribers": 0,
+    "revenueCents": 0
   }
 }

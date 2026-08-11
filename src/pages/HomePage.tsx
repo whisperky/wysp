@@ -1,10 +1,25 @@
 import { ArrowRight, AppWindow, CheckCircle2, ExternalLink, Workflow, Wrench } from 'lucide-react';
 import { ProductRow } from '../components/products/ProductRow';
 import { channels, contact, products, statCards, suggestionPrompts } from '../data/siteData';
+import type { StatCard } from '../data/siteData';
 import { useHashScroll } from '../hooks/useHashScroll';
 import { useLiveStats } from '../hooks/useLiveStats';
+import type { LiveStats } from '../hooks/useLiveStats';
 
 const numberFormatter = new Intl.NumberFormat('en-US');
+
+function formatStatValue(card: StatCard, stats: LiveStats | null): string {
+  if (card.key === 'revenue') {
+    return new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: stats?.currency || 'USD',
+      maximumFractionDigits: 0,
+    }).format((stats?.metrics?.revenueCents ?? 0) / 100);
+  }
+
+  const value = card.key === 'customers' ? stats?.metrics?.customers : stats?.metrics?.subscribers;
+  return numberFormatter.format(value ?? 0);
+}
 
 export function HomePage() {
   useHashScroll('home');
@@ -133,7 +148,7 @@ export function HomePage() {
               <div className="fact-icon" aria-hidden="true">
                 <i className={card.icon} />
               </div>
-              <strong>{numberFormatter.format(liveStats?.metrics?.[card.key] ?? 0)}</strong>
+              <strong>{formatStatValue(card, liveStats)}</strong>
               <span>{card.label}</span>
             </article>
           ))}

@@ -248,19 +248,18 @@ export const products: Product[] = [
 
 // --- Homepage "facts" band -------------------------------------------------
 // wysp.pro is a read-only showcase: it never holds accounts or payments, it only
-// *displays* counts. Every number is 0 until products launch. Values are read at
-// runtime from public/stats.json, refreshed hourly by the read-only job in
-// .github/workflows/refresh-stats.yml — see scripts/fetch-stats.mjs.
-// Only `subscribers` has a live source wired (LemonSqueezy). `downloads` and
-// `activeUsers` await each product's own analytics and stay 0 for now.
+// *displays* counts. All three cards are fed by public/stats.json, refreshed
+// hourly from the LemonSqueezy API (read-only aggregates, no per-customer data)
+// by .github/workflows/refresh-stats.yml — see scripts/fetch-stats.mjs.
+// Everything reads 0 until the first product actually sells.
 
-export type StatKey = 'downloads' | 'activeUsers' | 'subscribers';
+export type StatKey = 'customers' | 'subscribers' | 'revenue';
 export type StatCard = { key: StatKey; label: string; icon: string };
 
 export const statCards: StatCard[] = [
-  { key: 'downloads', label: 'Total downloads', icon: 'fas fa-download' },
-  { key: 'activeUsers', label: 'Active Users', icon: 'fas fa-users' },
+  { key: 'customers', label: 'Total Customers', icon: 'fas fa-users' },
   { key: 'subscribers', label: 'Paid Subscribers', icon: 'fab fa-gratipay' },
+  { key: 'revenue', label: 'Revenue to Date', icon: 'fas fa-coins' },
 ];
 
 export const channels: Channel[] = [
