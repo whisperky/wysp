@@ -68,12 +68,6 @@ export function ReelPrivacyPage() {
           </li>
           <li>Reel does not capture your Discord password, email, or 2FA.</li>
         </ul>
-        <p className="reel-legal-callout">
-          <strong>Important — account risk:</strong> using your own account&rsquo;s API access to
-          export messages is a form of automation that may be contrary to Discord&rsquo;s Terms of
-          Service and could, in principle, put your Discord account at risk. You use this feature
-          at your own discretion.
-        </p>
 
         <h2>3. Data sent to our AI service (paid &ldquo;Pro&rdquo; feature only)</h2>
         <p>
