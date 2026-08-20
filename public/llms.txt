@@ -1,0 +1,26 @@
+# Wysp
+
+> Wysp builds small, local-first software products. Each product has its own
+> microsite under this domain with full feature, pricing and privacy detail.
+
+## Products
+
+- [Reel — Discord Chat Exporter & AI Search](https://wysp.pro/reel/): Chrome
+  extension that exports Discord chat to Excel (XLSX), CSV, JSON or browsable
+  HTML — a whole server in one run, channels, threads and forum posts included.
+  The archive stays on the user's device, searchable by keyword or on-device
+  semantic meaning, with an optional AI research agent (Pro) that answers
+  questions with citations. Not affiliated with Discord.
+  - Privacy policy: https://wysp.pro/reel/privacy/
+- [Lanes](https://wysp.pro/lanes/): native macOS menu-bar app that names
+  Spaces, switches between them fast, and runs per-Lane automations.
+- [Trust Contract](https://wysp.pro/trust-contract/): privacy-first Discord
+  hiring marketplace run end to end by a bot — anonymous job posts, private
+  deal rooms, and a behavior-based trust score.
+- [Klinex](https://wysp.pro/klinex/): describe a world in one sentence and
+  Klinex co-designs and builds a real, playable 3D game you own.
+
+## Contact
+
+- Email: support@wysp.pro
+- GitHub: https://github.com/whisperky

@@ -25,6 +25,16 @@ export const landingFaqs: FaqItem[] = [
       'One server, one channel, 500 messages — with keyword + semantic search, sort/filter, and every export format. AI research and whole-server backup are Pro.',
   },
   {
+    question: 'How do I export a Discord chat to Excel or CSV?',
+    answer:
+      'Open the channel, click the Reel button in Discord’s toolbar, pick a message count or date range, and export. Download the result as Excel (XLSX, one sheet per channel), CSV, JSON or a browsable HTML archive.',
+  },
+  {
+    question: 'Can I download my Discord message history?',
+    answer:
+      'Yes — any channel your account can already read, threads and forum posts included. Messages are saved to a private archive on your own device, where you can search them by keyword or meaning and re-export any time.',
+  },
+  {
     question: 'Is this allowed?',
     answer:
       "Reel is independent, not affiliated with Discord. Automated access can be against Discord's ToS, so Reel paces gently and only runs on your click. Use it on communities you have a right to, at your own risk.",
@@ -32,7 +42,7 @@ export const landingFaqs: FaqItem[] = [
 ];
 
 export const landingMetadata: PageMetadata = {
-  title: 'Reel — Discord Chat Exporter, Search & AI · Wysp',
+  title: 'Discord Chat Exporter & AI Search — Reel · Wysp',
   description:
     'Export Discord chat to HTML, Excel, CSV or JSON — a whole server in one run, every channel, thread and forum post, into a private searchable archive on your own machine. Find anything by keyword or meaning with on-device semantic search, and ask an AI for research with citations.',
   path: PRODUCT_ROOT,

@@ -20,7 +20,7 @@ export function softwareApplicationSchema() {
   return {
     '@context': 'https://schema.org',
     '@type': 'SoftwareApplication',
-    name: 'Reel — Discord Chat Exporter, Search & AI',
+    name: 'Discord Chat Exporter & AI Search — Reel',
     applicationCategory: 'BrowserApplication',
     operatingSystem: 'Chrome',
     description:
