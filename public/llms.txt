@@ -11,12 +11,16 @@
   The archive stays on the user's device, searchable by keyword or on-device
   semantic meaning, with an optional AI research agent (Pro) that answers
   questions with citations. Not affiliated with Discord.
+  - Status: live — free on the Chrome Web Store, with a paid Pro tier.
+  - Install: https://chromewebstore.google.com/detail/discord-chat-exporter-ai/iblalnacoajhmhhgjekfchdcakfkoema
   - Privacy policy: https://wysp.pro/reel/privacy/
 - [Lanes](https://wysp.pro/lanes/): native macOS menu-bar app that names
   Spaces, switches between them fast, and runs per-Lane automations.
 - [Trust Contract](https://wysp.pro/trust-contract/): privacy-first Discord
   hiring marketplace run end to end by a bot — anonymous job posts, private
   deal rooms, and a behavior-based trust score.
+  - Status: live — the Discord server is open, free Bronze tier to join.
+  - Join: https://discord.gg/bQ2GZNZF
 - [Klinex](https://wysp.pro/klinex/): describe a world in one sentence and
   Klinex co-designs and builds a real, playable 3D game you own.
 
