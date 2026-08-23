@@ -81,8 +81,8 @@ export function LandingPage() {
         <div className="reel-hero-inner">
           <div className="reel-hero-copy">
             <span className="reel-hero-badge">
-              <span className="reel-hero-badge-tag">New</span>
-              <b>Reel</b>&nbsp;joins Wysp
+              <span className="reel-hero-badge-tag">Live</span>
+              <b>Reel</b>&nbsp;on the Chrome Web Store
             </span>
             <h1>
               Read a server like a <span className="reel-glow">database</span>.
@@ -516,7 +516,7 @@ export function LandingPage() {
             </AppLink>
             <AppLink className="reel-btn reel-btn-ghost" href={REEL_ROUTES.pricing}>Compare plans</AppLink>
           </div>
-          <p className="reel-final-note">Chrome Web Store listing coming soon · MV3 · works offline</p>
+          <p className="reel-final-note">Live on the Chrome Web Store · MV3 · works offline</p>
         </div>
       </section>
     </main>

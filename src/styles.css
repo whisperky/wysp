@@ -1083,6 +1083,35 @@ svg {
   background: rgba(168, 196, 174, 0.42);
 }
 
+/* Shipped products read as live at a glance, whatever their accent. Must stay
+   after the accent rules — same specificity, so source order decides. */
+.status.is-live {
+  gap: 7px;
+  color: #1b6045;
+  background: rgba(47, 191, 125, 0.2);
+}
+
+.status.is-live::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #2fbf7d;
+  box-shadow: 0 0 0 3px rgba(47, 191, 125, 0.24);
+  animation: live-pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes live-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.45;
+  }
+}
+
 .product-copy .eyebrow {
   display: block;
   margin: 16px 0 6px;
@@ -1887,7 +1916,8 @@ svg {
   .stream-flow,
   .lane-card,
   .wave-track,
-  .channel-link {
+  .channel-link,
+  .status.is-live::before {
     animation: none;
     transition: none;
   }

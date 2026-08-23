@@ -20,7 +20,9 @@ export function ProductRow({ product, index }: ProductRowProps) {
       </div>
 
       <div className="product-copy">
-        <span className={`status accent-${product.accent}`}>{product.status}</span>
+        <span className={`status accent-${product.accent}${product.status === 'Live' ? ' is-live' : ''}`}>
+          {product.status}
+        </span>
         <p className="eyebrow">{product.eyebrow}</p>
         <h3>{product.name}</h3>
         <p>{product.description}</p>

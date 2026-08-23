@@ -157,7 +157,7 @@ export function LandingPage() {
             </p>
             <div className="tc-hero-cta">
               <AppLink className="tc-btn tc-btn-gold" href={INVITE_HREF}>
-                Request an invite
+                Join the server
                 <ArrowRight />
               </AppLink>
               <AppLink className="tc-btn tc-btn-ghost" href={TC_ROUTES.how}>See how it works</AppLink>
@@ -719,10 +719,10 @@ export function LandingPage() {
         <div className="tc-narrow tc-final-inner">
           <span className="tc-eyebrow on-ink" style={{ marginInline: 'auto' }}>Get started</span>
           <h2>Hire — or get hired — on proof.</h2>
-          <p>Trust Contract is rolling out invites for clients and developers. Request access and the bot will onboard you into the right side of the marketplace, privately.</p>
+          <p>Trust Contract is open for clients and developers. Join the server and the bot onboards you into the right side of the marketplace, privately.</p>
           <div className="tc-hero-cta">
             <AppLink className="tc-btn tc-btn-gold" href={INVITE_HREF}>
-              Request an invite
+              Join the server
               <ArrowRight />
             </AppLink>
             <AppLink className="tc-btn tc-btn-ghost" href={TC_ROUTES.how}>Read how it works</AppLink>

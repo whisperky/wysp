@@ -30,8 +30,14 @@ export function AppLink({ href, children, reloadDocument, ...props }: AppLinkPro
     );
   }
 
+  // Links off the site (store listings, Discord invites) open in their own tab
+  // so the visitor keeps their place here. Callers can still override both.
+  const externalProps = href.startsWith('http')
+    ? { target: '_blank', rel: 'noreferrer', ...props }
+    : props;
+
   return (
-    <a href={href} {...props}>
+    <a href={href} {...externalProps}>
       {children}
     </a>
   );

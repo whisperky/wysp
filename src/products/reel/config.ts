@@ -36,11 +36,13 @@ export const CONTACT_EMAIL = contact.email;
 export const FEEDBACK_HREF = 'mailto:' + CONTACT_EMAIL + '?subject=Reel feedback';
 
 /**
- * Placeholder for the published Chrome Web Store listing.
- * Swap this for the real listing URL once Reel is live on the store.
+ * The published Chrome Web Store listing. Every install CTA on the microsite
+ * (nav, hero, both pricing plans, final section) reads this one constant, so
+ * the listing URL only ever changes here.
  */
-export const CHROME_STORE_HREF = REEL_ROUTES.get;
-export const LAST_UPDATED = '2026-06-04';
+export const CHROME_STORE_HREF =
+  'https://chromewebstore.google.com/detail/discord-chat-exporter-ai/iblalnacoajhmhhgjekfchdcakfkoema';
+export const LAST_UPDATED = '2026-08-23';
 
 export function reelAbsoluteUrl(path: string) {
   return SITE_ORIGIN + path;

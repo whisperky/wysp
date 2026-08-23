@@ -1,5 +1,5 @@
 import type { FaqItem } from './types';
-import { ASSET_ROOT, PRODUCT_ROOT, SITE_ORIGIN, reelAbsoluteUrl } from './config';
+import { ASSET_ROOT, CHROME_STORE_HREF, PRODUCT_ROOT, REEL_ROUTES, SITE_ORIGIN, reelAbsoluteUrl } from './config';
 
 export function buildFaqSchema(faqs: FaqItem[]) {
   return {
@@ -35,9 +35,10 @@ export function softwareApplicationSchema() {
       'Local-first — your corpus and embeddings stay in your browser',
     ],
     url: reelAbsoluteUrl(PRODUCT_ROOT),
-    downloadUrl: reelAbsoluteUrl('/reel/#get'),
+    downloadUrl: CHROME_STORE_HREF,
+    installUrl: CHROME_STORE_HREF,
     image: reelAbsoluteUrl(ASSET_ROOT + '/reel-icon-128.png'),
-    softwareVersion: '1.0',
+    softwareVersion: '0.3.0',
     publisher: {
       '@type': 'Organization',
       name: 'Wysp',
@@ -49,12 +50,16 @@ export function softwareApplicationSchema() {
         name: 'Reel Free',
         price: '0',
         priceCurrency: 'USD',
+        availability: 'https://schema.org/InStock',
+        url: CHROME_STORE_HREF,
       },
       {
         '@type': 'Offer',
         name: 'Reel Pro Monthly',
         price: '14.99',
         priceCurrency: 'USD',
+        availability: 'https://schema.org/InStock',
+        url: reelAbsoluteUrl(REEL_ROUTES.pricing),
         priceSpecification: {
           '@type': 'UnitPriceSpecification',
           price: '14.99',
@@ -68,6 +73,8 @@ export function softwareApplicationSchema() {
         name: 'Reel Pro Yearly',
         price: '149.00',
         priceCurrency: 'USD',
+        availability: 'https://schema.org/InStock',
+        url: reelAbsoluteUrl(REEL_ROUTES.pricing),
         priceSpecification: {
           '@type': 'UnitPriceSpecification',
           price: '149.00',

@@ -1,5 +1,5 @@
 import type { FaqItem } from './types';
-import { ASSET_ROOT, PRODUCT_ROOT, SITE_ORIGIN, tcAbsoluteUrl } from './config';
+import { ASSET_ROOT, INVITE_HREF, PRODUCT_ROOT, SITE_ORIGIN, TC_ROUTES, tcAbsoluteUrl } from './config';
 
 export function buildFaqSchema(faqs: FaqItem[]) {
   return {
@@ -32,10 +32,36 @@ export function serviceSchema() {
       name: 'Wysp',
       url: SITE_ORIGIN,
     },
+    availableChannel: {
+      '@type': 'ServiceChannel',
+      name: 'Trust Contract Discord server',
+      serviceUrl: INVITE_HREF,
+    },
     offers: [
-      { '@type': 'Offer', name: 'Bronze', price: '0', priceCurrency: 'USD' },
-      { '@type': 'Offer', name: 'Silver developer membership', price: '19', priceCurrency: 'USD' },
-      { '@type': 'Offer', name: 'Gold developer membership', price: '49', priceCurrency: 'USD' },
+      {
+        '@type': 'Offer',
+        name: 'Bronze',
+        price: '0',
+        priceCurrency: 'USD',
+        availability: 'https://schema.org/InStock',
+        url: INVITE_HREF,
+      },
+      {
+        '@type': 'Offer',
+        name: 'Silver developer membership',
+        price: '19',
+        priceCurrency: 'USD',
+        availability: 'https://schema.org/InStock',
+        url: tcAbsoluteUrl(TC_ROUTES.pricing),
+      },
+      {
+        '@type': 'Offer',
+        name: 'Gold developer membership',
+        price: '49',
+        priceCurrency: 'USD',
+        availability: 'https://schema.org/InStock',
+        url: tcAbsoluteUrl(TC_ROUTES.pricing),
+      },
     ],
   };
 }

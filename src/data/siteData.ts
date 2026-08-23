@@ -12,7 +12,7 @@ import {
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
-export type ProductStatus = 'Live shell' | 'Building' | 'Idea queue';
+export type ProductStatus = 'Live' | 'Live shell' | 'Building' | 'Idea queue';
 
 export type ProductDetailSection = {
   title: string;
@@ -113,11 +113,11 @@ export const products: Product[] = [
     id: 'trust-contract',
     name: 'Trust Contract',
     shortName: 'Trust Contract',
-    status: 'Building',
+    status: 'Live',
     eyebrow: 'Discord hiring server',
     description:
       'A privacy-first Discord hiring marketplace run end to end by a bot — anonymous job posts, vetted developers, private deal rooms, and a behavior-based Trust Score.',
-    outcome: 'Open the Trust Contract microsite to see the server, Trust Score ladder, tiers, and pricing.',
+    outcome: 'The Discord server is open — join it, or read the Trust Score ladder, tiers, and pricing first.',
     href: '/trust-contract/',
     accent: 'gold',
     icon: ShieldCheck,
@@ -144,9 +144,9 @@ export const products: Product[] = [
         },
       ],
       milestones: [
-        'Wire the real Discord invite link into the "Request an invite" CTAs',
         'Connect developer memberships and client credit-pack checkout',
-        'Add wysp.pro/trust-contract to the sitemap after deployment',
+        'Grow the first cohort of vetted developers and client job posts',
+        'Publish the first Trust Score outcomes as public proof',
       ],
       primaryAction: {
         label: 'Open Trust Contract',
@@ -158,11 +158,11 @@ export const products: Product[] = [
     id: 'reel',
     name: 'Reel',
     shortName: 'Reel',
-    status: 'Building',
+    status: 'Live',
     eyebrow: 'Discord Chat Exporter',
     description:
       'A local-first Chrome extension that backs up a whole Discord server in one run, then searches it by keyword or meaning and runs AI research — all on your own machine.',
-    outcome: 'Open the Reel microsite for the backup, search, AI research, privacy model, and pricing.',
+    outcome: 'Install it free from the Chrome Web Store, or read the privacy model and pricing first.',
     href: '/reel/',
     accent: 'sage',
     icon: Aperture,
@@ -189,9 +189,9 @@ export const products: Product[] = [
         },
       ],
       milestones: [
-        'Publish the Chrome Web Store listing and wire the real "Add to Chrome" URL',
         'Connect the Pro license and LemonSqueezy checkout',
-        'Add wysp.pro/reel to the sitemap after deployment',
+        'Gather first-install feedback and Chrome Web Store reviews',
+        'Replace the remaining mockups with real product screenshots',
       ],
       primaryAction: {
         label: 'Open Reel',

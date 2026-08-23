@@ -11,7 +11,9 @@ export function ProductDetailPage({ product }: { product: Product }) {
             <ArrowRight size={16} aria-hidden="true" />
             Back to products
           </AppLink>
-          <span className={`status accent-${product.accent}`}>{product.status}</span>
+          <span className={`status accent-${product.accent}${product.status === 'Live' ? ' is-live' : ''}`}>
+            {product.status}
+          </span>
           <p className="eyebrow">{product.eyebrow}</p>
           <h1 id="detail-title">{product.name}</h1>
           <p>{product.detail.intro}</p>

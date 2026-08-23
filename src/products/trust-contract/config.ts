@@ -20,11 +20,12 @@ export const BRAND_ROOT = ASSET_ROOT + '/brand';
 export const CONTACT_EMAIL = contact.email;
 
 /**
- * Placeholder for the real Discord invite. Swap this for the live invite link
- * once the server is open for onboarding.
+ * The live Trust Contract Discord server. Every join CTA on the microsite reads
+ * this one constant. Keep it pointing at a NON-EXPIRING invite — a temporary
+ * one silently turns every CTA into an "Invite Invalid" page when it lapses.
  */
-export const INVITE_HREF = TC_ROUTES.join;
-export const LAST_UPDATED = '2026-05-31';
+export const INVITE_HREF = 'https://discord.gg/bQ2GZNZF';
+export const LAST_UPDATED = '2026-08-23';
 
 export function tcAbsoluteUrl(path: string) {
   return SITE_ORIGIN + path;
