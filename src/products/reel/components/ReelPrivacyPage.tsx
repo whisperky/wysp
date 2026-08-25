@@ -94,8 +94,8 @@ export function ReelPrivacyPage() {
           <li>Transmission is over HTTPS.</li>
           <li>
             <strong>AI sub-processors:</strong> the request is processed by{' '}
-            <strong>Anthropic</strong> (primary model provider) and may be processed by{' '}
-            <strong>OpenAI</strong> (only as a failover, and only if configured). These
+            <strong>Google</strong> (Gemini &mdash; primary model provider) and may be processed by{' '}
+            <strong>Anthropic</strong> (only as a failover). These
             providers&rsquo; API terms do not use API-submitted content to train their models. We
             do <strong>not</strong> route your content to any AI provider that trains on submitted
             data.
@@ -155,8 +155,8 @@ export function ReelPrivacyPage() {
 
         <h2>8. Third parties / sub-processors</h2>
         <p>
-          Discord (message access + image CDN); Cloudflare (our Worker/AI proxy); Anthropic and, as
-          failover, OpenAI (AI model providers); Lemon Squeezy (payments and licensing). The
+          Discord (message access + image CDN); Cloudflare (our Worker/AI proxy); Google (Gemini)
+          and, as failover, Anthropic (AI model providers); Lemon Squeezy (payments and licensing). The
           embedding model is bundled locally and is <strong>not</strong> a runtime third party.
         </p>
 
