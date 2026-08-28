@@ -20,7 +20,7 @@
   hiring marketplace run end to end by a bot — anonymous job posts, private
   deal rooms, and a behavior-based trust score.
   - Status: live — the Discord server is open, free Bronze tier to join.
-  - Join: https://discord.gg/bQ2GZNZF
+  - Join: https://discord.gg/QyxU4nnYzm
 - [Klinex](https://wysp.pro/klinex/): describe a world in one sentence and
   Klinex co-designs and builds a real, playable 3D game you own.
 

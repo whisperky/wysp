@@ -24,7 +24,7 @@ export const CONTACT_EMAIL = contact.email;
  * this one constant. Keep it pointing at a NON-EXPIRING invite — a temporary
  * one silently turns every CTA into an "Invite Invalid" page when it lapses.
  */
-export const INVITE_HREF = 'https://discord.gg/bQ2GZNZF';
+export const INVITE_HREF = 'https://discord.gg/QyxU4nnYzm';
 export const LAST_UPDATED = '2026-08-23';
 
 export function tcAbsoluteUrl(path: string) {
