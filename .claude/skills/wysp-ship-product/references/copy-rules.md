@@ -33,8 +33,8 @@ microsite at /<id>/…" convention so the card defers to the microsite.
 `src/data/siteData.ts` exports a `contact` object. **Use it**; do not invent
 `hello@wysp.dev` or placeholder socials. Current values (verify against the live
 file — they can change):
-- email: `whisper.bix@gmail.com`
-- discord: `@whisper3029`
+- email: `support@wysp.pro`
+- discord: `@whisper_t`
 - github: `https://github.com/whisperky`
 
 For a `primaryAction` or CTA that's a contact link, build it from `contact.email`

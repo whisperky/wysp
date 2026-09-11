@@ -55,9 +55,9 @@ export type Channel = {
 
 export const contact = {
   email: 'support@wysp.pro',
-  phone: '+1 872 322 0408',
-  phoneHref: 'tel:+18723220408',
-  discord: '@whisper3029',
+  phone: '+1 312 600 5782',
+  phoneHref: 'tel:+13126005782',
+  discord: '@whisper_t',
   discordHref: 'https://discord.com/users/471372856580767745',
   github: 'https://github.com/whisperky',
   suggestionHref: 'mailto:support@wysp.pro?subject=Wysp tool suggestion',
