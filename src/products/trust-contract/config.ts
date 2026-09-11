@@ -19,12 +19,9 @@ export const ASSET_ROOT = '/assets/trust-contract';
 export const BRAND_ROOT = ASSET_ROOT + '/brand';
 export const CONTACT_EMAIL = contact.email;
 
-/**
- * The live Trust Contract Discord server. Every join CTA on the microsite reads
- * this one constant. Keep it pointing at a NON-EXPIRING invite — a temporary
- * one silently turns every CTA into an "Invite Invalid" page when it lapses.
- */
-export const INVITE_HREF = 'https://discord.gg/QyxU4nnYzm';
+// Must never expire - two temporary invites have already lapsed and broken
+// every join CTA. Verify a replacement reports expires_at: null before shipping.
+export const INVITE_HREF = 'https://discord.gg/AdAdrvzAVf';
 export const LAST_UPDATED = '2026-08-23';
 
 export function tcAbsoluteUrl(path: string) {
