@@ -56,13 +56,13 @@ export function softwareApplicationSchema() {
       {
         '@type': 'Offer',
         name: 'Reel Pro Monthly',
-        price: '14.99',
+        price: '9.99',
         priceCurrency: 'USD',
         availability: 'https://schema.org/InStock',
         url: reelAbsoluteUrl(REEL_ROUTES.pricing),
         priceSpecification: {
           '@type': 'UnitPriceSpecification',
-          price: '14.99',
+          price: '9.99',
           priceCurrency: 'USD',
           billingDuration: 'P1M',
           billingIncrement: 1,
@@ -71,13 +71,13 @@ export function softwareApplicationSchema() {
       {
         '@type': 'Offer',
         name: 'Reel Pro Yearly',
-        price: '149.00',
+        price: '99.00',
         priceCurrency: 'USD',
         availability: 'https://schema.org/InStock',
         url: reelAbsoluteUrl(REEL_ROUTES.pricing),
         priceSpecification: {
           '@type': 'UnitPriceSpecification',
-          price: '149.00',
+          price: '99.00',
           priceCurrency: 'USD',
           billingDuration: 'P1Y',
           billingIncrement: 1,

@@ -88,7 +88,7 @@ export function LandingPage() {
               Read a server like a <span className="reel-glow">database</span>.
             </h1>
             <p className="reel-hero-lead">
-              Back up a <b>whole</b> Discord server in one run — channels, threads and forums.
+              Export a <b>whole</b> Discord server in one run — channels, threads and forums.
               Then search it by keyword or meaning, or ask an AI.
             </p>
             <div className="reel-hero-cta">
@@ -332,7 +332,7 @@ export function LandingPage() {
         <div className="reel-wrap">
           <div className="reel-section-head is-center reel-reveal">
             <span className="reel-eyebrow" style={{ justifyContent: 'center' }}><span className="reel-eyebrow-dot"></span>How it works</span>
-            <h2>Three moves: back up, index, search.</h2>
+            <h2>Three moves: export, index, search.</h2>
             <p>No bot, no crawling. Reel uses your own session — only when you click.</p>
           </div>
           <div className="reel-steps reel-reveal">
@@ -467,11 +467,11 @@ export function LandingPage() {
             <div className="reel-plan is-featured">
               <span className="reel-plan-tag">Full power</span>
               <div className="reel-plan-name">Pro</div>
-              <div className="reel-plan-price"><strong>$14.99</strong><span>/ month</span></div>
-              <p className="reel-plan-note">or $149 / year — 17% off · best value</p>
+              <div className="reel-plan-price"><strong>$9.99</strong><span>/ month</span></div>
+              <p className="reel-plan-note">or $99 / year — 17% off · best value</p>
               <AppLink className="reel-btn reel-btn-brand reel-plan-cta" href={CHROME_STORE_HREF}>Go Pro</AppLink>
               <ul className="reel-plan-feats">
-                <li><Check size={14} sw={2.4} /><span><b>AI research agent</b> · 15M tokens / month</span></li>
+                <li><Check size={14} sw={2.4} /><span><b>AI research agent</b> · 20M credits / month</span></li>
                 <li><Check size={14} sw={2.4} />Whole-server backup — channels, threads &amp; forums</li>
                 <li><Check size={14} sw={2.4} />Unlimited servers &amp; channels · live sync</li>
                 <li><Check size={14} sw={2.4} />Cross-channel user profiles</li>

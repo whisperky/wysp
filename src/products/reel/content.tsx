@@ -44,7 +44,7 @@ export const landingFaqs: FaqItem[] = [
 export const landingMetadata: PageMetadata = {
   title: 'Discord Chat Exporter & AI Search — Reel · Wysp',
   description:
-    'Export Discord chat to HTML, Excel, CSV or JSON — a whole server in one run, every channel, thread and forum post, into a private searchable archive on your own machine. Find anything by keyword or meaning with on-device semantic search, and ask an AI for research with citations.',
+    'Discord chat export to HTML, Excel, CSV or JSON — a whole server in one run, every channel, thread and forum post, into a private searchable archive on your own machine. Find anything by keyword or meaning with on-device semantic search, and ask an AI for research with citations.',
   path: PRODUCT_ROOT,
   ogType: 'website',
   schema: [softwareApplicationSchema(), buildFaqSchema(landingFaqs)],
