@@ -161,16 +161,16 @@ export const products: Product[] = [
     status: 'Live',
     eyebrow: 'Discord Chat Exporter',
     description:
-      'A local-first Chrome extension that backs up a whole Discord server in one run, then searches it by keyword or meaning and runs AI research — all on your own machine.',
+      'A local-first Chrome extension that backs up Discord chats — a whole server in one run on Pro — then searches them by keyword or meaning and runs AI research, all on your own machine.',
     outcome: 'Install it free from the Chrome Web Store, or read the privacy model and pricing first.',
     href: '/reel/',
     accent: 'sage',
     icon: Aperture,
     image: {
       src: '/assets/reel/reel-product.svg',
-      alt: 'Reel preview — the jade lens, an Add to Chrome action, a whole-server backup tree, and an AI research answer over indexed Discord messages',
+      alt: 'Reel preview — the Reel icon, an Add to Chrome action, a whole-server backup tree, and an AI research answer over indexed Discord messages',
     },
-    points: ['Full export, at once', 'Keyword + semantic search', 'AI research, with citations'],
+    points: ['Export to Excel, CSV, JSONL, HTML', 'Keyword + semantic search', 'AI research, with citations'],
     detail: {
       intro:
         'Reel has its own product microsite at /reel/. Wysp keeps this catalog entry compact while the independent Reel page carries the hero, backup and search mockups, privacy model, pricing, and FAQ in its own dark research-tool design language.',
@@ -181,7 +181,7 @@ export const products: Product[] = [
         },
         {
           title: 'Whole-server backup & search',
-          text: 'The microsite shows the one-run backup of every channel, thread and forum post into a browsable HTML / Excel / CSV / JSON archive, plus keyword and on-device semantic search and an AI chat inside Discord that answers questions about the server.',
+          text: 'The microsite shows a one-run backup of every channel, thread and forum post (whole servers on Pro) into a browsable HTML / Excel / CSV / JSONL archive, plus keyword and on-device semantic search and an AI chat inside Discord that answers questions about the server.',
         },
         {
           title: 'Local-first by design',
@@ -189,7 +189,6 @@ export const products: Product[] = [
         },
       ],
       milestones: [
-        'Connect the Pro license and LemonSqueezy checkout',
         'Gather first-install feedback and Chrome Web Store reviews',
         'Replace the remaining mockups with real product screenshots',
       ],

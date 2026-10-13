@@ -24,13 +24,14 @@ export function softwareApplicationSchema() {
     applicationCategory: 'BrowserApplication',
     operatingSystem: 'Chrome',
     description:
-      'Reel is a local-first Chrome extension that backs up entire Discord servers — every channel, thread and forum post — into a private, searchable archive on your own device. Search by keyword or on-device semantic meaning, run AI research with cited evidence, and export to HTML, Excel, CSV or JSON.',
+      'Reel is a local-first Chrome extension that backs up Discord channels, or whole servers on Pro — every thread and forum post included — into a private, searchable archive on your own device. Search by keyword or on-device semantic meaning, run AI research with cited evidence, and export to HTML, Excel, CSV or JSONL.',
     featureList: [
-      'Whole-server backup — channels, threads and forum posts in one run',
+      'Whole-server backup on Pro — channels, threads and forum posts in one run',
       'Resumable, rate-limited history fetch (gentle on your account)',
       'On-device semantic search — find messages by meaning, no keywords needed',
       'Full-text keyword search, sort and filter',
       'AI chat about any server right inside Discord, with links to the messages (3 free questions, then Pro)',
+      'Saved questions, re-run over new messages, with a daily Watch for new matches (Pro)',
       'Export to browsable HTML, Excel (XLSX), CSV and JSONL',
       'Local-first — your corpus and embeddings stay in your browser',
     ],

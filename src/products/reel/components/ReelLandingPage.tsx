@@ -90,7 +90,7 @@ export function LandingPage() {
             <p className="reel-hero-lead">
               Right inside Discord. Open a server you are in, ask a question, and Reel reads the
               server and answers with links to the messages. <b>3 free questions.</b> Or export
-              the chat to Excel, CSV, HTML or JSON.
+              the chat to Excel, CSV, HTML or JSONL.
             </p>
             <div className="reel-hero-cta">
               <AppLink className="reel-btn reel-btn-brand" href={CHROME_STORE_HREF}>
@@ -282,12 +282,13 @@ export function LandingPage() {
               <h3>The whole server at once.</h3>
               <p>
                 Other tools export one channel at a time — brutal across dozens. Reel grabs the whole
-                server in one run: channels, threads and forums, to HTML, Excel, CSV or JSON.
+                server in one run: channels, threads and forums, to HTML, Excel, CSV or JSONL.
+                Whole-server export is a Pro feature.
               </p>
               <ul className="reel-feature-list">
                 <li><Check /><span><b>Channels, threads &amp; forums.</b> The posts other tools miss.</span></li>
                 <li><Check /><span><b>Four formats.</b> <code>HTML</code> · <code>XLSX</code> · <code>CSV</code> · <code>JSONL</code>.</span></li>
-                <li><Check /><span><b>Gentle &amp; resumable.</b> Re-sync in seconds.</span></li>
+                <li><Check /><span><b>Gentle &amp; resumable.</b> Re-runs fetch only what is new.</span></li>
               </ul>
               <div className="reel-tagline"><span className="mono-jade">→</span> acme-builders archive · HTML · 38,421 rows</div>
             </div>
@@ -300,7 +301,7 @@ export function LandingPage() {
                   </svg>
                   Export scope · <b>entire server</b>
                 </span>
-                <span className="reel-export-formats"><span className="reel-chip reel-chip-brand">HTML</span><span className="reel-chip">XLSX</span><span className="reel-chip">CSV</span><span className="reel-chip">JSON</span></span>
+                <span className="reel-export-formats"><span className="reel-chip reel-chip-brand">HTML</span><span className="reel-chip">XLSX</span><span className="reel-chip">CSV</span><span className="reel-chip">JSONL</span></span>
               </div>
               <div className="reel-channel-tree">
                 <div className="reel-tree-server"><span className="reel-srv-mark">AB</span><strong>Acme Builders</strong><span className="mono">7 channels · 18 threads · 12.4k</span></div>
@@ -374,7 +375,7 @@ export function LandingPage() {
                 </svg>
               </div>
               <h3>Get answers, or export</h3>
-              <p>The AI searches what Reel saved and answers with links to the messages. Prefer a file? Use the Export tab for HTML, Excel, CSV or JSON.</p>
+              <p>The AI searches what Reel saved and answers with links to the messages. Prefer a file? Use the Export tab for HTML, Excel, CSV or JSONL.</p>
               <div className="reel-step-arrow"></div>
             </div>
           </div>
@@ -461,7 +462,7 @@ export function LandingPage() {
                 <li><Check size={14} sw={2.4} /><span><b>3 free AI questions</b> · Fast mode</span></li>
                 <li><Check size={14} sw={2.4} />1 server, 1 channel, 500 messages</li>
                 <li><Check size={14} sw={2.4} />Keyword + semantic search, sort &amp; filter</li>
-                <li><Check size={14} sw={2.4} />Export to HTML, XLSX, CSV &amp; JSON</li>
+                <li><Check size={14} sw={2.4} />Export to HTML, XLSX, CSV &amp; JSONL</li>
                 <li className="is-muted"><Cross />More AI questions &amp; Deep mode</li>
                 <li className="is-muted"><Cross />Whole-server backup &amp; live sync</li>
               </ul>
@@ -478,6 +479,7 @@ export function LandingPage() {
                 <li><Check size={14} sw={2.4} />Unlimited servers &amp; channels · live sync</li>
                 <li><Check size={14} sw={2.4} />Cross-channel user profiles</li>
                 <li><Check size={14} sw={2.4} />100k messages per channel</li>
+                <li><Check size={14} sw={2.4} />Saved questions · daily Watch for new matches</li>
               </ul>
             </div>
           </div>

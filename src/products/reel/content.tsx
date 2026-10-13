@@ -12,7 +12,7 @@ export const landingFaqs: FaqItem[] = [
   {
     question: 'What do I actually get for free?',
     answer:
-      '3 AI questions, with no account. You also get capture and export within the free limits: one server, one channel, 500 messages. Pro adds more questions, Deep mode, and whole-server backup.',
+      '3 AI questions, with no account. You also get capture and export within the free limits: one server, one channel, 500 messages. Pro adds more questions, Deep mode, saved questions with a daily Watch, and whole-server backup.',
   },
   {
     question: 'Where do my messages go?',
@@ -32,17 +32,17 @@ export const landingFaqs: FaqItem[] = [
   {
     question: 'How is exporting a whole server different from other tools?',
     answer:
-      'Most tools go one channel at a time. Reel queues every channel, thread and forum in one run, into HTML, Excel, CSV or JSON — permalinks, timestamps and authors intact. Re-runs fetch only what is new.',
+      'Most tools go one channel at a time. Reel queues every channel, thread and forum in one run, into HTML, Excel, CSV or JSONL — permalinks, timestamps and authors intact. Re-runs fetch only what is new. Whole-server export is a Pro feature; the free tier exports one channel, up to 500 messages.',
   },
   {
     question: 'How do I export a Discord chat to Excel or CSV?',
     answer:
-      'Open the channel, click the Reel button in Discord’s toolbar, open the Export tab, pick a message count or date range, and export. Download the result as Excel (XLSX, one sheet per channel), CSV, JSON or a browsable HTML archive.',
+      'Open the channel, click the Reel button in Discord’s toolbar, open the Export tab, pick a message count or date range, and export. Download the result as Excel (XLSX, one sheet per channel), CSV, JSONL or a browsable HTML archive. The free tier caps each channel at 500 messages.',
   },
   {
     question: 'Can I download my Discord message history?',
     answer:
-      'Yes — any channel your account can already read, threads and forum posts included. Messages are saved to a private archive on your own device, where you can search them by keyword or meaning and re-export any time.',
+      'Yes — any channel your account can already read. The free tier covers one channel, up to 500 messages; Pro covers whole servers, threads and forum posts included. Messages are saved to a private archive on your own device, where you can search them by keyword or meaning and re-export any time.',
   },
   {
     question: 'Is this allowed?',
@@ -54,7 +54,7 @@ export const landingFaqs: FaqItem[] = [
 export const landingMetadata: PageMetadata = {
   title: 'Discord Chat Exporter & AI Search — Reel · Wysp',
   description:
-    'Ask AI about any Discord server right inside Discord. Reel reads the server and answers with links to the messages — 3 free questions. Export chats to HTML, Excel, CSV or JSON, into a private archive on your own machine, and search it by keyword or meaning.',
+    'Ask AI about any Discord server right inside Discord. Reel reads the server and answers with links to the messages — 3 free questions. Export chats to HTML, Excel, CSV or JSONL, into a private archive on your own machine, and search it by keyword or meaning.',
   path: PRODUCT_ROOT,
   ogType: 'website',
   schema: [softwareApplicationSchema(), buildFaqSchema(landingFaqs)],

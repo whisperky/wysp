@@ -60,7 +60,7 @@ export function ReelFooter() {
           </AppLink>
           <p>
             A local-first Discord chat lens: index channels you can see, ask evidence-backed questions,
-            export the whole server. Pull conversation, find signal.
+            export a channel or, on Pro, the whole server. Pull conversation, find signal.
           </p>
         </div>
         <div className="reel-footer-col">
