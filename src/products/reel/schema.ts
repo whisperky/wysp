@@ -30,7 +30,7 @@ export function softwareApplicationSchema() {
       'Resumable, rate-limited history fetch (gentle on your account)',
       'On-device semantic search — find messages by meaning, no keywords needed',
       'Full-text keyword search, sort and filter',
-      'AI research agent with one-click recipes and cited evidence (Pro)',
+      'AI chat about any server right inside Discord, with links to the messages (3 free questions, then Pro)',
       'Export to browsable HTML, Excel (XLSX), CSV and JSONL',
       'Local-first — your corpus and embeddings stay in your browser',
     ],
@@ -38,7 +38,7 @@ export function softwareApplicationSchema() {
     downloadUrl: CHROME_STORE_HREF,
     installUrl: CHROME_STORE_HREF,
     image: reelAbsoluteUrl(ASSET_ROOT + '/reel-icon-128.png'),
-    softwareVersion: '0.3.0',
+    softwareVersion: '1.1.0',
     publisher: {
       '@type': 'Organization',
       name: 'Wysp',

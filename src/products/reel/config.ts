@@ -9,7 +9,7 @@ export const PRODUCT_ROOT = '/reel/';
 export const PRIVACY_PATH = PRODUCT_ROOT + 'privacy/';
 
 /** Shown at the top of the policy page. Bump when the policy materially changes. */
-export const PRIVACY_EFFECTIVE_DATE = '2026-08-10';
+export const PRIVACY_EFFECTIVE_DATE = '2026-10-12';
 
 /**
  * Contact address published in the privacy policy. Deliberately NOT the

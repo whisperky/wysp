@@ -85,11 +85,12 @@ export function LandingPage() {
               <b>Reel</b>&nbsp;on the Chrome Web Store
             </span>
             <h1>
-              Read a server like a <span className="reel-glow">database</span>.
+              Ask AI about any <span className="reel-glow">Discord server</span>.
             </h1>
             <p className="reel-hero-lead">
-              Export a <b>whole</b> Discord server in one run — channels, threads and forums.
-              Then search it by keyword or meaning, or ask an AI.
+              Right inside Discord. Open a server you are in, ask a question, and Reel reads the
+              server and answers with links to the messages. <b>3 free questions.</b> Or export
+              the chat to Excel, CSV, HTML or JSON.
             </p>
             <div className="reel-hero-cta">
               <AppLink className="reel-btn reel-btn-brand" href={CHROME_STORE_HREF}>
@@ -119,18 +120,18 @@ export function LandingPage() {
                   <circle cx="12" cy="12" r="8.5" stroke="currentColor" strokeWidth="1.6" />
                   <path d="m8.5 12 2.4 2.4 4.6-5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
-                Whole server in one run
+                No account needed
               </span>
             </div>
 
             <div className="reel-hero-proof">
               <div>
                 <div className="reel-hero-proof-num">38,421</div>
-                <div className="reel-hero-proof-label">messages indexed locally</div>
+                <div className="reel-hero-proof-label">messages saved on your device</div>
               </div>
               <div>
-                <div className="reel-hero-proof-num">0</div>
-                <div className="reel-hero-proof-label">raw messages uploaded</div>
+                <div className="reel-hero-proof-num">3</div>
+                <div className="reel-hero-proof-label">free AI questions</div>
               </div>
             </div>
           </div>
@@ -177,7 +178,7 @@ export function LandingPage() {
           <div className="reel-stat"><strong data-count="7">0</strong><span>servers indexed</span></div>
           <div className="reel-stat"><strong data-count="23">0</strong><span>channels</span></div>
           <div className="reel-stat"><strong data-count="318">0</strong><span>threads &amp; forums</span></div>
-          <div className="reel-stat"><strong className="reel-stat-jade">100%</strong><span>stays on your device</span></div>
+          <div className="reel-stat"><strong className="reel-stat-jade">0</strong><span>ads or trackers</span></div>
         </div>
       </section>
 
@@ -186,16 +187,16 @@ export function LandingPage() {
         <div className="reel-wrap">
           <div className="reel-feature reel-reveal">
             <div className="reel-feature-copy">
-              <span className="reel-eyebrow"><span className="reel-eyebrow-dot"></span>Search &amp; AI research</span>
-              <h3>Find anything. Search or ask.</h3>
+              <span className="reel-eyebrow"><span className="reel-eyebrow-dot"></span>Ask AI inside Discord</span>
+              <h3>Ask the server. Get receipts.</h3>
               <p>
-                Search by keyword or by meaning. On Pro, an AI agent does the research — every claim
-                linked to the messages behind it.
+                Open the Reel sidebar in any server you are in and ask a question. Reel reads the
+                server first, then the AI answers with links to the messages behind it.
               </p>
               <ul className="reel-feature-list">
-                <li><Check /><span><b>Search by meaning.</b> On-device. Free tier too.</span></li>
-                <li><Check /><span><b>Cross-channel.</b> One question, every channel and thread. One-click recipes.</span></li>
-                <li><Check /><span><b>Receipts, not vibes.</b> Answers link to the messages. Only ≤25 rows leave.</span></li>
+                <li><Check /><span><b>3 free questions.</b> No account. Pro adds more, plus Deep mode.</span></li>
+                <li><Check /><span><b>Reads the server for you.</b> Newest messages first, saved on your device. Later questions read only what is new.</span></li>
+                <li><Check /><span><b>Receipts, not vibes.</b> Answers link to the messages. Of your saved messages, only capped excerpts are sent.</span></li>
               </ul>
               <div className="reel-tagline"><span className="mono-jade">$</span> reel.ask("what's the consensus — and who explains it best?")</div>
             </div>
@@ -203,7 +204,7 @@ export function LandingPage() {
             <div className="reel-feature-visual reel-mock">
               <div className="reel-mock-bar">
                 <span className="reel-mock-dots"><span></span><span></span><span></span></span>
-                <span className="reel-mock-title">Thread · <span className="mono">Acme Builders</span></span>
+                <span className="reel-mock-title">Ask · <span className="mono">Acme Builders</span></span>
               </div>
               <div className="reel-mock-body">
                 <div className="reel-thread">
@@ -332,8 +333,8 @@ export function LandingPage() {
         <div className="reel-wrap">
           <div className="reel-section-head is-center reel-reveal">
             <span className="reel-eyebrow" style={{ justifyContent: 'center' }}><span className="reel-eyebrow-dot"></span>How it works</span>
-            <h2>Three moves: export, index, search.</h2>
-            <p>No bot, no crawling. Reel uses your own session — only when you click.</p>
+            <h2>Three moves: open, ask, answer.</h2>
+            <p>No bot, no background crawling. Reel uses your own session — only when you ask or export.</p>
           </div>
           <div className="reel-steps reel-reveal">
             <div className="reel-step">
@@ -345,8 +346,8 @@ export function LandingPage() {
                   <circle cx="6" cy="7" r="0.6" fill="currentColor" />
                 </svg>
               </div>
-              <h3>Back up a server</h3>
-              <p>Click the lens, pick channels. Reel fetches channels, threads and forums — gently, resumably.</p>
+              <h3>Open the sidebar</h3>
+              <p>Click the Reel button in Discord&rsquo;s top bar and pick the Ask tab.</p>
               <div className="reel-step-arrow">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M5 12h13m0 0-5-5m5 5-5 5" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" /></svg>
               </div>
@@ -359,8 +360,8 @@ export function LandingPage() {
                   <path d="M4 7v10c0 1.7 3.6 3 8 3s8-1.3 8-3V7M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3" stroke="currentColor" strokeWidth="1.7" />
                 </svg>
               </div>
-              <h3>Index locally</h3>
-              <p>Full-text + on-device semantic search, in IndexedDB. Fully offline.</p>
+              <h3>Ask a question</h3>
+              <p>Reel reads the server with your own session — newest first, gently paced — and saves it on your device. Later questions read only what is new.</p>
               <div className="reel-step-arrow">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M5 12h13m0 0-5-5m5 5-5 5" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" /></svg>
               </div>
@@ -372,8 +373,8 @@ export function LandingPage() {
                   <path d="m12 3 1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3Z" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
                 </svg>
               </div>
-              <h3>Search, ask, or export</h3>
-              <p>Search by keyword or meaning, ask the AI, or export to HTML / Excel / CSV / JSON.</p>
+              <h3>Get answers, or export</h3>
+              <p>The AI searches what Reel saved and answers with links to the messages. Prefer a file? Use the Export tab for HTML, Excel, CSV or JSON.</p>
               <div className="reel-step-arrow"></div>
             </div>
           </div>
@@ -392,8 +393,8 @@ export function LandingPage() {
                 </svg>
               </div>
               <span className="reel-eyebrow"><span className="reel-eyebrow-dot"></span>Privacy is the product</span>
-              <h2>Your data has nowhere to leak.</h2>
-              <p>Local-first, not a scraper. Your corpus stays in your browser — only a tiny AI snippet leaves, Pro only.</p>
+              <h2>Your archive is stored on your device.</h2>
+              <p>Local-first. What Reel reads is saved in your browser. Of those messages, only the capped excerpts that an AI question&rsquo;s searches return are sent.</p>
             </div>
             <div>
               <div className="reel-privacy-grid">
@@ -414,8 +415,8 @@ export function LandingPage() {
                       <circle cx="12" cy="12" r="2.6" stroke="currentColor" strokeWidth="1.7" />
                     </svg>
                   </div>
-                  <h4>Nothing runs on its own</h4>
-                  <p>Every fetch is a click, paced gently. No crawling, no schedulers.</p>
+                  <h4>Reads only when you ask</h4>
+                  <p>Reel fetches messages only when you export or send a question, paced gently. No background crawling.</p>
                 </div>
                 <div className="reel-privacy-card">
                   <div className="reel-privacy-ico">
@@ -425,7 +426,7 @@ export function LandingPage() {
                     </svg>
                   </div>
                   <h4>Stored on your device</h4>
-                  <p>Messages and embeddings sit in IndexedDB. Free tier needs no backend.</p>
+                  <p>Messages and embeddings sit in IndexedDB. Exporting and searching do not upload them.</p>
                 </div>
                 <div className="reel-privacy-card">
                   <div className="reel-privacy-ico">
@@ -433,8 +434,8 @@ export function LandingPage() {
                       <path d="m12 3 1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3Z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
                     </svg>
                   </div>
-                  <h4>≤25 rows to the AI</h4>
-                  <p>Pro sends only the snippets a tool picks — never your whole corpus.</p>
+                  <h4>Capped excerpts to the AI</h4>
+                  <p>An AI question sends the excerpts its searches return, capped per search. Anthropic is the only AI provider.</p>
                 </div>
               </div>
             </div>
@@ -448,19 +449,20 @@ export function LandingPage() {
           <div className="reel-section-head is-center reel-reveal">
             <span className="reel-eyebrow" style={{ justifyContent: 'center' }}><span className="reel-eyebrow-dot"></span>Pricing</span>
             <h2>Free is useful. Pro is for research.</h2>
-            <p>No trial games. Free is complete for what it holds. Pro adds AI research and the whole server.</p>
+            <p>Free includes 3 AI questions and export. Pro adds more questions, Deep mode and the whole server.</p>
           </div>
           <div className="reel-pricing reel-reveal">
             <div className="reel-plan">
               <div className="reel-plan-name">Free</div>
               <div className="reel-plan-price"><strong>$0</strong><span>forever</span></div>
-              <p className="reel-plan-note">Runs fully offline. No account.</p>
+              <p className="reel-plan-note">No account needed. 3 free AI questions to try.</p>
               <AppLink className="reel-btn reel-btn-ghost reel-plan-cta" href={CHROME_STORE_HREF}>Add to Chrome</AppLink>
               <ul className="reel-plan-feats">
+                <li><Check size={14} sw={2.4} /><span><b>3 free AI questions</b> · Fast mode</span></li>
                 <li><Check size={14} sw={2.4} />1 server, 1 channel, 500 messages</li>
                 <li><Check size={14} sw={2.4} />Keyword + semantic search, sort &amp; filter</li>
                 <li><Check size={14} sw={2.4} />Export to HTML, XLSX, CSV &amp; JSON</li>
-                <li className="is-muted"><Cross />AI research agent</li>
+                <li className="is-muted"><Cross />More AI questions &amp; Deep mode</li>
                 <li className="is-muted"><Cross />Whole-server backup &amp; live sync</li>
               </ul>
             </div>
@@ -471,7 +473,7 @@ export function LandingPage() {
               <p className="reel-plan-note">or $99 / year — 17% off · best value</p>
               <AppLink className="reel-btn reel-btn-brand reel-plan-cta" href={CHROME_STORE_HREF}>Go Pro</AppLink>
               <ul className="reel-plan-feats">
-                <li><Check size={14} sw={2.4} /><span><b>AI research agent</b> · 20M credits / month</span></li>
+                <li><Check size={14} sw={2.4} /><span><b>AI chat · Fast &amp; Deep</b> · 20M credits / month</span></li>
                 <li><Check size={14} sw={2.4} />Whole-server backup — channels, threads &amp; forums</li>
                 <li><Check size={14} sw={2.4} />Unlimited servers &amp; channels · live sync</li>
                 <li><Check size={14} sw={2.4} />Cross-channel user profiles</li>
@@ -507,8 +509,8 @@ export function LandingPage() {
       {/* ════ FINAL CTA ════ */}
       <section className="reel-section reel-final" id="get">
         <div className="reel-wrap reel-final-inner reel-reveal">
-          <h2>Back up a server. Search it. Ask it anything.</h2>
-          <p>Back up a channel, then search or ask in a minute. Free, no account, all local.</p>
+          <h2>Ask any Discord server a question.</h2>
+          <p>Install, open a server, and ask. 3 free questions, no account. What Reel reads is saved on your device.</p>
           <div className="reel-final-cta">
             <AppLink className="reel-btn reel-btn-brand" href={CHROME_STORE_HREF}>
               <ChromeGlyph />
@@ -516,7 +518,7 @@ export function LandingPage() {
             </AppLink>
             <AppLink className="reel-btn reel-btn-ghost" href={REEL_ROUTES.pricing}>Compare plans</AppLink>
           </div>
-          <p className="reel-final-note">Live on the Chrome Web Store · MV3 · works offline</p>
+          <p className="reel-final-note">Live on the Chrome Web Store · MV3</p>
         </div>
       </section>
     </main>

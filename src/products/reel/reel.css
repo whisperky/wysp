@@ -199,7 +199,7 @@
 }
 .reel-brand { display: inline-flex; align-items: center; gap: 10px; }
 .reel-brand-mark {
-  width: 30px; height: 30px; border-radius: 8px; flex-shrink: 0;
+  width: 30px; height: 30px; border-radius: 6px; flex-shrink: 0;
   box-shadow: 0 0 0 1px var(--ink-2), 0 0 16px oklch(0.78 0.18 165 / 0.18);
 }
 .reel-brand-word {

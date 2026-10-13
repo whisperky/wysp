@@ -1,6 +1,6 @@
 <svg width="960" height="640" viewBox="0 0 960 640" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="rtitle rdesc">
   <title id="rtitle">Reel product preview</title>
-  <desc id="rdesc">A dark investigation-style interface showing the Reel lens, an Add to Chrome action, and an AI evidence list over indexed Discord messages.</desc>
+  <desc id="rdesc">A dark investigation-style interface showing the Reel icon, an Add to Chrome action, and an AI evidence list over indexed Discord messages.</desc>
   <defs>
     <linearGradient id="reelBg" x1="124" y1="65" x2="836" y2="589" gradientUnits="userSpaceOnUse">
       <stop stop-color="#101a26"/>
@@ -58,13 +58,32 @@
     <!-- LEFT: lens + brand + add to chrome -->
     <g>
       <ellipse cx="314" cy="278" rx="86" ry="86" fill="url(#reelAura)"/>
-      <circle cx="314" cy="278" r="62" fill="none" stroke="#3ee7a6" stroke-width="3" stroke-opacity="0.32" stroke-dasharray="4 12"/>
-      <circle cx="314" cy="278" r="46" fill="none" stroke="#3ee7a6" stroke-width="5" stroke-opacity="0.85"/>
-      <line x1="314" y1="263" x2="314" y2="232" stroke="#3ee7a6" stroke-width="5" stroke-linecap="round" stroke-opacity="0.8"/>
-      <circle cx="314" cy="278" r="15" fill="#3ee7a6"/>
+      <svg x="254" y="218" width="120" height="120" viewBox="0 0 128 128">
+        <defs>
+        <linearGradient id="ri-bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#181a23"/><stop offset="1" stop-color="#07080c"/></linearGradient>
+        <linearGradient id="ri-hash" x1="27.66" y1="31.34" x2="97.07" y2="102.48" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#7e8afb"/><stop offset="1" stop-color="#3c4dfd"/></linearGradient>
+        <linearGradient id="ri-spark" x1="0" y1="-10.5" x2="0" y2="10.5" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#3eeab5"/><stop offset="1" stop-color="#28de92"/></linearGradient>
+        <filter id="ri-halo" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="8"/></filter>
+        </defs>
+        <rect width="128" height="128" rx="26" fill="url(#ri-bg)"/>
+        <g fill="#5865f2" opacity=".35" filter="url(#ri-halo)" transform="matrix(1 0 -0.1698 1 11.36 0)">
+        <rect x="43.29" y="31.34" width="12.94" height="71.15" rx="5.68"/>
+        <rect x="67.48" y="31.34" width="12.94" height="71.15" rx="5.68"/>
+        <rect x="28.84" y="48" width="66.04" height="12.86" rx="5.68"/>
+        <rect x="28.84" y="72.96" width="66.04" height="12.86" rx="5.68"/>
+        </g>
+        <g fill="url(#ri-hash)" transform="matrix(1 0 -0.1698 1 11.36 0)">
+        <rect x="43.29" y="31.34" width="12.94" height="71.15" rx="5.68"/>
+        <rect x="67.48" y="31.34" width="12.94" height="71.15" rx="5.68"/>
+        <rect x="28.84" y="48" width="66.04" height="12.86" rx="5.68"/>
+        <rect x="28.84" y="72.96" width="66.04" height="12.86" rx="5.68"/>
+        </g>
+        <path transform="translate(98.81 33.53) scale(0.984 1.017)" fill="url(#ri-spark)" stroke="url(#ri-spark)" stroke-width="1.63" stroke-linejoin="round" d="M10.01 0C4.6 -1.63 1.63 -4.6 0 -10.01C-1.63 -4.6 -4.6 -1.63 -10.01 0C-4.6 1.63 -1.63 4.6 0 10.01C1.63 4.6 4.6 1.63 10.01 0Z"/>
+        <rect x=".5" y=".5" width="127" height="127" rx="25.5" fill="none" stroke="#fff" stroke-opacity=".08"/>
+      </svg>
 
       <text x="314" y="384" text-anchor="middle" fill="#EAF6F0" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="800">Reel</text>
-      <text x="314" y="406" text-anchor="middle" fill="#8fa9a0" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600">Discord Chat Lens</text>
+      <text x="314" y="406" text-anchor="middle" fill="#8fa9a0" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600">AI chat for Discord</text>
 
       <!-- Add to Chrome pill with the real multicolor Chrome mark -->
       <rect x="206" y="430" width="216" height="46" rx="12" fill="#3ee7a6"/>

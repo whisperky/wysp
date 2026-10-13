@@ -31,34 +31,60 @@ export function ReelPrivacyPage() {
         <p>
           Reel is a browser extension that exports the Discord messages <strong>you can already
           read</strong> to local storage on your own device and lets you search them, build
-          per-user profiles, and (on the paid tier) ask AI questions across them. This policy
-          explains exactly what data Reel touches and where — if anywhere — it goes.
+          per-user profiles, and ask AI questions about a server (3 free questions, then the
+          paid tier). When you ask a question, Reel first reads the server you are viewing. This
+          policy explains exactly what data Reel touches and where — if anywhere — it goes.
         </p>
 
-        <h2>1. Data stored on your device (never sent to us)</h2>
+        <h2>1. Data stored on your device</h2>
         <p>
-          Everything Reel exports lives in your browser&rsquo;s local storage (IndexedDB and{' '}
+          Everything Reel exports or reads lives in your browser&rsquo;s local storage (IndexedDB and{' '}
           <code>chrome.storage</code>) on your machine:
         </p>
         <ul>
           <li>
             Captured Discord messages, author names/IDs, channel/server names/IDs, timestamps,
-            and derived data (search index, semantic-search embeddings).
+            and derived data (search index, semantic-search embeddings). This includes the
+            messages Reel reads when you ask an AI question (see §2).
           </li>
           <li>Your settings and preferences.</li>
           <li>Your license key and a random per-installation identifier (see §5).</li>
+          <li>
+            A random device identifier that limits free questions (see §3). It is kept in the
+            extension&rsquo;s storage. If Chrome sync is on, it syncs with your Chrome profile.
+          </li>
         </ul>
         <p>
-          This data is <strong>not transmitted to the developer</strong>. You can erase all of it
-          at any time with <strong>Settings → Delete all data</strong>.
+          Your stored messages are <strong>not uploaded to us</strong>. The only message content
+          that leaves your device is what §3 describes. You can erase the stored messages and the
+          data built from them at any time with <strong>Settings → Delete all local data</strong>.
         </p>
 
         <h2>2. Your Discord session token</h2>
         <p>
-          To fetch message history and enumerate channels, Reel reads the Discord authorization
+          To read message history and list channels, Reel reads the Discord authorization
           token that your browser <strong>already sends</strong> with its own requests to Discord,
           and reuses it to call Discord&rsquo;s API <strong>on your behalf</strong>, for the
           servers and channels your account can already access.
+        </p>
+        <p>Reel fetches messages from Discord in two cases:</p>
+        <ul>
+          <li>
+            <strong>When you export.</strong> Reel reads the channels you chose.
+          </li>
+          <li>
+            <strong>When you send an AI question.</strong> Reel first reads the server you are
+            viewing: newest messages first, across the text and announcement channels you can see
+            (Deep mode also reads active threads). It stops when a time limit is reached (at most
+            about 90 seconds), saves what it read on your device, and then answers. Your next
+            question reads only what is new, then goes further back.
+          </li>
+        </ul>
+        <p>
+          Reel does not crawl Discord in the background. It fetches messages only when you start
+          an export or send a question, at a limited pace (about 2.8 requests per second at most).
+          If you turn on Live sync (Pro), Reel also saves the messages that Discord already shows
+          in your open tab. That reads the page, not Discord&rsquo;s API.
         </p>
         <ul>
           <li>
@@ -68,37 +94,56 @@ export function ReelPrivacyPage() {
           </li>
           <li>Reel does not capture your Discord password, email, or 2FA.</li>
         </ul>
-
-        <h2>3. Data sent to our AI service (paid &ldquo;Pro&rdquo; feature only)</h2>
         <p>
-          When you ask an AI question (a Pro feature), Reel sends the following to{' '}
-          <strong>our Cloudflare Worker</strong>, which forwards it to an AI model provider to
-          generate the answer:
+          <strong>Important — account risk:</strong> using your own account&rsquo;s API access to
+          export messages, or to read a server when you ask an AI question, is a form of
+          automation that may be contrary to Discord&rsquo;s Terms of Service and could, in
+          principle, put your Discord account at risk. You use these features at your own
+          discretion.
+        </p>
+
+        <h2>3. Data sent to our AI service (when you ask an AI question)</h2>
+        <p>
+          When you ask an AI question, Reel sends the following to{' '}
+          <strong>our Cloudflare Worker</strong>, which forwards it to <strong>Anthropic</strong>{' '}
+          to generate the answer. Pro questions and the 3 free questions send the same kinds of
+          data:
         </p>
         <ul>
-          <li>Your question text.</li>
+          <li>Your question text, and the earlier questions and answers in the same chat.</li>
           <li>
-            A <strong>small selection of message snippets</strong> the assistant chooses as
-            evidence — at most 25 rows per call, each truncated (≈400 characters), including author
-            display name/username/ID, message text, and channel/server names.{' '}
-            <strong>Your full message archive is never sent.</strong>
+            <strong>Message excerpts</strong> that the assistant&rsquo;s searches return as
+            evidence. A search returns at most 25 messages per call in Fast mode and at most 100
+            in Deep mode. The user-investigation tool returns up to 200 messages per call by
+            default and up to 1,000 when asked. Each excerpt is cut to about 800 characters. An
+            answer can take up to 20 steps in Fast mode and up to 40 in Deep mode (up to 10 for a
+            free question). Excerpts include the message text, the author&rsquo;s name and ID,
+            channel and server names and IDs, the timestamp, and a link to the message.
+          </li>
+          <li>
+            Context for the answer: the name and ID of the server, a short summary of what Reel
+            has saved for it (counts and date range), and short notes the assistant kept from
+            earlier answers about that server.
           </li>
         </ul>
+        <p>
+          Only the items above are sent, not the rest of your saved messages. For Pro questions,
+          Reel also sends your license key and license activation ID, so the Worker can check your
+          license and count your usage (see §5).
+        </p>
         <p>Handling of this data:</p>
         <ul>
           <li>
             Our Worker <strong>does not store your question or message content.</strong> It keeps
-            only anonymous usage counters keyed to a hash of your license key (to enforce your
-            monthly quota).
+            usage counters: for Pro, keyed to a one-way hash of your license key (to enforce your
+            monthly quota); for free questions, as described below.
           </li>
           <li>Transmission is over HTTPS.</li>
           <li>
-            <strong>AI sub-processors:</strong> the request is processed by{' '}
-            <strong>Google</strong> (Gemini &mdash; primary model provider) and may be processed by{' '}
-            <strong>Anthropic</strong> (only as a failover). These
-            providers&rsquo; API terms do not use API-submitted content to train their models. We
-            do <strong>not</strong> route your content to any AI provider that trains on submitted
-            data.
+            <strong>AI sub-processor:</strong> Anthropic is the only AI provider that receives
+            this data. Anthropic&rsquo;s commercial terms say it may not train its models on
+            customer content from its services. We do <strong>not</strong> send your content
+            to any other AI provider.
           </li>
           <li>
             The on-device semantic-search model runs <strong>entirely in your browser</strong> —
@@ -107,8 +152,28 @@ export function ReelPrivacyPage() {
           </li>
         </ul>
         <p>
-          If you are on the free tier and never use the AI feature,{' '}
-          <strong>no message content ever leaves your device.</strong>
+          <strong>Free questions.</strong> Without Pro you get 3 free questions, in Fast mode
+          only. To enforce the limit:
+        </p>
+        <ul>
+          <li>
+            Reel creates a random <strong>device identifier</strong> and keeps it in the
+            extension&rsquo;s storage. If Chrome sync is on, it syncs with your Chrome profile.
+          </li>
+          <li>
+            When you ask a free question, Reel sends this identifier to our Worker. The Worker
+            stores a <strong>one-way hash</strong> of it, with the number of free questions used,
+            their AI usage, and when they were used. It does not store the raw identifier.
+          </li>
+          <li>
+            The Worker sees your IP address when you connect, as any server does. To limit abuse
+            it keeps a <strong>one-way hash</strong> of the IP address for up to 24 hours. It does
+            not store the raw IP address.
+          </li>
+        </ul>
+        <p>
+          If you never ask an AI question, Reel sends no message content to us or to any AI
+          provider.
         </p>
 
         <h2>4. Images</h2>
@@ -143,21 +208,30 @@ export function ReelPrivacyPage() {
         <h2>7. Data retention &amp; deletion</h2>
         <ul>
           <li>
-            On-device data: retained until you clear it (<strong>Settings → Delete all data</strong>)
-            or uninstall the extension.
+            On-device data: retained until you clear it (<strong>Settings → Delete all local
+            data</strong>) or uninstall the extension. With Chrome sync on, Chrome may also keep a
+            synced copy of the device identifier in your Chrome profile.
           </li>
           <li>Session token: discarded automatically when you close the browser.</li>
+          <li>Server-side, Pro: usage counters keyed to a one-way hash of your license key.</li>
           <li>
-            Server-side: only anonymous, license-hashed usage counters; contact us at the address
-            above to request their deletion.
+            Server-side, free questions: a one-way hash of your device identifier, the number of
+            free questions used, their AI usage, and when they were used. We keep these to
+            enforce the free-question limit.
+          </li>
+          <li>Server-side, IP address: a one-way hash, for up to 24 hours.</li>
+          <li>Our Worker does not keep your questions or message content.</li>
+          <li>
+            To ask us to delete the counters above, email{' '}
+            <a href={'mailto:' + PRIVACY_CONTACT_EMAIL}>{PRIVACY_CONTACT_EMAIL}</a>.
           </li>
         </ul>
 
         <h2>8. Third parties / sub-processors</h2>
         <p>
-          Discord (message access + image CDN); Cloudflare (our Worker/AI proxy); Google (Gemini)
-          and, as failover, Anthropic (AI model providers); Lemon Squeezy (payments and licensing). The
-          embedding model is bundled locally and is <strong>not</strong> a runtime third party.
+          Discord (message access + image CDN); Cloudflare (our Worker/AI proxy); Anthropic (AI
+          answers: Pro and free questions); Lemon Squeezy (payments and licensing). The embedding
+          model is bundled locally and is <strong>not</strong> a runtime third party.
         </p>
 
         <h2>9. Children</h2>

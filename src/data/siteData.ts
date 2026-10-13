@@ -181,11 +181,11 @@ export const products: Product[] = [
         },
         {
           title: 'Whole-server backup & search',
-          text: 'The microsite shows the one-run backup of every channel, thread and forum post into a browsable HTML / Excel / CSV / JSON archive, plus keyword and on-device semantic search and an AI research agent over the result.',
+          text: 'The microsite shows the one-run backup of every channel, thread and forum post into a browsable HTML / Excel / CSV / JSON archive, plus keyword and on-device semantic search and an AI chat inside Discord that answers questions about the server.',
         },
         {
           title: 'Local-first by design',
-          text: 'The corpus and the optional semantic embeddings live in IndexedDB on the device. History fetches reuse your existing Discord session locally and are paced gently; only small AI snippets ever leave, and only on Pro.',
+          text: 'The corpus and the optional semantic embeddings live in IndexedDB on the device. History fetches reuse your existing Discord session locally and are paced gently; only the message excerpts an AI answer needs leave the device, on Pro or one of the 3 free questions.',
         },
       ],
       milestones: [

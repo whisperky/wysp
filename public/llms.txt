@@ -9,8 +9,9 @@
   extension that exports Discord chat to Excel (XLSX), CSV, JSON or browsable
   HTML — a whole server in one run, channels, threads and forum posts included.
   The archive stays on the user's device, searchable by keyword or on-device
-  semantic meaning, with an optional AI research agent (Pro) that answers
-  questions with citations. Not affiliated with Discord.
+  semantic meaning, with an AI chat inside Discord that answers questions
+  about a server with links to the messages (3 free questions, then Pro).
+  Not affiliated with Discord.
   - Status: live — free on the Chrome Web Store, with a paid Pro tier.
   - Install: https://chromewebstore.google.com/detail/discord-chat-exporter-ai/iblalnacoajhmhhgjekfchdcakfkoema
   - Privacy policy: https://wysp.pro/reel/privacy/
