@@ -7,15 +7,18 @@ import { LanesProductSite } from '../products/lanes';
 import { ReelProductSite } from '../products/reel';
 import { TrustContractProductSite } from '../products/trust-contract';
 import { KlinexProductSite } from '../products/klinex';
+import { ClautownProductSite } from '../products/clautown';
 import '../products/lanes/lanes.css';
 import '../products/reel/reel.css';
 import '../products/trust-contract/trust-contract.css';
 import '../products/klinex/klinex.css';
+import '../products/clautown/clautown.css';
 
 export default function App() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/clautown/*" element={<ClautownRoute />} />
         <Route path="/lanes/*" element={<LanesRoute />} />
         <Route path="/reel/*" element={<ReelRoute />} />
         <Route path="/trust-contract/*" element={<TrustContractRoute />} />
@@ -52,4 +55,10 @@ function KlinexRoute() {
   const { hash, key, pathname } = useLocation();
 
   return <KlinexProductSite routePath={pathname} scrollKey={`klinex:${key}:${pathname}:${hash}`} />;
+}
+
+function ClautownRoute() {
+  const { hash, key, pathname } = useLocation();
+
+  return <ClautownProductSite routePath={pathname} scrollKey={`clautown:${key}:${pathname}:${hash}`} />;
 }

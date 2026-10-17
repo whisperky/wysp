@@ -1,0 +1,865 @@
+/* =============================================================
+   Clautown — "Night Atlas II" product microsite (sapphire + gold leaf).
+   Scoped under .clautown-site so it lives beside the other microsites
+   inside Wysp. Tokens mirror the Clautown game's design tokens.
+   ============================================================= */
+
+.clautown-site {
+  /* surfaces: opaque sapphire */
+  --ink-950: #040b1d;
+  --ink-900: #071328;
+  --ink-850: #0b1c3b;
+  --ink-800: #102549;
+  --ink-750: #16305a;
+  --ink-600: #274c88;
+
+  /* text ladder */
+  --text-1: #f7f0df;
+  --text-2: #d3d4cd;
+  --text-3: #a7b6d1;
+  --text-4: #8797b6;
+
+  /* lines */
+  --line-1: rgb(247 240 223 / 0.1);
+  --line-2: rgb(247 240 223 / 0.19);
+  --line-gold: rgb(246 189 60 / 0.46);
+
+  /* gold leaf: the one accent */
+  --gold-200: #ffe9ae;
+  --gold-300: #ffd873;
+  --gold-400: #f6bd3c;
+  --gold-600: #a8690f;
+  --gold-ink: #2b1a06;
+
+  /* sea, gems and status */
+  --sea-300: #86e6e6;
+  --sea-600: #1f8f94;
+  --gem-cyan: #6fd8ff;
+  --live: #ff7b6f;
+  --ok: #7be0a0;
+  --bad: #ff8a80;
+
+  /* the six department families, in ring order */
+  --fam-code: #3987e5;
+  --fam-research: #d95926;
+  --fam-test: #199e70;
+  --fam-build: #c98500;
+  --fam-ship: #d55181;
+  --fam-delegate: #22bccf;
+
+  --grad-primary: linear-gradient(180deg, #fff1b5 0%, #ffd873 14%, #f6bd3c 48%, #eaa72c 52%, #d9951f 100%);
+  --grad-btn: linear-gradient(180deg, #2a5a9c 0%, #1d427a 46%, #16346a 54%, #112a58 100%);
+  --grad-panel: linear-gradient(180deg, #14325f, #0e2650 22%, #0a1d3e 100%);
+
+  --font-display: Cinzel, 'Trajan Pro 3', 'Palatino Linotype', Georgia, 'Times New Roman', serif;
+  --font-ui: 'Fira Sans', 'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
+
+  position: relative;
+  min-height: 100vh;
+  background:
+    radial-gradient(900px 520px at 80% -8%, rgb(39 76 136 / 0.45), transparent 70%),
+    linear-gradient(180deg, var(--ink-900), var(--ink-950) 60%);
+  color: var(--text-2);
+  font-family: var(--font-ui);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.clautown-site h1,
+.clautown-site h2,
+.clautown-site h3,
+.clautown-site h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--text-1);
+  line-height: 1.15;
+  letter-spacing: 0.02em;
+}
+
+/* zero specificity, so each class below sets its own spacing */
+.clautown-site :where(h1, h2, h3, h4, p, ul, ol, figure) {
+  margin: 0;
+}
+
+.clautown-site :where(ul, ol) {
+  padding: 0;
+  list-style: none;
+}
+
+.clautown-site code {
+  padding: 2px 6px;
+  border: 1px solid var(--line-1);
+  border-radius: 4px;
+  background: rgb(4 11 29 / 0.6);
+  color: var(--gold-300);
+  font-family: ui-monospace, Consolas, 'SF Mono', monospace;
+  font-size: 0.92em;
+}
+
+.clautown-site a:focus-visible,
+.clautown-site summary:focus-visible {
+  outline: 3px solid var(--gem-cyan);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* ---------- layout ---------- */
+
+.clautown-wrap {
+  width: min(1140px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+.clautown-wrap-narrow {
+  width: min(780px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+.clautown-section {
+  padding: 96px 0;
+  scroll-margin-top: 80px;
+}
+
+.clautown-section-alt {
+  background: linear-gradient(180deg, transparent, rgb(11 28 59 / 0.5) 22%, rgb(11 28 59 / 0.5) 78%, transparent);
+}
+
+.clautown-section-head {
+  max-width: 46rem;
+}
+
+.clautown-section-head h2,
+.clautown-split h2 {
+  margin-top: 14px;
+  font-size: clamp(30px, 3.6vw, 42px);
+}
+
+.clautown-section-head p,
+.clautown-split p {
+  margin-top: 16px;
+  font-size: 17px;
+  color: var(--text-2);
+}
+
+.clautown-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold-300);
+}
+
+.clautown-eyebrow-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--gold-400);
+  box-shadow: 0 0 12px rgb(246 189 60 / 0.8);
+}
+
+.clautown-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* ---------- buttons ---------- */
+
+.clautown-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 46px;
+  padding: 0 22px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-family: var(--font-ui);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  transition: transform 0.15s ease, filter 0.15s ease, border-color 0.15s ease;
+}
+
+.clautown-btn:hover {
+  transform: translateY(-1px);
+}
+
+.clautown-btn-gold {
+  background: var(--grad-primary);
+  color: var(--gold-ink);
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.55), 0 12px 28px -12px rgb(246 189 60 / 0.7);
+}
+
+.clautown-btn-gold:hover {
+  filter: brightness(1.05);
+}
+
+.clautown-btn-ghost {
+  background: var(--grad-btn);
+  color: var(--text-1);
+  border-color: var(--line-2);
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.08);
+}
+
+.clautown-btn-ghost:hover {
+  border-color: var(--line-gold);
+}
+
+/* ---------- nav ---------- */
+
+.clautown-nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  border-bottom: 1px solid var(--line-1);
+  background: rgb(4 11 29 / 0.84);
+  backdrop-filter: blur(10px);
+}
+
+.clautown-nav-inner {
+  width: min(1140px, calc(100% - 32px));
+  min-height: 68px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.clautown-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--text-1);
+}
+
+.clautown-brand-mark {
+  width: 38px;
+  height: 38px;
+}
+
+.clautown-brand-word {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-display);
+  font-size: 21px;
+  line-height: 1.05;
+  letter-spacing: 0.04em;
+  color: var(--text-1);
+}
+
+.clautown-brand-sub {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+
+.clautown-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.clautown-nav-links > a:not(.clautown-btn) {
+  color: var(--text-3);
+  font-size: 14px;
+}
+
+.clautown-nav-links > a:not(.clautown-btn):hover {
+  color: var(--gold-300);
+}
+
+.clautown-nav-cta {
+  min-height: 40px;
+  padding: 0 16px;
+  font-size: 15px;
+}
+
+/* ---------- hero ---------- */
+
+.clautown-hero {
+  position: relative;
+  padding: 72px 0 96px;
+  overflow: hidden;
+}
+
+.clautown-hero-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: 56px;
+  align-items: center;
+}
+
+.clautown-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 16px 5px 5px;
+  border: 1px solid var(--line-2);
+  border-radius: 999px;
+  background: var(--ink-850);
+  color: var(--text-2);
+  font-size: 14px;
+}
+
+.clautown-hero-tag {
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--grad-primary);
+  color: var(--gold-ink);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.clautown-hero h1 {
+  margin-top: 24px;
+  font-size: clamp(38px, 5.4vw, 64px);
+  line-height: 1.06;
+}
+
+.clautown-glow {
+  color: var(--gold-300);
+  text-shadow: 0 0 24px rgb(246 189 60 / 0.4);
+}
+
+.clautown-hero-lead {
+  margin-top: 22px;
+  max-width: 34rem;
+  font-size: 19px;
+  color: var(--text-2);
+}
+
+.clautown-hero .clautown-actions {
+  margin-top: 30px;
+}
+
+.clautown-hero-trust {
+  margin-top: 28px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 22px;
+  font-size: 15px;
+  color: var(--text-3);
+}
+
+.clautown-hero-trust li {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.clautown-hero-trust svg {
+  flex: none;
+  color: var(--gold-300);
+}
+
+.clautown-map-stage {
+  position: relative;
+  justify-self: center;
+  width: min(100%, 440px);
+  margin: 0;
+}
+
+.clautown-map-stage::before {
+  content: '';
+  position: absolute;
+  inset: -12% -8%;
+  background: radial-gradient(closest-side, rgb(246 189 60 / 0.16), transparent 72%);
+  pointer-events: none;
+}
+
+.clautown-hex-map {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.clautown-map-caption {
+  position: relative;
+  margin-top: 14px;
+  text-align: center;
+  font-size: 15px;
+  color: var(--text-3);
+}
+
+/* the hex map: fills are tokens, so the family colours match the cards below */
+.clautown-hex-face {
+  stroke: var(--ink-950);
+  stroke-width: 2;
+}
+
+.clautown-hex-code { fill: var(--fam-code); }
+.clautown-hex-research { fill: var(--fam-research); }
+.clautown-hex-test { fill: var(--fam-test); }
+.clautown-hex-build { fill: var(--fam-build); }
+.clautown-hex-ship { fill: var(--fam-ship); }
+.clautown-hex-delegate { fill: var(--fam-delegate); }
+
+.clautown-hex-plate {
+  fill: rgb(4 11 29 / 0.22);
+}
+
+.clautown-hex-wild {
+  fill: var(--ink-750);
+  stroke: var(--ink-950);
+  stroke-width: 2;
+}
+
+.clautown-hex-water {
+  fill: var(--sea-600);
+  stroke: var(--ink-950);
+  stroke-width: 2;
+}
+
+.clautown-hex-hall {
+  fill: var(--gold-400);
+  stroke: var(--gold-200);
+  stroke-width: 2.5;
+}
+
+.clautown-hall-roof,
+.clautown-hall-body {
+  fill: var(--ink-900);
+}
+
+.clautown-hoarding {
+  fill: var(--gold-300);
+  stroke: var(--gold-600);
+  stroke-width: 1;
+}
+
+.clautown-crane {
+  fill: none;
+  stroke: var(--text-1);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+}
+
+.clautown-live-dot {
+  fill: var(--live);
+  animation: clautown-pulse 2.4s ease-in-out infinite;
+}
+
+.clautown-star {
+  fill: var(--gold-200);
+  opacity: 0.7;
+}
+
+@keyframes clautown-pulse {
+  0%,
+  100% {
+    opacity: 0.35;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+/* ---------- cards, steps, districts ---------- */
+
+.clautown-plate {
+  position: relative;
+  padding: 26px;
+  border: 1px solid var(--line-2);
+  border-radius: 12px;
+  background: var(--grad-panel);
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.07), 0 22px 44px -26px rgb(0 0 0 / 0.85);
+}
+
+.clautown-plate h3 {
+  font-size: 20px;
+}
+
+.clautown-plate p {
+  margin-top: 10px;
+  color: var(--text-2);
+}
+
+.clautown-card-icon {
+  color: var(--gold-300);
+}
+
+.clautown-cards {
+  margin-top: 44px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.clautown-steps {
+  margin-top: 44px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.clautown-step-num {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold-300);
+}
+
+.clautown-step h3 {
+  margin-top: 12px;
+  font-size: 20px;
+}
+
+.clautown-step p {
+  margin-top: 10px;
+  color: var(--text-2);
+}
+
+.clautown-note {
+  margin-top: 26px;
+  font-size: 16px;
+  color: var(--text-3);
+}
+
+.clautown-families {
+  margin-top: 44px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.clautown-family {
+  --fam: var(--fam-code);
+  position: relative;
+  overflow: hidden;
+  padding: 22px 22px 22px 26px;
+  border: 1px solid var(--line-1);
+  border-radius: 12px;
+  background: var(--grad-panel);
+}
+
+.clautown-family::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 4px;
+  background: var(--fam);
+}
+
+.clautown-fam-code { --fam: var(--fam-code); }
+.clautown-fam-research { --fam: var(--fam-research); }
+.clautown-fam-test { --fam: var(--fam-test); }
+.clautown-fam-build { --fam: var(--fam-build); }
+.clautown-fam-ship { --fam: var(--fam-ship); }
+.clautown-fam-delegate { --fam: var(--fam-delegate); }
+
+.clautown-family-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.clautown-family h3 {
+  font-size: 20px;
+}
+
+.clautown-family-place {
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  white-space: nowrap;
+}
+
+.clautown-family p {
+  margin-top: 10px;
+  color: var(--text-2);
+}
+
+.clautown-points {
+  margin-top: 30px;
+  display: grid;
+  gap: 14px;
+}
+
+.clautown-points li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  color: var(--text-2);
+}
+
+.clautown-points svg {
+  flex: none;
+  margin-top: 3px;
+  color: var(--gold-300);
+}
+
+.clautown-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 56px;
+  align-items: start;
+}
+
+.clautown-split .clautown-points {
+  margin-top: 0;
+}
+
+/* ---------- privacy ---------- */
+
+.clautown-privacy-grid {
+  margin-top: 44px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.clautown-privacy-grid ul {
+  margin-top: 16px;
+  display: grid;
+  gap: 12px;
+}
+
+.clautown-privacy-grid li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 16px;
+  color: var(--text-2);
+}
+
+.clautown-privacy-grid li svg {
+  flex: none;
+  margin-top: 4px;
+}
+
+.clautown-privacy-sent li svg {
+  color: var(--ok);
+}
+
+.clautown-privacy-never li svg {
+  color: var(--bad);
+}
+
+.clautown-privacy-actions {
+  margin-top: 36px;
+}
+
+.clautown-privacy-actions p {
+  color: var(--text-2);
+}
+
+.clautown-privacy-actions .clautown-actions {
+  margin-top: 22px;
+}
+
+/* ---------- faq ---------- */
+
+.clautown-faq {
+  margin-top: 36px;
+  display: grid;
+  gap: 12px;
+}
+
+.clautown-faq details {
+  padding: 0 22px;
+  border: 1px solid var(--line-1);
+  border-radius: 12px;
+  background: var(--grad-panel);
+}
+
+.clautown-faq summary {
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  cursor: pointer;
+  list-style: none;
+  font-family: var(--font-ui);
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--text-1);
+}
+
+.clautown-faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.clautown-faq summary::after {
+  content: '+';
+  flex: none;
+  font-size: 24px;
+  line-height: 1;
+  color: var(--gold-300);
+  transition: transform 0.2s ease;
+}
+
+.clautown-faq details[open] summary::after {
+  transform: rotate(45deg);
+}
+
+.clautown-faq details > div {
+  padding: 0 0 20px;
+}
+
+.clautown-faq details p {
+  color: var(--text-2);
+}
+
+/* ---------- final call ---------- */
+
+.clautown-final {
+  padding: 110px 0;
+  border-top: 1px solid var(--line-1);
+  background: radial-gradient(640px 320px at 50% 0%, rgb(246 189 60 / 0.16), transparent 72%);
+  text-align: center;
+}
+
+.clautown-final h2 {
+  font-size: clamp(32px, 4.4vw, 48px);
+}
+
+.clautown-final p {
+  max-width: 40rem;
+  margin: 18px auto 0;
+  font-size: 18px;
+  color: var(--text-2);
+}
+
+.clautown-final .clautown-actions {
+  margin-top: 30px;
+  justify-content: center;
+}
+
+/* ---------- footer ---------- */
+
+.clautown-footer {
+  padding: 48px 0 28px;
+  border-top: 1px solid var(--line-1);
+  background: var(--ink-950);
+}
+
+.clautown-footer-inner {
+  width: min(1140px, calc(100% - 32px));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.4fr repeat(3, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.clautown-footer-brand p {
+  max-width: 26rem;
+  margin-top: 14px;
+  font-size: 15px;
+  color: var(--text-3);
+}
+
+.clautown-footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.clautown-footer-col h4 {
+  margin-bottom: 4px;
+  font-family: var(--font-ui);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold-300);
+}
+
+.clautown-footer-col a {
+  font-size: 15px;
+  color: var(--text-3);
+}
+
+.clautown-footer-col a:hover {
+  color: var(--text-1);
+}
+
+.clautown-colophon {
+  width: min(1140px, calc(100% - 32px));
+  margin: 36px auto 0;
+  padding-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px 24px;
+  border-top: 1px solid var(--line-1);
+  font-size: 14px;
+  color: var(--text-4);
+}
+
+/* ---------- responsive ---------- */
+
+@media (max-width: 1080px) {
+  .clautown-nav-links > a:not(.clautown-btn) {
+    display: none;
+  }
+}
+
+@media (max-width: 1000px) {
+  .clautown-hero-inner,
+  .clautown-split {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .clautown-map-stage {
+    width: min(100%, 380px);
+  }
+
+  .clautown-families {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .clautown-footer-inner {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .clautown-section {
+    padding: 72px 0;
+  }
+
+  .clautown-hero {
+    padding: 48px 0 72px;
+  }
+
+  .clautown-cards,
+  .clautown-steps,
+  .clautown-families,
+  .clautown-privacy-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .clautown-footer-inner {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .clautown-brand-sub {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .clautown-site *,
+  .clautown-site *::before,
+  .clautown-site *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

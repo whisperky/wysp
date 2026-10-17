@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="640" viewBox="0 0 960 640" role="img" aria-labelledby="clautown-title clautown-desc">
+  <title id="clautown-title">Clautown product preview</title>
+  <desc id="clautown-desc">A sapphire hex map with a gold Town Hall at the centre and six department districts around it. The Code district shows a construction hoarding and a crane. On the right are the Clautown name, a Live tag and three short points.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1c3b"/>
+      <stop offset="1" stop-color="#040b1d"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6bd3c" stop-opacity="0.24"/>
+      <stop offset="1" stop-color="#f6bd3c" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="tag" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff1b5"/>
+      <stop offset="0.48" stop-color="#f6bd3c"/>
+      <stop offset="1" stop-color="#d9951f"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="640" fill="url(#bg)"/>
+  <circle cx="280" cy="320" r="330" fill="url(#glow)"/>
+  <circle cx="56" cy="66" r="1.8" fill="#ffe9ae" fill-opacity="0.7"/>
+  <circle cx="904" cy="74" r="1.8" fill="#ffe9ae" fill-opacity="0.7"/>
+  <circle cx="930" cy="560" r="1.8" fill="#ffe9ae" fill-opacity="0.7"/>
+  <circle cx="44" cy="586" r="1.8" fill="#ffe9ae" fill-opacity="0.7"/>
+  <circle cx="520" cy="36" r="1.8" fill="#ffe9ae" fill-opacity="0.7"/>
+  <circle cx="888" cy="300" r="1.8" fill="#ffe9ae" fill-opacity="0.7"/>
+  <polygon points="531.1,291.0 480.9,262.0 430.7,291.0 430.7,349.0 480.9,378.0 531.1,349.0" fill="#16305a" stroke="#040b1d" stroke-width="3"/>
+  <polygon points="430.7,117.0 380.5,88.0 330.2,117.0 330.2,175.0 380.5,204.0 430.7,175.0" fill="#1f8f94" stroke="#040b1d" stroke-width="3"/>
+  <polygon points="229.8,117.0 179.5,88.0 129.3,117.0 129.3,175.0 179.5,204.0 229.8,175.0" fill="#16305a" stroke="#040b1d" stroke-width="3"/>
+  <polygon points="129.3,291.0 79.1,262.0 28.9,291.0 28.9,349.0 79.1,378.0 129.3,349.0" fill="#1f8f94" stroke="#040b1d" stroke-width="3"/>
+  <polygon points="229.8,465.0 179.5,436.0 129.3,465.0 129.3,523.0 179.5,552.0 229.8,523.0" fill="#16305a" stroke="#040b1d" stroke-width="3"/>
+  <polygon points="430.7,465.0 380.5,436.0 330.2,465.0 330.2,523.0 380.5,552.0 430.7,523.0" fill="#1f8f94" stroke="#040b1d" stroke-width="3"/>
+  <polygon points="480.9,204.0 430.7,175.0 380.5,204.0 380.5,262.0 430.7,291.0 480.9,262.0" fill="#16305a" stroke="#040b1d" stroke-width="3"/>
+  <polygon points="330.2,117.0 280.0,88.0 229.8,117.0 229.8,175.0 280.0,204.0 330.2,175.0" fill="#16305a" stroke="#040b1d" stroke-width="3"/>
+  <polygon points="179.5,204.0 129.3,175.0 79.1,204.0 79.1,262.0 129.3,291.0 179.5,262.0" fill="#16305a" stroke="#040b1d" stroke-width="3"/>
+  <polygon points="179.5,378.0 129.3,349.0 79.1,378.0 79.1,436.0 129.3,465.0 179.5,436.0" fill="#16305a" stroke="#040b1d" stroke-width="3"/>
+  <polygon points="330.2,465.0 280.0,436.0 229.8,465.0 229.8,523.0 280.0,552.0 330.2,523.0" fill="#16305a" stroke="#040b1d" stroke-width="3"/>
+  <polygon points="480.9,378.0 430.7,349.0 380.5,378.0 380.5,436.0 430.7,465.0 480.9,436.0" fill="#16305a" stroke="#040b1d" stroke-width="3"/>
+  <polygon points="430.7,291.0 380.5,262.0 330.2,291.0 330.2,349.0 380.5,378.0 430.7,349.0" fill="#3987e5" stroke="#040b1d" stroke-width="3"/><polygon points="413.6,300.9 380.5,281.7 347.3,300.9 347.3,339.1 380.5,358.3 413.6,339.1" fill="#040b1d" fill-opacity="0.22"/>
+  <polygon points="380.5,204.0 330.2,175.0 280.0,204.0 280.0,262.0 330.2,291.0 380.5,262.0" fill="#d95926" stroke="#040b1d" stroke-width="3"/><polygon points="363.4,213.9 330.2,194.7 297.1,213.9 297.1,252.1 330.2,271.3 363.4,252.1" fill="#040b1d" fill-opacity="0.22"/>
+  <polygon points="280.0,204.0 229.8,175.0 179.5,204.0 179.5,262.0 229.8,291.0 280.0,262.0" fill="#199e70" stroke="#040b1d" stroke-width="3"/><polygon points="262.9,213.9 229.8,194.7 196.6,213.9 196.6,252.1 229.8,271.3 262.9,252.1" fill="#040b1d" fill-opacity="0.22"/>
+  <polygon points="229.8,291.0 179.5,262.0 129.3,291.0 129.3,349.0 179.5,378.0 229.8,349.0" fill="#c98500" stroke="#040b1d" stroke-width="3"/><polygon points="212.7,300.9 179.5,281.7 146.4,300.9 146.4,339.1 179.5,358.3 212.7,339.1" fill="#040b1d" fill-opacity="0.22"/>
+  <polygon points="280.0,378.0 229.8,349.0 179.5,378.0 179.5,436.0 229.8,465.0 280.0,436.0" fill="#d55181" stroke="#040b1d" stroke-width="3"/><polygon points="262.9,387.9 229.8,368.7 196.6,387.9 196.6,426.1 229.8,445.3 262.9,426.1" fill="#040b1d" fill-opacity="0.22"/>
+  <polygon points="380.5,378.0 330.2,349.0 280.0,378.0 280.0,436.0 330.2,465.0 380.5,436.0" fill="#22bccf" stroke="#040b1d" stroke-width="3"/><polygon points="363.4,387.9 330.2,368.7 297.1,387.9 297.1,426.1 330.2,445.3 363.4,426.1" fill="#040b1d" fill-opacity="0.22"/>
+  <polygon points="330.2,291.0 280.0,262.0 229.8,291.0 229.8,349.0 280.0,378.0 330.2,349.0" fill="#f6bd3c" stroke="#ffe9ae" stroke-width="4"/>
+  <path d="M268.1 309.8 L280.0 287.6 L291.9 309.8 Z" fill="#071328"/>
+  <rect x="268.1" y="309.8" width="23.9" height="22.2" fill="#071328"/>
+  <line x1="392.4" y1="330.2" x2="392.4" y2="296.1" stroke="#f7f0df" stroke-width="2.6" stroke-linecap="round"/>
+  <line x1="370.2" y1="296.1" x2="400.9" y2="296.1" stroke="#f7f0df" stroke-width="2.6" stroke-linecap="round"/>
+  <line x1="370.2" y1="296.1" x2="370.2" y2="313.2" stroke="#f7f0df" stroke-width="2.6" stroke-linecap="round"/>
+  <rect x="363.4" y="313.2" width="34.1" height="18.8" rx="2.5" fill="#ffd873" stroke="#a8690f" stroke-width="1.5"/>
+  <circle cx="377.0" cy="282.5" r="4.4" fill="#ff7b6f"/>
+  <rect x="600" y="150" width="78" height="32" rx="16" fill="url(#tag)"/>
+  <text x="639" y="171" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700" letter-spacing="2" fill="#2b1a06">LIVE</text>
+  <text x="598" y="284" font-family="Georgia, 'Times New Roman', serif" font-size="66" font-weight="700" fill="#ffd873">Clautown</text>
+  <text font-family="Segoe UI, Arial, sans-serif" font-size="28" fill="#f7f0df">
+    <tspan x="600" y="336">Your Claude Code work</tspan>
+    <tspan x="600" y="372">builds a living 3D town.</tspan>
+  </text>
+  <rect x="600" y="408" width="282" height="40" rx="20" fill="#102549" stroke="#f7f0df" stroke-opacity="0.19" stroke-width="1.5"/>
+  <text x="622" y="434" font-family="Segoe UI, Arial, sans-serif" font-size="19" fill="#f7f0df">Districts grow live</text>
+  <rect x="600" y="458" width="282" height="40" rx="20" fill="#102549" stroke="#f7f0df" stroke-opacity="0.19" stroke-width="1.5"/>
+  <text x="622" y="484" font-family="Segoe UI, Arial, sans-serif" font-size="19" fill="#f7f0df">Counts, never prompts</text>
+  <rect x="600" y="508" width="282" height="40" rx="20" fill="#102549" stroke="#f7f0df" stroke-opacity="0.19" stroke-width="1.5"/>
+  <text x="622" y="534" font-family="Segoe UI, Arial, sans-serif" font-size="19" fill="#f7f0df">Visit and cheer towns</text>
+  <text x="600" y="592" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#a7b6d1">clautown.vercel.app · a Wysp product</text>
+</svg>

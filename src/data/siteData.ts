@@ -1,6 +1,7 @@
 import {
   Aperture,
   Bell,
+  Castle,
   Code2,
   Command,
   Gamepad2,
@@ -64,6 +65,50 @@ export const contact = {
 };
 
 export const products: Product[] = [
+  {
+    id: 'clautown',
+    name: 'Clautown',
+    shortName: 'Clautown',
+    status: 'Live',
+    eyebrow: 'Claude Code town',
+    description:
+      'A living 3D town built by your real Claude Code work: each project becomes a district that grows as Claude builds.',
+    outcome: 'Open the Clautown microsite for how it connects and what stays private.',
+    href: '/clautown/',
+    accent: 'cyan',
+    icon: Castle,
+    image: {
+      src: '/assets/clautown/clautown-product.svg',
+      alt: 'Clautown product preview — a sapphire hex map with a gold Town Hall at the centre, six department districts around it, and a construction hoarding and crane on the Code district.',
+    },
+    points: ['Districts grow live', 'Counts, never prompts', 'Visit and chat'],
+    detail: {
+      intro:
+        'Clautown has its own product microsite at /clautown/. Wysp keeps this catalog entry compact while the independent Clautown page carries the hero, the district map, the connect steps, the privacy model, and the FAQ in its own sapphire and gold design language.',
+      sections: [
+        {
+          title: 'Independent product home',
+          text: 'The homepage card sends visitors into the Clautown microsite instead of rendering a generic Wysp detail layout — the same approach as Klinex, Trust Contract, Reel, and Lanes.',
+        },
+        {
+          title: 'A town built by real work',
+          text: 'Each Claude Code project becomes a district on a hex map. Its department families grow through six tiers while Claude works, and a timelapse replays the town from its first day.',
+        },
+        {
+          title: 'Counts, never your words',
+          text: 'The collector sends counts and short labels from fixed lists. Prompts, code, file names, and commit messages are never sent, and the names of districts stay private by default.',
+        },
+      ],
+      milestones: [
+        'Keep the live Clautown town and this microsite in step',
+        'Open the Hangar shop once the Lemon Squeezy store checks are done',
+      ],
+      primaryAction: {
+        label: 'Open Clautown',
+        href: '/clautown/',
+      },
+    },
+  },
   {
     id: 'klinex',
     name: 'Klinex',
