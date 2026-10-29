@@ -925,6 +925,24 @@ svg {
   box-shadow: 0 12px 20px rgba(23, 32, 36, 0.14);
 }
 
+.product-visual video {
+  position: relative;
+  width: min(540px, 100%);
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: 100% 50%;
+  background: #17130e;
+  border: 1px solid rgba(246, 189, 60, 0.42);
+  border-radius: 12px;
+  box-shadow:
+    0 20px 44px rgba(23, 19, 14, 0.34),
+    0 0 0 5px rgba(246, 189, 60, 0.1);
+}
+
+.product-visual.has-video::before {
+  inset: 34% 18%;
+}
+
 .product-visual.accent-cyan {
   --product-glow: rgba(105, 215, 220, 0.32);
 }

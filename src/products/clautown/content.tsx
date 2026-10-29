@@ -1,6 +1,6 @@
 import type { PageMetadata } from '../../lib/pageMetadata';
 import { PRODUCT_ROOT, clautownAbsoluteUrl } from './config';
-import { buildFaqSchema, clautownSoftwareSchema } from './schema';
+import { buildFaqSchema, clautownFilmSchema, clautownSoftwareSchema } from './schema';
 import type { FaqItem } from './types';
 
 export const landingFaqs: FaqItem[] = [
@@ -44,15 +44,19 @@ export const landingFaqs: FaqItem[] = [
     answer:
       'Delete your account in Settings. It removes your town, stats, picture, follows, cheers, guestbook notes, purchases and the chat lines you wrote. A few records stay for a short time, such as moderation logs, as the privacy policy explains. Then run the uninstall command on your computer to remove the hooks.',
   },
+  {
+    question: 'Is Clautown made by Anthropic?',
+    answer: 'No. Clautown is an independent project and is not affiliated with Anthropic.',
+  },
 ];
 
 export const landingMetadata: PageMetadata = {
-  title: 'Clautown · a 3D town built by your Claude Code work · Wysp',
+  title: 'Clautown · your Claude Code town · Wysp',
   description:
-    'A living 3D town built by your real Claude Code work. Every project becomes a district that grows while Claude works. Connect in one click. Counts and short labels only, never your words.',
+    'Your town grows every time you code with Claude. Every Claude Code project becomes a district in a living 3D world that builds while Claude works. Connect in one click. Counts and short labels only, never your words.',
   path: PRODUCT_ROOT,
   ogType: 'website',
-  schema: [clautownSoftwareSchema(), buildFaqSchema(landingFaqs)],
+  schema: [clautownSoftwareSchema(), clautownFilmSchema(), buildFaqSchema(landingFaqs)],
 };
 
 export const notFoundMetadata: PageMetadata = {

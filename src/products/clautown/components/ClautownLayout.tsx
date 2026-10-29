@@ -2,6 +2,7 @@ import { NotFoundPanel } from '../../../components/feedback/NotFoundPanel';
 import { AppLink } from '../../../components/navigation/AppLink';
 import {
   ASSET_ROOT,
+  CLAUTOWN_DEMO_HREF,
   CLAUTOWN_PLAY_HREF,
   CLAUTOWN_PRIVACY_HREF,
   CLAUTOWN_ROUTES,
@@ -10,19 +11,31 @@ import {
   FEEDBACK_HREF,
 } from '../config';
 
+function BrandMark() {
+  return (
+    <img
+      className="clautown-brand-mark"
+      src={ASSET_ROOT + '/clautown-logo-128.webp'}
+      width={40}
+      height={40}
+      alt=""
+      aria-hidden="true"
+    />
+  );
+}
+
 export function ClautownNav() {
   return (
     <nav className="clautown-nav" aria-label="Clautown primary">
       <div className="clautown-nav-inner">
         <AppLink className="clautown-brand" href={CLAUTOWN_ROUTES.home} aria-label="Clautown home">
-          <img className="clautown-brand-mark" src={ASSET_ROOT + '/clautown-icon.svg'} alt="" aria-hidden="true" />
-          <span className="clautown-brand-word">
-            Clautown<span className="clautown-brand-sub">your Claude Code town</span>
-          </span>
+          <BrandMark />
+          <span className="clautown-brand-word">Clautown</span>
         </AppLink>
         <div className="clautown-nav-links">
           <AppLink href={CLAUTOWN_ROUTES.how}>How it connects</AppLink>
           <AppLink href={CLAUTOWN_ROUTES.districts}>Districts</AppLink>
+          <AppLink href={CLAUTOWN_ROUTES.yours}>Make it yours</AppLink>
           <AppLink href={CLAUTOWN_ROUTES.world}>World map</AppLink>
           <AppLink href={CLAUTOWN_ROUTES.privacy}>Privacy</AppLink>
           <AppLink href={CLAUTOWN_ROUTES.faq}>FAQ</AppLink>
@@ -30,7 +43,7 @@ export function ClautownNav() {
             Wysp
           </AppLink>
           <AppLink className="clautown-btn clautown-btn-gold clautown-nav-cta" href={CLAUTOWN_PLAY_HREF}>
-            Play Clautown
+            Play
           </AppLink>
         </div>
       </div>
@@ -62,16 +75,16 @@ export function ClautownFooter() {
       <div className="clautown-footer-inner">
         <div className="clautown-footer-brand">
           <AppLink className="clautown-brand" href={CLAUTOWN_ROUTES.home} aria-label="Clautown home">
-            <img className="clautown-brand-mark" src={ASSET_ROOT + '/clautown-icon.svg'} alt="" aria-hidden="true" />
+            <BrandMark />
             <span className="clautown-brand-word">Clautown</span>
           </AppLink>
-          <p>A 3D town built by your real Claude Code work. Counts and short labels only, never your words.</p>
+          <p>Your town grows every time you code with Claude. Counts and short labels only, never your words.</p>
         </div>
         <div className="clautown-footer-col">
           <h4>Game</h4>
           <AppLink href={CLAUTOWN_PLAY_HREF}>Play Clautown</AppLink>
+          <AppLink href={CLAUTOWN_DEMO_HREF}>See a grown town</AppLink>
           <AppLink href={CLAUTOWN_ROUTES.how}>How it connects</AppLink>
-          <AppLink href={CLAUTOWN_ROUTES.districts}>Districts</AppLink>
           <AppLink href={CLAUTOWN_ROUTES.world}>World map</AppLink>
         </div>
         <div className="clautown-footer-col">

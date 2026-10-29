@@ -34,6 +34,7 @@ export type Product = {
   image: {
     src: string;
     alt: string;
+    video?: string;
   };
   points: string[];
   detail: {
@@ -72,19 +73,20 @@ export const products: Product[] = [
     status: 'Live',
     eyebrow: 'Claude Code town',
     description:
-      'A living 3D town built by your real Claude Code work: each project becomes a district that grows as Claude builds.',
-    outcome: 'Open the Clautown microsite for how it connects and what stays private.',
+      'Your Claude Code work builds a living 3D town. Every project becomes a district that grows while Claude works.',
+    outcome: 'Watch the film, then found your town for free.',
     href: '/clautown/',
-    accent: 'cyan',
+    accent: 'gold',
     icon: Castle,
     image: {
-      src: '/assets/clautown/clautown-product.svg',
-      alt: 'Clautown product preview — a sapphire hex map with a gold Town Hall at the centre, six department districts around it, and a construction hoarding and crane on the Code district.',
+      src: '/assets/clautown/film/hero-loop-poster.jpg',
+      video: '/assets/clautown/film/hero-loop.mp4',
+      alt: 'Clautown preview film: a golden comet streaks into a building under construction in a night district, then the view opens onto a sunlit archipelago of districts.',
     },
     points: ['Districts grow live', 'Counts, never prompts', 'Visit and chat'],
     detail: {
       intro:
-        'Clautown has its own product microsite at /clautown/. Wysp keeps this catalog entry compact while the independent Clautown page carries the hero, the district map, the connect steps, the privacy model, and the FAQ in its own sapphire and gold design language.',
+        'Clautown has its own product microsite at /clautown/. Wysp keeps this catalog entry compact while the independent Clautown page carries the film, the real app view, the connect steps, the districts, the privacy model, and the FAQ in its own design language.',
       sections: [
         {
           title: 'Independent product home',

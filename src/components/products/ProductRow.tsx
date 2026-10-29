@@ -1,6 +1,7 @@
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import type { Product } from '../../data/siteData';
 import { AppLink } from '../navigation/AppLink';
+import { ProductVideo } from './ProductVideo';
 
 type ProductRowProps = {
   product: Product;
@@ -12,8 +13,12 @@ export function ProductRow({ product, index }: ProductRowProps) {
 
   return (
     <article className={isReversed ? 'product-row is-reversed' : 'product-row'}>
-      <div className={`product-visual accent-${product.accent}`}>
-        <img src={product.image.src} alt={product.image.alt} />
+      <div className={`product-visual accent-${product.accent}${product.image.video ? ' has-video' : ''}`}>
+        {product.image.video ? (
+          <ProductVideo src={product.image.video} poster={product.image.src} label={product.image.alt} />
+        ) : (
+          <img src={product.image.src} alt={product.image.alt} />
+        )}
         <div className="product-visual-badge" aria-hidden="true">
           <product.icon size={24} />
         </div>

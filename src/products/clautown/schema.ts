@@ -1,4 +1,13 @@
-import { ASSET_ROOT, CLAUTOWN_PLAY_HREF, PRODUCT_ROOT, SITE_ORIGIN, clautownAbsoluteUrl } from './config';
+import {
+  CLAUTOWN_PLAY_HREF,
+  FILM_POSTER,
+  FILM_VIDEO,
+  OG_IMAGE,
+  PRODUCT_ROOT,
+  SHOTS_ROOT,
+  SITE_ORIGIN,
+  clautownAbsoluteUrl,
+} from './config';
 import type { FaqItem } from './types';
 
 export function buildFaqSchema(faqs: FaqItem[]) {
@@ -34,7 +43,8 @@ export function clautownSoftwareSchema() {
       'A shared world map where towns at level 5 can found countries',
     ],
     url: clautownAbsoluteUrl(PRODUCT_ROOT),
-    image: clautownAbsoluteUrl(ASSET_ROOT + '/clautown-og.png'),
+    image: clautownAbsoluteUrl(OG_IMAGE),
+    screenshot: clautownAbsoluteUrl(SHOTS_ROOT + '/town-hud.webp'),
     publisher: {
       '@type': 'Organization',
       name: 'Wysp',
@@ -47,6 +57,25 @@ export function clautownSoftwareSchema() {
       priceCurrency: 'USD',
       availability: 'https://schema.org/InStock',
       url: CLAUTOWN_PLAY_HREF,
+    },
+  };
+}
+
+export function clautownFilmSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'VideoObject',
+    name: 'Clautown: your town grows every time you code with Claude',
+    description:
+      'A one-minute film of Clautown, a living 3D town built by your Claude Code work: districts that build while Claude works, a capital that grows with you, towns to visit, and a shared world map.',
+    thumbnailUrl: clautownAbsoluteUrl(FILM_POSTER),
+    contentUrl: clautownAbsoluteUrl(FILM_VIDEO),
+    uploadDate: '2026-10-28',
+    duration: 'PT1M',
+    publisher: {
+      '@type': 'Organization',
+      name: 'Wysp',
+      url: SITE_ORIGIN,
     },
   };
 }

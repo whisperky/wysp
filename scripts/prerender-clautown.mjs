@@ -38,11 +38,11 @@ function outputPathForRoute(routePath) {
 
 function injectRouteHtml(indexHtml, renderedApp, metadata) {
   const canonical = `${siteOrigin}${metadata.path}`;
-  const image = `${siteOrigin}${assetRoot}/clautown-og.png`;
+  const image = `${siteOrigin}${assetRoot}/film/og-image.jpg`;
   const headTags = [
     `<link rel="canonical" href="${escapeAttribute(canonical)}" />`,
     `<link rel="icon" type="image/png" sizes="128x128" href="${assetRoot}/clautown-icon-128.png" />`,
-    `<link rel="apple-touch-icon" href="${assetRoot}/clautown-icon-128.png" />`,
+    `<link rel="apple-touch-icon" href="${assetRoot}/clautown-apple-touch.png" />`,
     `<meta property="og:type" content="${escapeAttribute(metadata.ogType)}" />`,
     `<meta property="og:title" content="${escapeAttribute(metadata.title)}" />`,
     `<meta property="og:description" content="${escapeAttribute(metadata.description)}" />`,
