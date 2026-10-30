@@ -483,7 +483,7 @@ export function LandingPage() {
               </ul>
             </div>
           </div>
-          <p className="reel-pricing-foot">14-day money-back guarantee · 2 devices per license · billed via LemonSqueezy</p>
+          <p className="reel-pricing-foot">2 devices per license · billed via LemonSqueezy</p>
         </div>
       </section>
 

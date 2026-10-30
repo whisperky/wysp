@@ -32,8 +32,16 @@ export function ReelPrivacyPage() {
           Reel is a browser extension that exports the Discord messages <strong>you can already
           read</strong> to local storage on your own device and lets you search them, build
           per-user profiles, and ask AI questions about a server (3 free questions, then the
-          paid tier). When you ask a question, Reel first reads the server you are viewing. This
-          policy explains exactly what data Reel touches and where — if anywhere — it goes.
+          paid tier). When you ask a question, Reel first reads the server you are viewing. This policy explains exactly what data Reel
+          touches and where — if anywhere — it goes.
+        </p>
+        <p>
+          <strong>Consent.</strong> Reel does nothing until you agree. When you install it, a page
+          opens with one checkbox: &ldquo;I agree that Reel reads the Discord chats I open,
+          including DMs, saves them on this device, and sends my AI questions and the messages
+          they need to Reel&rsquo;s server and Anthropic.&rdquo; The side panel asks for the same
+          agreement until you give it. Until then nothing is read and AI questions are refused.
+          Your agreement is saved on your device. You can withdraw it at any time (see §2).
         </p>
 
         <h2>1. Data stored on your device</h2>
@@ -48,7 +56,16 @@ export function ReelPrivacyPage() {
             messages Reel reads when you ask an AI question (see §2).
           </li>
           <li>Your settings and preferences.</li>
+          <li>
+            Your private notes about DMs. Notes never leave your device.
+          </li>
+          <li>
+            Messages Reel saves from a DM when you press &ldquo;Read this chat&rdquo;. They are
+            kept in a separate table, apart from server data. They do not appear in the Analyzer, in exports, in the semantic index or in any
+            AI search tool, and they are never uploaded.
+          </li>
           <li>Your license key and a random per-installation identifier (see §5).</li>
+          <li>A random one-time code for a purchase you start from Reel (see §5).</li>
           <li>
             A random device identifier that limits free questions (see §3). It is kept in the
             extension&rsquo;s storage. If Chrome sync is on, it syncs with your Chrome profile.
@@ -58,6 +75,8 @@ export function ReelPrivacyPage() {
           Your stored messages are <strong>not uploaded to us</strong>. The only message content
           that leaves your device is what §3 describes. You can erase the stored messages and the
           data built from them at any time with <strong>Settings → Delete all local data</strong>.
+          This also deletes all saved DMs and DM notes. To remove only one saved DM chat, use{' '}
+          <strong>Delete saved chat</strong> in the DM panel; it keeps your note for that chat.
         </p>
 
         <h2>2. Your Discord session token</h2>
@@ -65,12 +84,34 @@ export function ReelPrivacyPage() {
           To read message history and list channels, Reel reads the Discord authorization
           token that your browser <strong>already sends</strong> with its own requests to Discord,
           and reuses it to call Discord&rsquo;s API <strong>on your behalf</strong>, for the
-          servers and channels your account can already access.
+          servers and channels your account can already access. Reel keeps this token only after
+          you agree on the consent page.
         </p>
-        <p>Reel fetches messages from Discord in two cases:</p>
+        <p>
+          <strong>Withdrawing consent.</strong> You can withdraw consent at any time in{' '}
+          <strong>Settings → Privacy &amp; data → Consent</strong>. After you confirm, Reel removes
+          the stored consent and the Discord token and its other session caches (server and
+          profile caches), stops keeping the token, stops Live sync, refuses AI questions, and
+          shows the consent card again in the side panel. Data already saved on your device stays
+          there until you use <strong>Delete all local data</strong>.
+        </p>
+        <p>Reel fetches messages from Discord in three cases:</p>
         <ul>
           <li>
             <strong>When you export.</strong> Reel reads the channels you chose.
+          </li>
+          <li>
+            <strong>When you open a DM.</strong> If the side panel is open on a DM, Reel makes up
+            to three calls and reads no messages: the DM&rsquo;s info (the people in it and the
+            last message id), the other person&rsquo;s profile card (1:1 DMs only), and your
+            server list (only to name the servers you share with them). The profile call uses an
+            undocumented Discord endpoint that Discord&rsquo;s own app also uses. Reel keeps the
+            profile for 5 minutes and the server list for 10 minutes in the browser&rsquo;s
+            session memory only. They are never written to disk and never sent to us or to the
+            AI. Reel reads that DM&rsquo;s messages only when you press &ldquo;Read this
+            chat&rdquo; (no AI): newest first, for up to about 15 seconds the first time and
+            about 5 seconds after that. It saves them on your device in a separate table, apart from
+            server data. It never reads other DMs.
           </li>
           <li>
             <strong>When you send an AI question.</strong> Reel first reads the server you are
@@ -82,7 +123,7 @@ export function ReelPrivacyPage() {
         </ul>
         <p>
           Reel does not crawl Discord in the background. It fetches messages only when you start
-          an export or send a question, at a limited pace (about 2.8 requests per second at most).
+          an export, send a question or read a DM, at a limited pace (about 2.8 requests per second at most).
           If you turn on Live sync (Pro), Reel also saves the messages that Discord already shows
           in your open tab. That reads the page, not Discord&rsquo;s API.
         </p>
@@ -110,22 +151,36 @@ export function ReelPrivacyPage() {
           data:
         </p>
         <ul>
-          <li>Your question text, and the earlier questions and answers in the same chat.</li>
+          <li>
+            Your question text, and the earlier questions and answers in the same chat.
+          </li>
           <li>
             <strong>Message excerpts</strong> that the assistant&rsquo;s searches return as
             evidence. A search returns at most 25 messages per call in Fast mode and at most 100
-            in Deep mode. The user-investigation tool returns up to 200 messages per call by
-            default and up to 1,000 when asked. Each excerpt is cut to about 800 characters. An
-            answer can take up to 20 steps in Fast mode and up to 40 in Deep mode (up to 10 for a
-            free question). Excerpts include the message text, the author&rsquo;s name and ID,
-            channel and server names and IDs, the timestamp, and a link to the message.
+            in Deep mode. The user-investigation tool returns the latest 40 messages by default and
+            at most 200. Each excerpt is cut to between 280 and 800 characters, unless the
+            assistant asks for whole messages (4,000 characters at most). An answer can take up
+            to 8 steps in Fast mode and up to 14 in Deep mode (for a free question: up to 14 for
+            the first, 10 for the others). Search results include the message text, the message ID,
+            the author&rsquo;s @username (or name and ID when there is none), the channel name,
+            and the time to the minute. Messages shown as evidence about a person carry the
+            channel, the text and the day. People in a result also carry up to four short account
+            facts that Reel works out on your device, for example &ldquo;account 6 years old&rdquo;.
           </li>
           <li>
-            Context for the answer: the name and ID of the server, a short summary of what Reel
+            Context for the answer: the name of the server, a short summary of what Reel
             has saved for it (counts and date range), and short notes the assistant kept from
             earlier answers about that server.
           </li>
         </ul>
+        <p>
+          <strong>Direct messages.</strong> DMs get no AI. No DM text is ever sent to our Worker
+          or to Anthropic. AI questions are only about servers. The &ldquo;About them&rdquo; part
+          of the DM panel (the profile card, facts from your saved messages from that person in
+          servers, the servers you share with their totals, and the counts, links and files of
+          the DM you read) is shown on your device and sends nothing to us or
+          to the AI. Your private note about a DM is saved only on your device and is never sent.
+        </p>
         <p>
           Only the items above are sent, not the rest of your saved messages. For Pro questions,
           Reel also sends your license key and license activation ID, so the Worker can check your
@@ -136,7 +191,9 @@ export function ReelPrivacyPage() {
           <li>
             Our Worker <strong>does not store your question or message content.</strong> It keeps
             usage counters: for Pro, keyed to a one-way hash of your license key (to enforce your
-            monthly quota); for free questions, as described below.
+            monthly quota); for free questions, as described below. For Pro it also counts how
+            many requests, and how much AI usage, went through Fast and through Deep. This is a
+            usage counter only, with no question or message content.
           </li>
           <li>Transmission is over HTTPS.</li>
           <li>
@@ -152,8 +209,8 @@ export function ReelPrivacyPage() {
           </li>
         </ul>
         <p>
-          <strong>Free questions.</strong> Without Pro you get 3 free questions, in Fast mode
-          only. To enforce the limit:
+          <strong>Free questions.</strong> Without Pro you get 3 free questions. The first
+          searches as deep as Deep mode; the others run in Fast mode. To enforce the limit:
         </p>
         <ul>
           <li>
@@ -191,6 +248,18 @@ export function ReelPrivacyPage() {
           own privacy policy for how they process payment data. We never see your full card
           details.
         </p>
+        <p>
+          <strong>Buying from inside Reel.</strong> When you open checkout from Reel, Reel adds a
+          random one-time code to the checkout and keeps a copy on your device. Lemon Squeezy
+          sends the code back to our Worker with your new license key. The Worker stores the key
+          encrypted with that code, and does not keep the code itself, so only your copy of Reel
+          can read the key. While Settings or the side panel is open, Reel asks the Worker for the
+          key and activates it as if you had pasted it. The Worker deletes the key when Reel picks
+          it up. A key that is not picked up within 24 hours can no longer be picked up, and the
+          Worker deletes it the next time any copy of Reel checks for a purchase. These checks
+          are counted per network under a one-way hash of the IP address (see §7). Pasting the
+          key from your purchase email still works.
+        </p>
 
         <h2>6. What we do NOT do</h2>
         <ul>
@@ -209,17 +278,25 @@ export function ReelPrivacyPage() {
         <ul>
           <li>
             On-device data: retained until you clear it (<strong>Settings → Delete all local
-            data</strong>) or uninstall the extension. With Chrome sync on, Chrome may also keep a
+            data</strong>, or <strong>Delete saved chat</strong> for one saved DM chat) or
+            uninstall the extension. With Chrome sync on, Chrome may also keep a
             synced copy of the device identifier in your Chrome profile.
           </li>
           <li>Session token: discarded automatically when you close the browser.</li>
-          <li>Server-side, Pro: usage counters keyed to a one-way hash of your license key.</li>
+          <li>
+            Server-side, Pro: usage counters keyed to a one-way hash of your license key,
+            including how many requests used Fast and how many used Deep.
+          </li>
           <li>
             Server-side, free questions: a one-way hash of your device identifier, the number of
             free questions used, their AI usage, and when they were used. We keep these to
             enforce the free-question limit.
           </li>
           <li>Server-side, IP address: a one-way hash, for up to 24 hours.</li>
+          <li>
+            Server-side, after a purchase from inside Reel: your new license key, encrypted with a
+            one-time code that only your copy of Reel holds, until Reel picks it up (see §5).
+          </li>
           <li>Our Worker does not keep your questions or message content.</li>
           <li>
             To ask us to delete the counters above, email{' '}
